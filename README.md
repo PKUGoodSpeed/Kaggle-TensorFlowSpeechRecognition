@@ -11,5 +11,5 @@ https://www.kaggle.com/c/tensorflow-speech-recognition-challenge
 #### Maybe use the following scripts to load audio files:
 https://github.com/ibab/tensorflow-wavenet/blob/master/wavenet/audio_reader.py
 #### Ref:
-https://www.tensorflow.org/versions/master/tutorials/audio_recognition
-https://www.iotforall.com/tensorflow-sound-classification-machine-learning-applications/
+1. https://www.tensorflow.org/versions/master/tutorials/audio_recognition
+2. https://www.iotforall.com/tensorflow-sound-classification-machine-learning-applications/
