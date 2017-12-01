@@ -7,7 +7,4 @@
 #### All the executable files must be moved to a folder with name "apps"
 #### Website
 https://www.kaggle.com/c/tensorflow-speech-recognition-challenge
-#### Download trainset data:
-```wget https://www.kaggle.com/c/tensorflow-speech-recognition-challenge/download/train.7z```
-#### Download testset data:
-```wget https://www.kaggle.com/c/tensorflow-speech-recognition-challenge/download/test.7z```
+#### You need to download particular softward to unzip .7z files
