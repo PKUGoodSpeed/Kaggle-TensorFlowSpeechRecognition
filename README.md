@@ -12,3 +12,4 @@ https://www.kaggle.com/c/tensorflow-speech-recognition-challenge
 https://github.com/ibab/tensorflow-wavenet/blob/master/wavenet/audio_reader.py
 #### Ref:
 https://www.tensorflow.org/versions/master/tutorials/audio_recognition
+https://www.iotforall.com/tensorflow-sound-classification-machine-learning-applications/
