@@ -8,3 +8,5 @@
 #### Website
 https://www.kaggle.com/c/tensorflow-speech-recognition-challenge
 #### You need to download particular softward to unzip .7z files
+#### Maybe use the following scripts to load audio files:
+https://github.com/ibab/tensorflow-wavenet/blob/master/wavenet/audio_reader.py
