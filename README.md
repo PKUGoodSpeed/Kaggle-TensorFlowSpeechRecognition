@@ -8,6 +8,6 @@
 #### Website
 https://www.kaggle.com/c/tensorflow-speech-recognition-challenge
 #### Download trainset data:
-```wget -O https://www.kaggle.com/c/tensorflow-speech-recognition-challenge/download/train.7z```
+```wget https://www.kaggle.com/c/tensorflow-speech-recognition-challenge/download/train.7z```
 #### Download testset data:
-```wget -O https://www.kaggle.com/c/tensorflow-speech-recognition-challenge/download/test.7z```
+```wget https://www.kaggle.com/c/tensorflow-speech-recognition-challenge/download/test.7z```
