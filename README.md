@@ -13,3 +13,4 @@ https://github.com/ibab/tensorflow-wavenet/blob/master/wavenet/audio_reader.py
 #### Ref:
 1. https://www.tensorflow.org/versions/master/tutorials/audio_recognition
 2. https://www.iotforall.com/tensorflow-sound-classification-machine-learning-applications/
+#### Converted frequency data (.csv) are put in the converted_data_set folder
