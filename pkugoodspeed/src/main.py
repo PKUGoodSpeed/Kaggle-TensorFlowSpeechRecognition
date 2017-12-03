@@ -14,7 +14,6 @@ from scipy import signal
 from scipy.io import wavfile
 
 #Visualization
-%matplotlib inline
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -25,11 +24,6 @@ mpl.rcParams['xtick.major.size'] = 5
 mpl.rcParams['xtick.minor.size'] = 2
 mpl.rcParams['ytick.major.size'] = 5
 mpl.rcParams['ytick.minor.size'] = 2
-
-import plotly.offline as py
-py.init_notebook_mode(connected=True)
-import plotly.graph_objs as go
-import plotly.tools as tls
 
 # Shuffle data
 from sklearn.utils import shuffle
