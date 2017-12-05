@@ -181,7 +181,7 @@ if __name__ == '__main__':
     print("TRAINING ENDS!")
     
     ## Plot results
-    steps = [i for i in range(128)]
+    steps = [i for i in range(3)]
     train_accu = res.history['acc']
     train_loss = res.history['loss']
     test_accu = res.history['val_acc']
@@ -205,7 +205,7 @@ if __name__ == '__main__':
     axes[0][1].set_xlabel('# of steps')
     axes[0][1].legend()
     
-    plt.savefig('output/convrg_rst.png')
+    plt.savefig('../output/convrg_rst.png')
     
     ## show model configuration
-    plot_model(model, to_file = 'output/model.png')
+    plot_model(model, to_file = '../output/model.png')
