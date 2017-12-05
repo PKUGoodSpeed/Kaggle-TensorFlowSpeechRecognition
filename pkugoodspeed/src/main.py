@@ -105,6 +105,31 @@ def comp_cls_wts(y, pwr = 0.2):
     for x in set(y):
         dic[x] = len(y)**pwr/list(y).count(x)**pwr
     return dic
+    
+# Get Prediction
+def getPrediction(model, path):
+    files = os.listdir(path)
+    files.sort()
+    dic = {'fname':[], 'label':[] }
+    batch_size = 10000
+    y = []
+    N = len(files)
+    for i in range(0, N, batch_size):
+        fnames = files[i: min(i+batch_size, N)]
+        x = []
+        for f in fnames:
+            rate, sample = wavfile.read(test_dir + '/' + f)
+            x.append(sample)
+        x = fft_convert(x)
+        nx, ny, nz = np.shape(x)
+        x = x.reshape(nx, ny, nz, 1)
+        ty = model.predict_classes(x, batch_size=128)
+        for p in ty:
+            y.append(idmap[p])
+    dic['filename'] = files
+    dic['predict'] = y
+    df = pd.DataFrame(dic)
+    return df
 
 
 if __name__ == '__main__':
@@ -214,3 +239,7 @@ if __name__ == '__main__':
     
     ## show model configuration
     plot_model(model, to_file = '../cnn_output/model.png')
+    
+    ## Getting prediction
+    df = getPrediction(model, '../data/test/audio')
+    df.to_csv('../cnn_output/predict.csv')
