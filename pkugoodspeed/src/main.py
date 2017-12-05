@@ -146,7 +146,7 @@ if __name__ == '__main__':
     
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
-    tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=0.6)
+    tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=0.65)
     
     ## Preprocessing x data
     print("PROCESSING FFT!")
@@ -180,7 +180,7 @@ if __name__ == '__main__':
     model.add(Conv2D(32, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
-    model.add(Dropout(0.25))
+    model.add(Dropout(0.12))
     model.add(Conv2D(32, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
@@ -204,7 +204,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 100
+    N_epoch = 250
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
