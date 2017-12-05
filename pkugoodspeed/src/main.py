@@ -3,7 +3,7 @@ import os
 from os.path import isdir, join
 import pandas as pd
 
-#math and data handler
+# math and data handler
 import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
@@ -13,11 +13,15 @@ from scipy.fftpack import fft
 from scipy import signal
 from scipy.io import wavfile
 
-#Visualization
+# Visualization
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
 from IPython.display import display
+
+# Progress bar
+from progress import ProgressBar
+pbar = ProgressBar()
 
 mpl.rc('font', family = 'serif', size = 17)
 mpl.rcParams['xtick.major.size'] = 5
@@ -80,9 +84,9 @@ def fft_convert(samples, rate = 16000, n = 25, m = 16, NR = 256, NC = 128, delta
     convert input data into a big spectrum matrix
     '''
     res = []
+    pbar.setBar(len(samples))
     for i,sam in enumerate(samples):
-        if(i % 3000 == 0):
-            print(i)
+        pbar.show(i)
         freq, times, spec = signal.spectrogram(sam, fs=rate, window=('kaiser',10), nperseg=int(n*rate/1000),
                                                noverlap=int(m*rate/1000))
         p1 = max(0, NR - np.shape(spec)[0])
@@ -175,13 +179,14 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    res = model.fit(train_x, train_y, batch_size = 128, epochs = 3, 
+    N_epoch = 100
+    res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
     print("TRAINING ENDS!")
     
     ## Plot results
-    steps = [i for i in range(3)]
+    steps = [i for i in range(N_epoch)]
     train_accu = res.history['acc']
     train_loss = res.history['loss']
     test_accu = res.history['val_acc']
@@ -205,7 +210,7 @@ if __name__ == '__main__':
     axes[0][1].set_xlabel('# of steps')
     axes[0][1].legend()
     
-    plt.savefig('../output/convrg_rst.png')
+    plt.savefig('../cnn_output/convrg_rst.png')
     
     ## show model configuration
-    plot_model(model, to_file = '../output/model.png')
+    plot_model(model, to_file = '../cnn_output/model.png')
