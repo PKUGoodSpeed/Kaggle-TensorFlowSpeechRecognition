@@ -118,7 +118,7 @@ def getPrediction(model, path):
         fnames = files[i: min(i+batch_size, N)]
         x = []
         for f in fnames:
-            rate, sample = wavfile.read(test_dir + '/' + f)
+            rate, sample = wavfile.read(path + '/' + f)
             x.append(sample)
         x = fft_convert(x)
         nx, ny, nz = np.shape(x)
