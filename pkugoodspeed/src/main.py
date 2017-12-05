@@ -126,8 +126,8 @@ def getPrediction(model, path):
         ty = model.predict_classes(x, batch_size=128)
         for p in ty:
             y.append(idmap[p])
-    dic['filename'] = files
-    dic['predict'] = y
+    dic['fname'] = files
+    dic['label'] = y
     df = pd.DataFrame(dic)
     return df
 
@@ -242,4 +242,5 @@ if __name__ == '__main__':
     
     ## Getting prediction
     df = getPrediction(model, '../data/test/audio')
+    df = df.set_index('fname')
     df.to_csv('../cnn_output/predict.csv')
