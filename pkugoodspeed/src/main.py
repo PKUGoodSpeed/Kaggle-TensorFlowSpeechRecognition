@@ -125,16 +125,17 @@ if __name__ == '__main__':
     test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
     
     ## Compute class weights
-    cls_wts = comp_cls_wts(train_y)
+    cls_wts = comp_cls_wts(tr_y)
     
     ## Preprocessing y data
     n_cls = 31
-    train_y = np_utils.to_categorical(y_train, n_cls)
-    test_y = np_utils.to_categorical(y_test, n_cls)
+    train_y = np_utils.to_categorical(tr_y, n_cls)
+    test_y = np_utils.to_categorical(ts_y, n_cls)
     
     ### Construct the model
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Conv2D(32, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
@@ -146,13 +147,13 @@ if __name__ == '__main__':
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(0.25))
-    model.add(Conv2D(32, kernel_size = (5, 5), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
-    model.add(Dropout(0.25))
+    #model.add(Conv2D(32, kernel_size = (5, 5), padding = 'same'))
+    #model.add(MaxPooling2D(pool_size = (2, 2)))
+    #model.add(Activation('relu'))
+    #model.add(Dropout(0.25))
     model.add(Flatten())
     model.add(Dense(128))
-    model.add(Activation(Itachi()))
+    model.add(Activation('relu'))
     model.add(Dropout(0.25))
     model.add(Dense(n_cls, activation = 'softmax'))
     model.summary()
