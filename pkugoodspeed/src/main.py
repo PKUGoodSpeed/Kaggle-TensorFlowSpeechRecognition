@@ -81,7 +81,7 @@ def fft_convert(samples, rate = 16000, n = 25, m = 16, NR = 256, NC = 128, delta
     '''
     res = []
     for i,sam in enumerate(samples):
-        if(i % 1000 == 0):
+        if(i % 3000 == 0):
             print(i)
         freq, times, spec = signal.spectrogram(sam, fs=rate, window=('kaiser',10), nperseg=int(n*rate/1000),
                                                noverlap=int(m*rate/1000))
@@ -112,12 +112,15 @@ if __name__ == '__main__':
         os.system('rm {0}/silence/README.md'.format(data_dir))
     
     ## Loading raw data Frame
+    print("LOADING RAW DATA!")
     raw_df = load_audio_data(data_dir)
     
     ## Parsing the data Frame into train and test sets
+    print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
     tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=0.6)
     
     ## Preprocessing x data
+    print("PROCESSING FFT!")
     train_x = fft_convert(tr_x)
     test_x = fft_convert(ts_x)
     img_r, img_c = np.shape(train_x)[1:]
@@ -131,8 +134,14 @@ if __name__ == '__main__':
     n_cls = 31
     train_y = np_utils.to_categorical(tr_y, n_cls)
     test_y = np_utils.to_categorical(ts_y, n_cls)
+    print("INPUT SHAPES:")
+    print("train_x: ", np.shape(train_x))
+    print("train_y: ", np.shape(train_y))
+    print("test_x: ", np.shape(test_x))
+    print("test_y: ", np.shape(test_y))
     
     ### Construct the model
+    print("CONSTRUCTING MODEL!")
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     model.add(MaxPooling2D(pool_size = (2, 2)))
@@ -165,9 +174,11 @@ if __name__ == '__main__':
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
     
     ### Train the model
-    res = model.fit(train_x, train_y, batch_size = 128, epochs = 64, 
+    print("TRAINING BEGINS!")
+    res = model.fit(train_x, train_y, batch_size = 128, epochs = 3, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
+    print("TRAINING ENDS!")
     
     ## Plot results
     steps = [i for i in range(128)]
@@ -176,6 +187,8 @@ if __name__ == '__main__':
     test_accu = res.history['val_acc']
     test_loss = res.history['val_loss']
     
+    
+    print("VISUALIZATION:")
         ## Plotting the results
     fig, axes = plt.subplots(2,2, figsize = (12, 12))
     fig.subplots_adjust(hspace = 0.4, wspace = 0.4)
