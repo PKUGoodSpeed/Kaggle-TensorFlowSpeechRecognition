@@ -92,6 +92,7 @@ def get_stddev(x):
     var = 0.
     for i, vec in enumerate(x):
         pbar.show(i)
+        assert len(Vec) == 16000
         var += np.std(vec, ddof=1)**2.
     return np.sqrt(var/len(x))/2.
     
