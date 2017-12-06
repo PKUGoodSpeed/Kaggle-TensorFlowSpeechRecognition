@@ -146,7 +146,7 @@ if __name__ == '__main__':
     
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
-    tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=0.9)
+    tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=0.7)
     
     ## Preprocessing x data
     print("PROCESSING FFT!")
@@ -157,7 +157,7 @@ if __name__ == '__main__':
     test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
     
     ## Compute class weights
-    cls_wts = comp_cls_wts(tr_y)
+    cls_wts = comp_cls_wts(tr_y, pwr = 0.5)
     
     ## Preprocessing y data
     n_cls = 31
@@ -173,22 +173,19 @@ if __name__ == '__main__':
     print("CONSTRUCTING MODEL!")
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    model.add(Conv2D(128, kernel_size = (8, 8), padding = 'same'))
+    model.add(Conv2D(128, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
-    model.add(Conv2D(64, kernel_size = (8, 8), padding = 'same'))
+    model.add(Conv2D(64, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
-    model.add(Dropout(0.12))
     model.add(Conv2D(32, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
-    model.add(Dropout(0.17))
-    model.add(Conv2D(32, kernel_size = (5, 5), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(Flatten())
+    model.add(Dense(1024))
     model.add(Activation('relu'))
     model.add(Dropout(0.25))
-    model.add(Flatten())
     model.add(Dense(128))
     model.add(Activation('relu'))
     model.add(Dropout(0.25))
@@ -203,7 +200,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 300
+    N_epoch = 200
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
@@ -234,7 +231,7 @@ if __name__ == '__main__':
     axes[0][1].set_xlabel('# of steps')
     axes[0][1].legend()
     
-    plt.savefig('../fc_output/convrg_rst.png')
+    plt.savefig('../cnn2_output/convrg_rst.png')
     
     ## show model configuration
     plot_model(model, to_file = '../cnn_output/model.png')
@@ -242,4 +239,4 @@ if __name__ == '__main__':
     ## Getting prediction
     df = getPrediction(model, '../data/test/audio')
     df = df.set_index('fname')
-    df.to_csv('../fc_output/predict.csv')
+    df.to_csv('../cnn2_output/predict.csv')
