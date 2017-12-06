@@ -1,3 +1,10 @@
+'''
+Here We just try a very simple straight forward model
+to see how it works.
+We no longer need the fft process.
+'''
+
+
 # input, output and command line tools
 import os
 from os.path import isdir, join
@@ -79,22 +86,7 @@ def train_test_split(df, ratio = 0.7):
     return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y), label_map
 
 # Using fft to convert input x's
-def fft_convert(samples, rate = 16000, n = 25, m = 16, NR = 256, NC = 128, delta = 1.E-10):
-    '''
-    convert input data into a big spectrum matrix
-    '''
-    res = []
-    pbar.setBar(len(samples))
-    for i,sam in enumerate(samples):
-        pbar.show(i)
-        freq, times, spec = signal.spectrogram(sam, fs=rate, window=('kaiser',10), nperseg=int(n*rate/1000),
-                                               noverlap=int(m*rate/1000))
-        p1 = max(0, NR - np.shape(spec)[0])
-        p2 = max(0, NC - np.shape(spec)[1])
-        spec = np.pad(spec, [(0,p1), (0, p2)], mode='constant')
-        spec = spec[:NR, :NC]
-        res.append(spec)
-    return np.log(np.array(res) + delta)
+def get_stddev
     
 # Function to compute class weights
 def comp_cls_wts(y, pwr = 0.2):

@@ -157,7 +157,7 @@ if __name__ == '__main__':
     test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
     
     ## Compute class weights
-    cls_wts = comp_cls_wts(tr_y, pwr = 0.5)
+    cls_wts = comp_cls_wts(tr_y, pwr = 0.1)
     
     ## Preprocessing y data
     n_cls = 31
