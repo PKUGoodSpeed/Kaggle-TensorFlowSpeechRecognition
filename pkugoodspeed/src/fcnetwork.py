@@ -59,6 +59,7 @@ def load_audio_data(path):
         for filename in os.listdir(path + '/' + folder):
             rate, sample = wavfile.read(data_dir + '/' + folder + '/' + filename)
             assert(rate == 16000)
+            spec = np.pad(spec, [(0,rate - len(sample))], mode='constant')
             assert(len(sample) == rate)
             raw['x'].append(np.array(sample))
             raw['y'].append(i)
