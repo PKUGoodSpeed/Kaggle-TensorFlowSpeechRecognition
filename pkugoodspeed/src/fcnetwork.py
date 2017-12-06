@@ -155,7 +155,7 @@ if __name__ == '__main__':
     input_length = 16000
     sigma = get_stddev(raw_df.x.tolist())
     train_x = (np.array(tr_x)/sigma).reshape(len(tr_x), input_length)
-    test_x = np.array(ts_x)/sigma.reshape(len(ts_x), input_length)
+    test_x = (np.array(ts_x)/sigma).reshape(len(ts_x), input_length)
     print("sigma = ", sigma)
     
     ## Compute class weights
