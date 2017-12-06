@@ -85,8 +85,14 @@ def train_test_split(df, ratio = 0.7):
         test_y += tmp_df.y.tolist()[tmp_n: ]
     return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y), label_map
 
-# Using fft to convert input x's
-def get_stddev
+# Compute standard deviation, which will be used for normalization
+def get_stddev(x):
+    samples = []
+    pbar.setBar(len(x))
+    for i, vec in enumerate(x):
+        pbar.show(i)
+        samples += list(vec)
+    return np.std(samples, ddof=1)
     
 # Function to compute class weights
 def comp_cls_wts(y, pwr = 0.2):
