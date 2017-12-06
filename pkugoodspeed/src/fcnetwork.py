@@ -93,7 +93,7 @@ def get_stddev(x):
     for i, vec in enumerate(x):
         pbar.show(i)
         var += np.std(vec, ddof=1)**2.
-    return np.sqrt(var/len(x))
+    return np.sqrt/2.
     
 # Function to compute class weights
 def comp_cls_wts(y, pwr = 0.2):
@@ -144,14 +144,13 @@ if __name__ == '__main__':
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
     tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=0.7)
-    print(len(tr_x), len(tr_x[0]))
     
     ## Preprocessing x data
     print("PROCESSING DATA!")
-    sigma = get_stddev(raw_df.x.tolist())
-    train_x = np.array(tr_x)/sigma
-    test_x = np.array(ts_x)/sigma
     input_length = 16000
+    sigma = get_stddev(raw_df.x.tolist())
+    train_x = (np.array(tr_x)/sigma).reshape(len(tr_x), input_length)
+    test_x = np.array(ts_x)/sigma.reshape(len(ts_x), input_length)
     print("sigma = ", sigma)
     
     ## Compute class weights
