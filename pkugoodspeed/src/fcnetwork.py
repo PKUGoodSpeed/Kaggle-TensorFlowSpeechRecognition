@@ -144,6 +144,7 @@ if __name__ == '__main__':
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
     tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=0.7)
+    print(len(tr_x), len(tr_x[0]))
     
     ## Preprocessing x data
     print("PROCESSING DATA!")
@@ -151,6 +152,7 @@ if __name__ == '__main__':
     train_x = np.array(tr_x)/sigma
     test_x = np.array(ts_x)/sigma
     input_length = 16000
+    print("sigma = ", sigma)
     
     ## Compute class weights
     cls_wts = comp_cls_wts(tr_y, pwr = 0.1)
