@@ -89,10 +89,11 @@ def train_test_split(df, ratio = 0.7):
 def get_stddev(x):
     samples = []
     pbar.setBar(len(x))
+    var = 0.
     for i, vec in enumerate(x):
         pbar.show(i)
-        samples += list(vec)
-    return np.std(samples, ddof=1)
+        var += np.std(vec, ddof=1)**2.
+    return np.sqrt(var/len(x))
     
 # Function to compute class weights
 def comp_cls_wts(y, pwr = 0.2):
@@ -216,6 +217,6 @@ if __name__ == '__main__':
     plot_model(model, to_file = '../fc_output/model.png')
     
     ## Getting prediction
-    df = getPrediction(model, '../data/test/audio')
+    df = getPrediction(model, '../data/test/audio', sigma)
     df = df.set_index('fname')
     df.to_csv('../fc_output/predict.csv')
