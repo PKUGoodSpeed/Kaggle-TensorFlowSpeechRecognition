@@ -234,7 +234,7 @@ if __name__ == '__main__':
     plt.savefig('../cnn2_output/convrg_rst.png')
     
     ## show model configuration
-    plot_model(model, to_file = '../cnn_output/model.png')
+    plot_model(model, to_file = '../cnn2_output/model.png')
     
     ## Getting prediction
     df = getPrediction(model, '../data/test/audio')
