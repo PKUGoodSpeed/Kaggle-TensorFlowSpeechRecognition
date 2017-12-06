@@ -62,6 +62,7 @@ def load_audio_data(path):
             if(len(sample) > rate):
                 print len(sample)
             sample = np.pad(sample, [(0,max(0, rate - len(sample)))], mode='constant')
+            sample = sample[ :rate]
             assert(len(sample) == rate)
             raw['x'].append(np.array(sample))
             raw['y'].append(i)
