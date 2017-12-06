@@ -59,6 +59,7 @@ def load_audio_data(path):
         for filename in os.listdir(path + '/' + folder):
             rate, sample = wavfile.read(data_dir + '/' + folder + '/' + filename)
             assert(rate == 16000)
+            assert(len(sample) == rate)
             raw['x'].append(np.array(sample))
             raw['y'].append(i)
             raw['label'].append(folder)
@@ -92,7 +93,6 @@ def get_stddev(x):
     var = 0.
     for i, vec in enumerate(x):
         pbar.show(i)
-        print len(vec)
         var += np.std(vec, ddof=1)**2.
     return np.sqrt(var/len(x))/2.
     
