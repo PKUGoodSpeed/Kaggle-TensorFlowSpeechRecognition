@@ -93,7 +93,7 @@ def get_stddev(x):
     for i, vec in enumerate(x):
         pbar.show(i)
         var += np.std(vec, ddof=1)**2.
-    return np.sqrt/2.
+    return np.sqrt(var/len(x))/2.
     
 # Function to compute class weights
 def comp_cls_wts(y, pwr = 0.2):
