@@ -105,7 +105,7 @@ def comp_cls_wts(y, pwr = 0.2):
     return dic
     
 # Get Prediction
-def getPrediction(model, path):
+def getPrediction(model, path, simga):
     files = os.listdir(path)
     files.sort()
     dic = {'fname':[], 'label':[] }
@@ -118,9 +118,7 @@ def getPrediction(model, path):
         for f in fnames:
             rate, sample = wavfile.read(path + '/' + f)
             x.append(sample)
-        x = fft_convert(x)
-        nx, ny, nz = np.shape(x)
-        x = x.reshape(nx, ny, nz, 1)
+        x = np.array(x)/sigma
         ty = model.predict_classes(x, batch_size=128)
         for p in ty:
             y.append(idmap[p])
@@ -144,18 +142,17 @@ if __name__ == '__main__':
     
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
-    tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=0.9)
+    tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=0.7)
     
     ## Preprocessing x data
-    print("PROCESSING FFT!")
-    train_x = fft_convert(tr_x)
-    test_x = fft_convert(ts_x)
-    img_r, img_c = np.shape(train_x)[1:]
-    train_x = train_x.reshape(len(train_x), img_r, img_c, 1)
-    test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
+    print("PROCESSING DATA!")
+    sigma = get_stddev(raw_df.x.tolist())
+    train_x = np.array(tr_x)/sigma
+    test_x = np.array(ts_x)/sigma
+    input_length = 16000
     
     ## Compute class weights
-    cls_wts = comp_cls_wts(tr_y)
+    cls_wts = comp_cls_wts(tr_y, pwr = 0.1)
     
     ## Preprocessing y data
     n_cls = 31
@@ -170,27 +167,8 @@ if __name__ == '__main__':
     ### Construct the model
     print("CONSTRUCTING MODEL!")
     model = Sequential()
-    model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    model.add(Conv2D(128, kernel_size = (8, 8), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
-    model.add(Conv2D(64, kernel_size = (8, 8), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
-    model.add(Dropout(0.12))
-    model.add(Conv2D(32, kernel_size = (5, 5), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
-    model.add(Dropout(0.17))
-    model.add(Conv2D(32, kernel_size = (5, 5), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
-    model.add(Dropout(0.25))
-    model.add(Flatten())
-    model.add(Dense(128))
-    model.add(Activation('relu'))
-    model.add(Dropout(0.25))
-    model.add(Dense(n_cls, activation = 'softmax'))
+    model.add(Dense(128, input_shape = (input_length,), activation = 'sigmoid', name = 'fc_1'))
+    model.add(Dense(n_cls, activation = 'softmax', name = 'fc_2'))
     model.summary()
     
     ### Compile the model
@@ -235,7 +213,7 @@ if __name__ == '__main__':
     plt.savefig('../fc_output/convrg_rst.png')
     
     ## show model configuration
-    plot_model(model, to_file = '../cnn_output/model.png')
+    plot_model(model, to_file = '../fc_output/model.png')
     
     ## Getting prediction
     df = getPrediction(model, '../data/test/audio')
