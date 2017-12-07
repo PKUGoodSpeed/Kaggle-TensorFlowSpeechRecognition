@@ -228,7 +228,7 @@ if __name__ == '__main__':
     test_loss = res.history['val_loss']
     
     statics = test_accu[150:]
-    filename = "pwr="+str(hyper_pwr)+".txt"
+    filename = "../cnn2_output/pretrain/pwr="+str(hyper_pwr)+".txt"
     f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')
