@@ -150,8 +150,8 @@ if __name__ == '__main__':
     
     ## Preprocessing x data
     print("PROCESSING FFT!")
-    train_x = fft_convert(tr_x)
-    test_x = fft_convert(ts_x)
+    train_x = fft_convert(tr_x, rate = 16000, n = 25, m = 16, NR = 256, NC = 128, delta = 1.)
+    test_x = fft_convert(ts_x, rate = 16000, n = 25, m = 16, NR = 256, NC = 128, delta = 1.)
     img_r, img_c = np.shape(train_x)[1:]
     train_x = train_x.reshape(len(train_x), img_r, img_c, 1)
     test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
@@ -212,6 +212,13 @@ if __name__ == '__main__':
     train_loss = res.history['loss']
     test_accu = res.history['val_acc']
     test_loss = res.history['val_loss']
+    
+    statics = test_accu[150:]
+    f = open('1.txt','w')
+    for acc in statics:
+        f.write(str(acc) + ' ')
+    f.write("\n" + str(sum(statics)*1./len(statics)))
+    f.close()
     
     
     print("VISUALIZATION:")
