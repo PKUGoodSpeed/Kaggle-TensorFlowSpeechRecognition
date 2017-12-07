@@ -214,7 +214,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 100
+    N_epoch = 200
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
@@ -228,7 +228,8 @@ if __name__ == '__main__':
     test_loss = res.history['val_loss']
     
     statics = test_accu[150:]
-    f = open('1.txt','w')
+    filename = "pwr="+str(hyper_pwr)+".txt"
+    f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')
     f.write("\n" + str(sum(statics)*1./len(statics)))
