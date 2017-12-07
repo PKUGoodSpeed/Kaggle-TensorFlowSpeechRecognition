@@ -157,7 +157,7 @@ if __name__ == '__main__':
     test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
     
     ## Compute class weights
-    cls_wts = comp_cls_wts(tr_y, pwr = 0.1)
+    cls_wts = comp_cls_wts(tr_y, pwr = 0.0)
     
     ## Preprocessing y data
     n_cls = 31
@@ -174,10 +174,9 @@ if __name__ == '__main__':
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     model.add(Conv2D(32, kernel_size = (4, 4), padding = 'same'))
-    model.add(Activation('tanh'))
-    model.add(Conv2D(32, kernel_size = (4, 4), padding = 'same'))
-    model.add(Activation('tanh'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(Activation('relu'))
+    model.add(Dropout(0.1))
     model.add(Conv2D(32, kernel_size = (4, 4), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
@@ -187,7 +186,7 @@ if __name__ == '__main__':
     model.add(Activation('relu'))
     model.add(Dropout(0.25))
     model.add(Flatten())
-    model.add(Dense(256))
+    model.add(Dense(128))
     model.add(Activation('relu'))
     model.add(Dropout(0.25))
     model.add(Dense(n_cls, activation = 'softmax'))
@@ -201,7 +200,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 300
+    N_epoch = 100
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
