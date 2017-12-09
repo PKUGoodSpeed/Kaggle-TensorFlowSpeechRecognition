@@ -40,7 +40,7 @@ from keras.layers import Flatten, Conv2D, MaxPooling2D
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
 
-hyper_pwr = 0.02
+hyper_pwr = 0.15
 hyper_train_ratio = 0.6
 hypter_n = 25
 hypter_m = 16
@@ -228,7 +228,7 @@ if __name__ == '__main__':
     test_loss = res.history['val_loss']
     
     statics = test_accu[150:]
-    filename = "../cnn2_output/pretrain/pwr="+str(hyper_pwr)+".txt"
+    filename = "../cnn2_output/pretrain/" + str(hyper_n) + "." + str(hyper_m) + ".txt"
     f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')
