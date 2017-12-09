@@ -43,9 +43,9 @@ from keras.utils import np_utils, plot_model
 hyper_pwr = 0.15
 hyper_train_ratio = 0.6
 hyper_n = 25
-hyper_m = 5
+hyper_m = 15
 hyper_NR = 208
-hyper_NC = 64
+hyper_NC = 112
 hyper_delta = 1.
 hyper_dropout1 = 0.1
 hyper_dropout2 = 0.1
