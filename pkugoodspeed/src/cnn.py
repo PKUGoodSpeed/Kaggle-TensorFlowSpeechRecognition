@@ -47,6 +47,7 @@ hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 1.
+hyper_filter = 2
 hyper_dropout1 = 0.1
 hyper_dropout2 = 0.1
 hyper_dropout3 = 0.25
@@ -187,11 +188,11 @@ if __name__ == '__main__':
     print("CONSTRUCTING MODEL!")
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    model.add(Conv2D(16, kernel_size = (4, 4), padding = 'same'))
+    model.add(Conv2D(16, kernel_size = (hyper_filter, hyper_filter), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
-    model.add(Conv2D(16, kernel_size = (4, 4), padding = 'same'))
+    model.add(Conv2D(16, kernel_size = (hyper_filter, hyper_filter), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
@@ -228,7 +229,7 @@ if __name__ == '__main__':
     test_loss = res.history['val_loss']
     
     statics = test_accu[150:]
-    filename = "../cnn2_output/pretrain/" + str(hyper_n) + "." + str(hyper_m) + ".txt"
+    filename = "../cnn2_output/pretrain/" + str(hyper_filter) + ".txt"
     f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')
