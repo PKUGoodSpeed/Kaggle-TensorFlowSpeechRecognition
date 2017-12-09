@@ -42,11 +42,11 @@ from keras.utils import np_utils, plot_model
 
 hyper_pwr = 0.15
 hyper_train_ratio = 0.6
-hypter_n = 25
-hypter_m = 5
-hypter_NR = 208
-hypter_NC = 64
-hypter_delta = 1.
+hyper_n = 25
+hyper_m = 5
+hyper_NR = 208
+hyper_NC = 64
+hyper_delta = 1.
 hyper_dropout1 = 0.1
 hyper_dropout2 = 0.1
 hyper_dropout3 = 0.25
@@ -162,10 +162,10 @@ if __name__ == '__main__':
     
     ## Preprocessing x data
     print("PROCESSING FFT!")
-    train_x = fft_convert(tr_x, rate = 16000, n = hypter_n, m = hypter_m, 
-    NR = hypter_NR, NC = hypter_NC, delta = hypter_delta)
-    test_x = fft_convert(ts_x, rate = 16000, n = hypter_n, m = hypter_m, 
-    NR = hypter_NR, NC = hypter_NC, delta = hypter_delta)
+    train_x = fft_convert(tr_x, rate = 16000, n = hyper_n, m = hyper_m, 
+    NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
+    test_x = fft_convert(ts_x, rate = 16000, n = hyper_n, m = hyper_m, 
+    NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
     img_r, img_c = np.shape(train_x)[1:]
     train_x = train_x.reshape(len(train_x), img_r, img_c, 1)
     test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
@@ -228,7 +228,7 @@ if __name__ == '__main__':
     test_loss = res.history['val_loss']
     
     statics = test_accu[150:]
-    filename = "../cnn2_output/pretrain/" + str(hypter_n) + "." + str(hypter_m) + ".txt"
+    filename = "../cnn2_output/pretrain/" + str(hyper_n) + "." + str(hyper_m) + ".txt"
     f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')
