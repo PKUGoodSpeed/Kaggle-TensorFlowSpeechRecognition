@@ -43,9 +43,9 @@ from keras.utils import np_utils, plot_model
 hyper_pwr = 0.15
 hyper_train_ratio = 0.6
 hypter_n = 25
-hypter_m = 16
-hypter_NR = 256
-hypter_NC = 128
+hypter_m = 5
+hypter_NR = 208
+hypter_NC = 64
 hypter_delta = 1.
 hyper_dropout1 = 0.1
 hyper_dropout2 = 0.1
@@ -228,7 +228,7 @@ if __name__ == '__main__':
     test_loss = res.history['val_loss']
     
     statics = test_accu[150:]
-    filename = "../cnn2_output/pretrain/" + str(hyper_n) + "." + str(hyper_m) + ".txt"
+    filename = "../cnn2_output/pretrain/" + str(hypter_n) + "." + str(hypter_m) + ".txt"
     f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')

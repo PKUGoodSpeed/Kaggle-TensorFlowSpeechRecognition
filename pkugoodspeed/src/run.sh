@@ -8,3 +8,10 @@ python cnn7.py
 python cnn8.py
 python cnn9.py
 python cnn10.py
+python cnn11.py
+python cnn12.py
+python cnn13.py
+python cnn14.py
+python cnn15.py
+python cnn16.py
+python cnn17.py
