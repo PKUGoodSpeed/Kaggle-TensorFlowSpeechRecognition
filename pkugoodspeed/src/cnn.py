@@ -40,7 +40,7 @@ from keras.layers import Flatten, Conv2D, MaxPooling2D
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
 
-hyper_pwr = 0.0
+hyper_pwr = 0.02
 hyper_train_ratio = 0.6
 hypter_n = 25
 hypter_m = 16
@@ -259,6 +259,6 @@ if __name__ == '__main__':
     plot_model(model, to_file = '../cnn2_output/model.png')
     
     ## Getting prediction
-    df = getPrediction(model, '../data/test/audio')
-    df = df.set_index('fname')
-    df.to_csv('../cnn2_output/predict.csv')
+    # df = getPrediction(model, '../data/test/audio')
+    # df = df.set_index('fname')
+    # df.to_csv('../cnn2_output/predict.csv')
