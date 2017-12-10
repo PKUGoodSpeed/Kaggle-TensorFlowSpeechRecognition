@@ -47,11 +47,12 @@ hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 1.
-hyper_filter = 12
-hyper_dropout1 = 0.1
-hyper_dropout2 = 0.1
-hyper_dropout3 = 0.25
-hyper_dropout4 = 0.25
+hyper_filter = 2
+hyper_dropout1 = 0.15
+hyper_dropout2 = 0.25
+hyper_dropout3 = 0.5
+hyper_dropout4 = 0.5
+hyper_dropout5 = 0.5
 
 
 ## Function for loading the audio data, return a dataFrame
@@ -188,38 +189,107 @@ if __name__ == '__main__':
     print("CONSTRUCTING MODEL!")
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    model.add(Conv2D(16, kernel_size = (hyper_filter, hyper_filter), padding = 'same'))
+    model.add(Conv2D(32, kernel_size = (hyper_filter, hyper_filter), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
-    model.add(Conv2D(16, kernel_size = (hyper_filter, hyper_filter), padding = 'same'))
+    model.add(Conv2D(32, kernel_size = (hyper_filter, hyper_filter), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
-    model.add(Conv2D(16, kernel_size = (4, 4), padding = 'same'))
+    model.add(Conv2D(64, kernel_size = (4, 4), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
-    model.add(Flatten())
-    model.add(Dense(128))
+    model.add(Conv2D(128, kernel_size = (4, 4), padding = 'same'))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
+    model.add(Flatten())
+    model.add(Dense(256))
+    model.add(Activation('relu'))
+    model.add(Dropout(hyper_dropout5))
     model.add(Dense(n_cls, activation = 'softmax'))
     model.summary()
     
+    
+    ''' First training section '''
     ### Compile the model
-    optimizer = SGD()
+    optimizer = SGD(0.02)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 200
+    N_epoch = 100
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
-    print("TRAINING ENDS!")
+    print("FIRST SECTION TRAINING ENDS!")
+    
+    
+    ''' Second training section '''
+    ### Compile the model
+    optimizer = SGD(0.01)
+    loss = 'categorical_crossentropy'
+    metrics = ['accuracy']
+    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
+    
+    ### Train the model
+    print("TRAINING BEGINS!")
+    N_epoch = 100
+    res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
+    verbose = 1, validation_data = (test_x, test_y), 
+    class_weight = cls_wts)
+    print("SECOND SECTION TRAINING ENDS!")
+    
+    
+    ''' Third training section '''
+    ### Compile the model
+    optimizer = SGD(0.005)
+    loss = 'categorical_crossentropy'
+    metrics = ['accuracy']
+    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
+    
+    ### Train the model
+    print("TRAINING BEGINS!")
+    N_epoch = 100
+    res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
+    verbose = 1, validation_data = (test_x, test_y), 
+    class_weight = cls_wts)
+    print("THIRD SECTION TRAINING ENDS!")
+    
+    
+    ''' Forth training section '''
+    ### Compile the model
+    optimizer = SGD(0.002)
+    loss = 'categorical_crossentropy'
+    metrics = ['accuracy']
+    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
+    
+    ### Train the model
+    print("TRAINING BEGINS!")
+    N_epoch = 100
+    res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
+    verbose = 1, validation_data = (test_x, test_y), 
+    class_weight = cls_wts)
+    print("FOUTH SECTION TRAINING ENDS!")
+    
+    ''' Fifth training section '''
+    ### Compile the model
+    optimizer = SGD(0.001)
+    loss = 'categorical_crossentropy'
+    metrics = ['accuracy']
+    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
+    
+    ### Train the model
+    print("TRAINING BEGINS!")
+    N_epoch = 100
+    res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
+    verbose = 1, validation_data = (test_x, test_y), 
+    class_weight = cls_wts)
+    print("FIFTH SECTION TRAINING ENDS!")
     
     ## Plot results
     steps = [i for i in range(N_epoch)]
@@ -228,13 +298,14 @@ if __name__ == '__main__':
     test_accu = res.history['val_acc']
     test_loss = res.history['val_loss']
     
+    '''
     statics = test_accu[150:]
     filename = "../cnn2_output/pretrain/" + str(hyper_filter) + ".txt"
     f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')
     f.write("\n" + str(sum(statics)*1./len(statics)))
-    f.close()
+    f.close()'''
     
     
     print("VISUALIZATION:")
@@ -260,6 +331,6 @@ if __name__ == '__main__':
     plot_model(model, to_file = '../cnn2_output/model.png')
     
     ## Getting prediction
-    # df = getPrediction(model, '../data/test/audio')
-    # df = df.set_index('fname')
-    # df.to_csv('../cnn2_output/predict.csv')
+    df = getPrediction(model, '../data/test/audio')
+    df = df.set_index('fname')
+    df.to_csv('../cnn2_output/predict.csv')
