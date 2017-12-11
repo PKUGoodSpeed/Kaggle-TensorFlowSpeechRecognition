@@ -295,14 +295,21 @@ if __name__ == '__main__':
     test_accu = res.history['val_acc']
     test_loss = res.history['val_loss']
     
-    '''
     statics = test_accu[150:]
-    filename = "../cnn2_output/pretrain/" + str(hyper_filter) + ".txt"
+    filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')
     f.write("\n" + str(sum(statics)*1./len(statics)))
-    f.close()'''
+    f.close()
+    
+    statics = train_accu[150:]
+    filename = "../cnn2_output/train_accu.txt"
+    f = open(filename,'w')
+    for acc in statics:
+        f.write(str(acc) + ' ')
+    f.write("\n" + str(sum(statics)*1./len(statics)))
+    f.close()
     
     
     print("VISUALIZATION:")
