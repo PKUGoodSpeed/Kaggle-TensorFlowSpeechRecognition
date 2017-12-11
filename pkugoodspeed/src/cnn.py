@@ -134,7 +134,8 @@ def getPrediction(model, path):
         for f in fnames:
             rate, sample = wavfile.read(path + '/' + f)
             x.append(sample)
-        x = fft_convert(x)
+        x = fft_convert(x, rate = 16000, n = hyper_n, m = hyper_m, 
+        NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
         nx, ny, nz = np.shape(x)
         x = x.reshape(nx, ny, nz, 1)
         ty = model.predict_classes(x, batch_size=128)
