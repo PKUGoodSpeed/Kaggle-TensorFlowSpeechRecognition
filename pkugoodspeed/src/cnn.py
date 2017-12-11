@@ -48,8 +48,8 @@ hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 1.
 hyper_filter = 2
-hyper_dropout1 = 0.15
-hyper_dropout2 = 0.25
+hyper_dropout1 = 0.1
+hyper_dropout2 = 0.2
 hyper_dropout3 = 0.5
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.5
@@ -193,20 +193,20 @@ if __name__ == '__main__':
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
-    model.add(Conv2D(32, kernel_size = (hyper_filter, hyper_filter), padding = 'same'))
+    model.add(Conv2D(64, kernel_size = (hyper_filter, hyper_filter), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
-    model.add(Conv2D(64, kernel_size = (4, 4), padding = 'same'))
+    model.add(Conv2D(128, kernel_size = (4, 4), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
-    model.add(Conv2D(128, kernel_size = (4, 4), padding = 'same'))
+    model.add(Conv2D(256, kernel_size = (4, 4), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
     model.add(Flatten())
-    model.add(Dense(256))
+    model.add(Dense(512))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     model.add(Dense(n_cls, activation = 'softmax'))
@@ -222,7 +222,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 100
+    N_epoch = 200
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
