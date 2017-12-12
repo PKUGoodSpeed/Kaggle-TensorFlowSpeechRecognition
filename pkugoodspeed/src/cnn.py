@@ -47,8 +47,8 @@ hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 1.
-hyper_dropout1 = 0.15
-hyper_dropout2 = 0.3
+hyper_dropout1 = 0.2
+hyper_dropout2 = 0.4
 hyper_dropout3 = 0.6
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.5
@@ -209,6 +209,9 @@ if __name__ == '__main__':
     model.add(Dense(1024))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
+    model.add(Dense(128))
+    model.add(Activation('relu'))
+    model.add(Dropout(hyper_dropout5))
     model.add(Dense(n_cls, activation = 'softmax'))
     model.summary()
     
@@ -222,7 +225,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 60
+    N_epoch = 100
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
