@@ -49,9 +49,9 @@ hyper_NC = 112
 hyper_delta = 1.
 hyper_dropout1 = 0.2
 hyper_dropout2 = 0.4
-hyper_dropout3 = 0.6
-hyper_dropout4 = 0.5
-hyper_dropout5 = 0.5
+hyper_dropout3 = 0.64
+hyper_dropout4 = 0.56
+hyper_dropout5 = 0.54
 
 
 ## Function for loading the audio data, return a dataFrame
