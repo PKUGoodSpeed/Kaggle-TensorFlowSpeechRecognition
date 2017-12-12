@@ -51,7 +51,7 @@ hyper_dropout1 = 0.2
 hyper_dropout2 = 0.4
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.56
-hyper_dropout5 = 0.54
+hyper_dropout5 = 0.5
 
 
 ## Function for loading the audio data, return a dataFrame
