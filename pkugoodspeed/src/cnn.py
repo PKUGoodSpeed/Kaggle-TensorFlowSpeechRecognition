@@ -46,9 +46,9 @@ hyper_n = 25
 hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
-hyper_delta = 1.
+hyper_delta = 0.5
 hyper_dropout1 = 0.2
-hyper_dropout2 = 0.4
+hyper_dropout2 = 0.45
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.56
 hyper_dropout5 = 0.5
@@ -65,6 +65,9 @@ def load_audio_data(path):
         for filename in os.listdir(path + '/' + folder):
             rate, sample = wavfile.read(data_dir + '/' + folder + '/' + filename)
             assert(rate == 16000)
+            p = max(0, rate - len(sample))
+            sample = np.pad(sample, [(0,p)], mode='constant')
+            sample = sample[:rate]
             raw['x'].append(np.array(sample))
             raw['y'].append(i)
             raw['label'].append(folder)
@@ -189,11 +192,11 @@ if __name__ == '__main__':
     print("CONSTRUCTING MODEL!")
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
+    model.add(Conv2D(128, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
-    model.add(Conv2D(128, kernel_size = (7, 7), padding = 'same'))
+    model.add(Conv2D(256, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
@@ -209,9 +212,6 @@ if __name__ == '__main__':
     model.add(Dense(1024))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
-    model.add(Dense(128))
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout5))
     model.add(Dense(n_cls, activation = 'softmax'))
     model.summary()
     
@@ -225,7 +225,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 100
+    N_epoch = 80
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
@@ -249,7 +249,7 @@ if __name__ == '__main__':
     
     ''' Third training section '''
     ### Compile the model
-    optimizer = SGD(0.005)
+    optimizer = SGD(0.01)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
@@ -264,7 +264,7 @@ if __name__ == '__main__':
     
     ''' Forth training section '''
     ### Compile the model
-    optimizer = SGD(0.002)
+    optimizer = SGD(0.005)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
@@ -278,7 +278,7 @@ if __name__ == '__main__':
     
     ''' Fifth training section '''
     ### Compile the model
-    optimizer = SGD(0.001)
+    optimizer = SGD(0.002)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
