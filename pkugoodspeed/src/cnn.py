@@ -40,7 +40,7 @@ from keras.layers import Flatten, Conv2D, MaxPooling2D
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
 
-hyper_pwr = 0.4
+hyper_pwr = 0.5
 hyper_train_ratio = 0.95
 hyper_n = 25
 hyper_m = 15
@@ -132,7 +132,7 @@ def comp_cls_wts(y, pwr = 0.2):
     return dic
     
 # Get Prediction
-def getPrediction(model, path, idmap):
+def getPrediction(model, path):
     files = os.listdir(path)
     files.sort()
     dic = {'fname':[], 'label':[] }
@@ -244,7 +244,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 6
+    N_epoch = 0
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
@@ -356,6 +356,6 @@ if __name__ == '__main__':
     plot_model(model, to_file = '../cnn2_output/model.png')
     
     ## Getting prediction
-    df = getPrediction(model, '../data/test/audio', idmap)
+    df = getPrediction(model, '../data/test/audio')
     df = df.set_index('fname')
     df.to_csv('../cnn2_output/predict.csv')
