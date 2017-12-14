@@ -132,7 +132,7 @@ def comp_cls_wts(y, pwr = 0.2):
     return dic
     
 # Get Prediction
-def getPrediction(model, path):
+def getPrediction(model, path, mp):
     files = os.listdir(path)
     files.sort()
     dic = {'fname':[], 'label':[] }
@@ -148,11 +148,11 @@ def getPrediction(model, path):
         x = fft_convert(x, rate = 16000, n = hyper_n, m = hyper_m, 
         NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
         nx, ny, nz = np.shape(x)
-        x = x.reshape
+        x = x.reshape(nx, ny, nz, 1)
         ty = model.predict_classes(x, batch_size=128)
         print "\n\n"
         for p in ty:
-            y.append(idmap[p])
+            y.append(mp[p])
     dic['fname'] = files
     dic['label'] = y
     df = pd.DataFrame(dic)
@@ -244,7 +244,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 0
+    N_epoch = 1
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
@@ -356,6 +356,6 @@ if __name__ == '__main__':
     plot_model(model, to_file = '../cnn2_output/model.png')
     
     ## Getting prediction
-    df = getPrediction(model, '../data/test/audio')
+    df = getPrediction(model, '../data/test/audio',idmap)
     df = df.set_index('fname')
     df.to_csv('../cnn2_output/predict.csv')
