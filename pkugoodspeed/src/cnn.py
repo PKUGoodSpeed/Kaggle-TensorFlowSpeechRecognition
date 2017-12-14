@@ -202,7 +202,7 @@ if __name__ == '__main__':
     print cls_wts
     
     ## Preprocessing y data
-    n_cls = 31
+    n_cls = len(TAGET_LABELS)
     train_y = np_utils.to_categorical(tr_y, n_cls)
     test_y = np_utils.to_categorical(ts_y, n_cls)
     print("INPUT SHAPES:")
@@ -248,7 +248,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 60
+    N_epoch = 40
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
