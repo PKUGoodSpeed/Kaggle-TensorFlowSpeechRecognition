@@ -173,7 +173,7 @@ if __name__ == '__main__':
     for i,lab in enumerate(TAGET_LABELS):
         label2idx[lab] = i
         idmap[i] = lab
-    raw_df = load_audio_data(data_dir)
+    raw_df = load_audio_data(data_dir, label2idx)
     print raw_df[:30]
     print label2idx
     print idmap
