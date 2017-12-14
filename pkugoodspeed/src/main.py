@@ -136,9 +136,10 @@ def comp_cls_wts(y, pwr = 0.2):
 def getPrediction(model, path):
     files = os.listdir(path)
     files.sort()
-    dic = {'fname':[], 'label':[] }
+    dic = {'fname':[], 'label':[], 'prob':[] }
     batch_size = 10000
     y = []
+    pro = []
     N = len(files)
     for i in range(0, N, batch_size):
         fnames = files[i: min(i+batch_size, N)]
@@ -157,14 +158,11 @@ def getPrediction(model, path):
         ty = model.predict_classes(x, batch_size=128)
         sy = model.predict(x, batch_size=128)
         for j,p in enumerate(ty):
-            if idmap[p] == 'silence':
-                y.append('silence')
-            elif idmap[p] in TAGET_LABELS and sy[j] >= hyper_thhd:
-                y.append(idmap[p])
-            else:
-                y.append('unknown')
+            y.append(idmap[p])
+            pro.append(1.*sy[j][p]/np.sum(sy[j]))
     dic['fname'] = files
     dic['label'] = y
+    dic['prob'] = pro
     df = pd.DataFrame(dic)
     return df
 
