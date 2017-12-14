@@ -144,6 +144,10 @@ def getPrediction(model, path, mp):
         x = []
         for f in fnames:
             rate, sample = wavfile.read(path + '/' + f)
+            assert(rate == 16000)
+            p = max(0, rate - len(sample))
+            sample = np.pad(sample, [(0,p)], mode='constant')
+            sample = sample[:rate]
             x.append(sample)
         x = fft_convert(x, rate = 16000, n = hyper_n, m = hyper_m, 
         NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
@@ -244,7 +248,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 60
+    N_epoch = 1
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
