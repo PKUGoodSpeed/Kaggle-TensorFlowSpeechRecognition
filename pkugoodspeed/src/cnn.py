@@ -174,6 +174,9 @@ if __name__ == '__main__':
         label2idx[lab] = i
         idmap[i] = lab
     raw_df = load_audio_data(data_dir)
+    print raw_df[:30]
+    print label2idx
+    print idmap
     
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
