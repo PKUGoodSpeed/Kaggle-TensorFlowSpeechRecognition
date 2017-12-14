@@ -244,7 +244,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 4
+    N_epoch = 6
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
