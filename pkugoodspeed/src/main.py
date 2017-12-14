@@ -52,6 +52,9 @@ hyper_dropout2 = 0.45
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.56
 hyper_dropout5 = 0.5
+hyper_thhd = 0.3
+
+TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
 
 ## Function for loading the audio data, return a dataFrame
@@ -65,12 +68,19 @@ def load_audio_data(path):
         for filename in os.listdir(path + '/' + folder):
             rate, sample = wavfile.read(data_dir + '/' + folder + '/' + filename)
             assert(rate == 16000)
-            p = max(0, rate - len(sample))
-            sample = np.pad(sample, [(0,p)], mode='constant')
-            sample = sample[:rate]
-            raw['x'].append(np.array(sample))
-            raw['y'].append(i)
-            raw['label'].append(folder)
+            if folder == 'silence':
+                length = len(sample)
+                for j in range(int(length/rate)):
+                    raw['x'].append(np.array(sample[j*rate: (j+1)*rate]))
+                    raw['y'].append(i)
+                    raw['label'].append('silence')
+            else:
+                p = max(0, rate - len(sample))
+                sample = np.pad(sample, [(0,p)], mode='constant')
+                sample = sample[:rate]
+                raw['x'].append(np.array(sample))
+                raw['y'].append(i)
+                raw['label'].append(folder)
     return pd.DataFrame(raw)
 
 # Split train, test sets, and also return label_map
@@ -135,14 +145,24 @@ def getPrediction(model, path):
         x = []
         for f in fnames:
             rate, sample = wavfile.read(path + '/' + f)
+            assert(rate == 16000)
+            p = max(0, rate - len(sample))
+            sample = np.pad(sample, [(0,p)], mode='constant')
+            sample = sample[:rate]
             x.append(sample)
         x = fft_convert(x, rate = 16000, n = hyper_n, m = hyper_m, 
         NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
         nx, ny, nz = np.shape(x)
         x = x.reshape(nx, ny, nz, 1)
         ty = model.predict_classes(x, batch_size=128)
-        for p in ty:
-            y.append(idmap[p])
+        sy = model.predict(x, batch_size=128)
+        for j,p in enumerate(ty):
+            if idmap[p] == 'silence':
+                y.append('silence')
+            elif idmap[p] in TAGET_LABELS and sy[j] >= hyper_thhd:
+                y.append(idmap[p])
+            else:
+                y.append('unknown')
     dic['fname'] = files
     dic['label'] = y
     df = pd.DataFrame(dic)
