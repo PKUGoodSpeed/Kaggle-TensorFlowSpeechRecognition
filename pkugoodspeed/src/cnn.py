@@ -53,9 +53,10 @@ hyper_dropout3 = 0.64
 hyper_dropout4 = 0.56
 hyper_dropout5 = 0.5
 
+TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
 ## Function for loading the audio data, return a dataFrame
-def load_audio_data(path):
+def load_audio_data(path, ltoi):
     '''
     path: audio file path
     return: pd.DataFrame
@@ -65,12 +66,22 @@ def load_audio_data(path):
         for filename in os.listdir(path + '/' + folder):
             rate, sample = wavfile.read(data_dir + '/' + folder + '/' + filename)
             assert(rate == 16000)
-            p = max(0, rate - len(sample))
-            sample = np.pad(sample, [(0,p)], mode='constant')
-            sample = sample[:rate]
-            raw['x'].append(np.array(sample))
-            raw['y'].append(i)
-            raw['label'].append(folder)
+            if folder == 'silence':
+                length = len(sample)
+                for j in range(int(length/rate)):
+                    raw['x'].append(np.array(sample[j*rate: (j+1)*rate]))
+                    raw['y'].append(ltoi['silence'])
+                    raw['label'].append('silence')
+            else:
+                p = max(0, rate - len(sample))
+                sample = np.pad(sample, [(0,p)], mode='constant')
+                sample = sample[:rate]
+                raw['x'].append(np.array(sample))
+                label = folder
+                if folder not in TAGET_LABELS:
+                    label = 'unknown'
+                raw['y'].append(ltoi[label])
+                raw['label'].append(label)
     return pd.DataFrame(raw)
 
 # Split train, test sets, and also return label_map
@@ -82,17 +93,15 @@ def train_test_split(df, ratio = 0.7):
     test_y = []
     train_x = []
     train_y = []
-    label_map = {}
     for i in set(df.y.tolist()):
         tmp_df = df[df.y == i]
-        label_map[i] = tmp_df.label.tolist()[0]
         tmp_df = shuffle(tmp_df)
         tmp_n = int(len(tmp_df)*ratio)
         train_x += tmp_df.x.tolist()[: tmp_n]
         test_x += tmp_df.x.tolist()[tmp_n: ]
         train_y += tmp_df.y.tolist()[: tmp_n]
         test_y += tmp_df.y.tolist()[tmp_n: ]
-    return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y), label_map
+    return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y)
 
 # Using fft to convert input x's
 def fft_convert(samples, rate = 16000, n = 25, m = 16, NR = 256, NC = 128, delta = 1.E-10):
@@ -159,11 +168,16 @@ if __name__ == '__main__':
     
     ## Loading raw data Frame
     print("LOADING RAW DATA!")
+    label2idx = {}
+    idmap = {}
+    for i,lab in enumerate(TAGET_LABELS):
+        label2idx[lab] = i
+        idmap[i] = lab
     raw_df = load_audio_data(data_dir)
     
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
-    tr_x, tr_y, ts_x, ts_y, idmap = train_test_split(raw_df, ratio=hyper_train_ratio)
+    tr_x, tr_y, ts_x, ts_y = train_test_split(raw_df, ratio=hyper_train_ratio)
     
     ## Preprocessing x data
     print("PROCESSING FFT!")
@@ -177,6 +191,7 @@ if __name__ == '__main__':
     
     ## Compute class weights
     cls_wts = comp_cls_wts(tr_y, pwr = hyper_pwr)
+    print cls_wts
     
     ## Preprocessing y data
     n_cls = 31
@@ -225,7 +240,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 60
+    N_epoch = 1
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
