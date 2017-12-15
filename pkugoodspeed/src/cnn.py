@@ -40,16 +40,16 @@ from keras.layers import Flatten, Conv2D, MaxPooling2D
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
 
-hyper_pwr = 0.5
+hyper_pwr = 0.54
 hyper_train_ratio = 0.95
 hyper_n = 25
 hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.5
-hyper_dropout1 = 0.2
-hyper_dropout2 = 0.5
-hyper_dropout3 = 0.64
+hyper_dropout1 = 0.17
+hyper_dropout2 = 0.34
+hyper_dropout3 = 0.6
 hyper_dropout4 = 0.56
 hyper_dropout5 = 0.5
 
@@ -248,7 +248,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 40
+    N_epoch = 50
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
