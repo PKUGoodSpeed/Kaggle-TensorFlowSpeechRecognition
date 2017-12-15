@@ -40,7 +40,7 @@ from keras.layers import Flatten, Conv2D, MaxPooling2D
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
 
-hyper_pwr = 0.56
+hyper_pwr = 0.6
 hyper_train_ratio = 0.95
 hyper_n = 25
 hyper_m = 15
