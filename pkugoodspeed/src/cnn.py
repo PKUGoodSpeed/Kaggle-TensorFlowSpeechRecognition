@@ -164,6 +164,7 @@ def getPrediction(model, path, mp):
 
 
 if __name__ == '__main__':
+    print "WORK STATED!!"
     data_dir = '../data/train/audio'
     ## change the name of `_background_noise_' into 'silence` which is a proper label name
     if os.path.exists(data_dir + '/' + '_background_noise_'):
