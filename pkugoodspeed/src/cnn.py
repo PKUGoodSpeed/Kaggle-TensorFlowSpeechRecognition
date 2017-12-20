@@ -245,14 +245,14 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    optimizer = SGD(0.04)
+    optimizer = SGD(0.02)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 1
+    N_epoch = 80
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
@@ -265,7 +265,7 @@ if __name__ == '__main__':
     
     ''' Second training section '''
     ### Compile the model
-    optimizer = SGD(0.02)
+    optimizer = SGD(0.15)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
