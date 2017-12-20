@@ -39,6 +39,7 @@ from keras.layers import Dense, Dropout, Activation
 from keras.layers import Flatten, Conv2D, MaxPooling2D
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
+from keras.layers.normalization import BatchNormalization
 
 hyper_pwr = 0.6
 hyper_train_ratio = 0.95
@@ -218,28 +219,28 @@ if __name__ == '__main__':
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     model.add(Conv2D(16, kernel_size = (11, 11), padding = 'same'))
-    model.add(Activation('relu'))
     model.add(BatchNormalization())
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout0))
     model.add(Conv2D(32, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
     model.add(BatchNormalization())
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     model.add(Conv2D(64, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
     model.add(BatchNormalization())
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     model.add(Conv2D(128, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
     model.add(BatchNormalization())
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     model.add(Conv2D(256, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
     model.add(BatchNormalization())
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
     model.add(Flatten())
     model.add(Dense(512))
