@@ -47,8 +47,8 @@ hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.5
-hyper_dropout1 = 0.2
-hyper_dropout2 = 0.56
+hyper_dropout1 = 0.17
+hyper_dropout2 = 0.48
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.56
 hyper_dropout5 = 0.6
@@ -245,7 +245,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    optimizer = SGD(0.02)
+    optimizer = SGD(0.04)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
@@ -265,7 +265,7 @@ if __name__ == '__main__':
     
     ''' Second training section '''
     ### Compile the model
-    optimizer = SGD(0.01)
+    optimizer = SGD(0.02)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
