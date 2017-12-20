@@ -47,12 +47,11 @@ hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.5
-hyper_dropout0 = 0.17
-hyper_dropout1 = 0.32
-hyper_dropout2 = 0.64
+hyper_dropout1 = 0.2
+hyper_dropout2 = 0.56
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.56
-hyper_dropout5 = 0.54
+hyper_dropout5 = 0.6
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -165,7 +164,7 @@ def getPrediction(model, path, mp):
 
 
 if __name__ == '__main__':
-    print "WORK STATED!!"
+    print "WORK STATED!!:"
     data_dir = '../data/train/audio'
     ## change the name of `_background_noise_' into 'silence` which is a proper label name
     if os.path.exists(data_dir + '/' + '_background_noise_'):
@@ -216,10 +215,7 @@ if __name__ == '__main__':
     ### Construct the model
     print("CONSTRUCTING MODEL!")
     model = Sequential()
-    model.add(Conv2D(32, kernel_size = (11, 11), padding = 'same', input_shape = (img_r, img_c, 1)))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout0))
+    model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
@@ -240,7 +236,7 @@ if __name__ == '__main__':
     model.add(Dense(1024))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
-    model.add(Dense(144))
+    model.add(Dense(128))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     model.add(Dense(n_cls, activation = 'softmax'))
@@ -256,7 +252,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 50
+    N_epoch = 60
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
