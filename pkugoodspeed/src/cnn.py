@@ -219,22 +219,27 @@ if __name__ == '__main__':
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     model.add(Conv2D(16, kernel_size = (11, 11), padding = 'same'))
     model.add(Activation('relu'))
+    model.add(BatchNormalization())
     model.add(Dropout(hyper_dropout0))
     model.add(Conv2D(32, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
+    model.add(BatchNormalization())
     model.add(Dropout(hyper_dropout1))
     model.add(Conv2D(64, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
+    model.add(BatchNormalization())
     model.add(Dropout(hyper_dropout2))
     model.add(Conv2D(128, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
+    model.add(BatchNormalization())
     model.add(Dropout(hyper_dropout3))
     model.add(Conv2D(256, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
+    model.add(BatchNormalization())
     model.add(Dropout(hyper_dropout4))
     model.add(Flatten())
     model.add(Dense(512))
@@ -253,7 +258,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 3
+    N_epoch = 2
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
