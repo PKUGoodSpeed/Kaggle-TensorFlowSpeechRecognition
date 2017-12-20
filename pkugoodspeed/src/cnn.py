@@ -252,11 +252,15 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 60
+    N_epoch = 1
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
     print("FIRST SECTION TRAINING ENDS!")
+    train_accu = list(res.history['acc'])
+    train_loss = list(res.history['loss'])
+    test_accu = list(res.history['val_acc'])
+    test_loss = list(res.history['val_loss'])
     
     
     ''' Second training section '''
@@ -272,7 +276,10 @@ if __name__ == '__main__':
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
     print("SECOND SECTION TRAINING ENDS!")
-    
+    train_accu += list(res.history['acc'])
+    train_loss += list(res.history['loss'])
+    test_accu += list(res.history['val_acc'])
+    test_loss += list(res.history['val_loss'])
     
     ''' Third training section '''
     ### Compile the model
@@ -287,7 +294,10 @@ if __name__ == '__main__':
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
     print("THIRD SECTION TRAINING ENDS!")
-    
+    train_accu += list(res.history['acc'])
+    train_loss += list(res.history['loss'])
+    test_accu += list(res.history['val_acc'])
+    test_loss += list(res.history['val_loss'])
     
     ''' Forth training section '''
     ### Compile the model
@@ -302,6 +312,11 @@ if __name__ == '__main__':
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
     print("FOUTH SECTION TRAINING ENDS!")
+    train_accu += list(res.history['acc'])
+    train_loss += list(res.history['loss'])
+    test_accu += list(res.history['val_acc'])
+    test_loss += list(res.history['val_loss'])
+    
     
     ''' Fifth training section '''
     ### Compile the model
@@ -316,15 +331,15 @@ if __name__ == '__main__':
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
     print("FIFTH SECTION TRAINING ENDS!")
+    train_accu += list(res.history['acc'])
+    train_loss += list(res.history['loss'])
+    test_accu += list(res.history['val_acc'])
+    test_loss += list(res.history['val_loss'])
     
     ## Plot results
     steps = [i for i in range(N_epoch)]
-    train_accu = res.history['acc']
-    train_loss = res.history['loss']
-    test_accu = res.history['val_acc']
-    test_loss = res.history['val_loss']
     
-    statics = test_accu[0:]
+    statics = test_accu[4*N_epoch:]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
