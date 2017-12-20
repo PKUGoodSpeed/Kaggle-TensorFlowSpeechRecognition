@@ -47,6 +47,7 @@ hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.5
+hyper_dropout0 = 0.1
 hyper_dropout1 = 0.17
 hyper_dropout2 = 0.48
 hyper_dropout3 = 0.64
@@ -216,6 +217,9 @@ if __name__ == '__main__':
     print("CONSTRUCTING MODEL!")
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
+    model.add(Conv2D(32, kernel_size = (11, 11), padding = 'same'))
+    model.add(Activation('relu'))
+    model.add(Dropout(hyper_dropout0))
     model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Activation('relu'))
@@ -233,10 +237,7 @@ if __name__ == '__main__':
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
     model.add(Flatten())
-    model.add(Dense(1024))
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout5))
-    model.add(Dense(128))
+    model.add(Dense(256))
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     model.add(Dense(n_cls, activation = 'softmax'))
@@ -252,7 +253,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 80
+    N_epoch = 1
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
