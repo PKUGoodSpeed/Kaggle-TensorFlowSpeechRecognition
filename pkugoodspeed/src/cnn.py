@@ -252,7 +252,7 @@ if __name__ == '__main__':
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 80
+    N_epoch = 1
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
@@ -337,7 +337,7 @@ if __name__ == '__main__':
     test_loss += list(res.history['val_loss'])
     
     ## Plot results
-    steps = [i for i in range(N_epoch)]
+    steps = [i for i in range(len(test_accu))]
     
     statics = test_accu[4*N_epoch:]
     filename = "../cnn2_output/test_accu.txt"
