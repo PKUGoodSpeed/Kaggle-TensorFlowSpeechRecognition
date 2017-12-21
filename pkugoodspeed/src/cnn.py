@@ -49,7 +49,7 @@ hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.5
 hyper_dropout0 = 0.1
-hyper_dropout1 = 0.17
+hyper_dropout1 = 0.2
 hyper_dropout2 = 0.48
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.56
@@ -218,41 +218,37 @@ if __name__ == '__main__':
     print("CONSTRUCTING MODEL!")
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    model.add(Conv2D(16, kernel_size = (11, 11), padding = 'same'))
-    model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout0))
-    model.add(Conv2D(32, kernel_size = (9, 9), padding = 'same'))
+    model.add(Conv2D(72, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
-    model.add(Conv2D(64, kernel_size = (7, 7), padding = 'same'))
+    model.add(Conv2D(144, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
-    model.add(Conv2D(128, kernel_size = (5, 5), padding = 'same'))
+    model.add(Conv2D(288, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
-    model.add(Conv2D(256, kernel_size = (3, 3), padding = 'same'))
+    model.add(Conv2D(576, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
     model.add(Flatten())
-    model.add(Dense(512))
+    model.add(Dense(1024))
+    model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     model.add(Dense(n_cls, activation = 'softmax'))
     model.summary()
     
-    
     ''' First training section '''
     ### Compile the model
-    optimizer = SGD(0.005)
+    optimizer = SGD(0.004)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
