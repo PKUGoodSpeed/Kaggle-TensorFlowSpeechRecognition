@@ -252,14 +252,14 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    optimizer = SGD(0.02)
+    optimizer = SGD(0.005)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 60
+    N_epoch = 300
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
@@ -269,84 +269,10 @@ if __name__ == '__main__':
     test_accu = list(res.history['val_acc'])
     test_loss = list(res.history['val_loss'])
     
-    
-    ''' Second training section '''
-    ### Compile the model
-    optimizer = SGD(0.15)
-    loss = 'categorical_crossentropy'
-    metrics = ['accuracy']
-    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
-    
-    ### Train the model
-    print("TRAINING BEGINS!")
-    res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
-    verbose = 1, validation_data = (test_x, test_y), 
-    class_weight = cls_wts)
-    print("SECOND SECTION TRAINING ENDS!")
-    train_accu += list(res.history['acc'])
-    train_loss += list(res.history['loss'])
-    test_accu += list(res.history['val_acc'])
-    test_loss += list(res.history['val_loss'])
-    
-    ''' Third training section '''
-    ### Compile the model
-    optimizer = SGD(0.01)
-    loss = 'categorical_crossentropy'
-    metrics = ['accuracy']
-    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
-    
-    ### Train the model
-    print("TRAINING BEGINS!")
-    res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
-    verbose = 1, validation_data = (test_x, test_y), 
-    class_weight = cls_wts)
-    print("THIRD SECTION TRAINING ENDS!")
-    train_accu += list(res.history['acc'])
-    train_loss += list(res.history['loss'])
-    test_accu += list(res.history['val_acc'])
-    test_loss += list(res.history['val_loss'])
-    
-    ''' Forth training section '''
-    ### Compile the model
-    optimizer = SGD(0.005)
-    loss = 'categorical_crossentropy'
-    metrics = ['accuracy']
-    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
-    
-    ### Train the model
-    print("TRAINING BEGINS!")
-    res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
-    verbose = 1, validation_data = (test_x, test_y), 
-    class_weight = cls_wts)
-    print("FOUTH SECTION TRAINING ENDS!")
-    train_accu += list(res.history['acc'])
-    train_loss += list(res.history['loss'])
-    test_accu += list(res.history['val_acc'])
-    test_loss += list(res.history['val_loss'])
-    
-    
-    ''' Fifth training section '''
-    ### Compile the model
-    optimizer = SGD(0.002)
-    loss = 'categorical_crossentropy'
-    metrics = ['accuracy']
-    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
-    
-    ### Train the model
-    print("TRAINING BEGINS!")
-    res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
-    verbose = 1, validation_data = (test_x, test_y), 
-    class_weight = cls_wts)
-    print("FIFTH SECTION TRAINING ENDS!")
-    train_accu += list(res.history['acc'])
-    train_loss += list(res.history['loss'])
-    test_accu += list(res.history['val_acc'])
-    test_loss += list(res.history['val_loss'])
-    
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[4*N_epoch:]
+    statics = test_accu[200:]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -354,7 +280,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[0:]
+    statics = train_accu[200:]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
