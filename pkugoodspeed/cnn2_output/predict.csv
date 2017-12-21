@@ -77,7 +77,7 @@ clip_001fd434c.wav,silence
 clip_001fdd23a.wav,unknown
 clip_002011429.wav,no
 clip_00209953c.wav,unknown
-clip_0020a49ad.wav,stop
+clip_0020a49ad.wav,unknown
 clip_002130efd.wav,unknown
 clip_0021662c3.wav,unknown
 clip_00219963b.wav,unknown
@@ -614,7 +614,7 @@ clip_010fbbd47.wav,unknown
 clip_010fda474.wav,right
 clip_010fef894.wav,unknown
 clip_01101b0c2.wav,left
-clip_011050af7.wav,off
+clip_011050af7.wav,unknown
 clip_01112e541.wav,silence
 clip_011225c77.wav,unknown
 clip_01125ec70.wav,no
@@ -1837,7 +1837,7 @@ clip_030ad2def.wav,unknown
 clip_030b48a3e.wav,go
 clip_030b592a9.wav,stop
 clip_030b691f6.wav,unknown
-clip_030b6e25f.wav,down
+clip_030b6e25f.wav,unknown
 clip_030b9df0c.wav,left
 clip_030c1395d.wav,right
 clip_030c2d7d1.wav,unknown
@@ -2277,7 +2277,7 @@ clip_03b74b6ed.wav,unknown
 clip_03b74c827.wav,left
 clip_03b8b7675.wav,unknown
 clip_03b8f7cd0.wav,yes
-clip_03b965151.wav,on
+clip_03b965151.wav,unknown
 clip_03ba65f23.wav,right
 clip_03babc419.wav,off
 clip_03bb11491.wav,no
@@ -2493,11 +2493,11 @@ clip_04156d44b.wav,unknown
 clip_04156e4b3.wav,unknown
 clip_04157c85c.wav,unknown
 clip_041638bfa.wav,up
-clip_04186bb27.wav,go
+clip_04186bb27.wav,unknown
 clip_041882fa9.wav,left
 clip_0418c51d6.wav,unknown
 clip_0418ec485.wav,no
-clip_0419231be.wav,on
+clip_0419231be.wav,unknown
 clip_041995aab.wav,unknown
 clip_041a439f7.wav,unknown
 clip_041a8e006.wav,unknown
@@ -3287,7 +3287,7 @@ clip_055894524.wav,unknown
 clip_0558b0591.wav,unknown
 clip_0558d0b42.wav,unknown
 clip_0558f4087.wav,go
-clip_055982ba1.wav,no
+clip_055982ba1.wav,unknown
 clip_0559ccf22.wav,up
 clip_0559ed1e8.wav,no
 clip_055a4d52f.wav,no
@@ -5090,7 +5090,7 @@ clip_08347f6f5.wav,off
 clip_083486ebd.wav,unknown
 clip_08352dea2.wav,unknown
 clip_0835335fc.wav,unknown
-clip_083563a98.wav,left
+clip_083563a98.wav,unknown
 clip_08358009f.wav,unknown
 clip_0835874e5.wav,unknown
 clip_08372202b.wav,on
@@ -5545,7 +5545,7 @@ clip_08ee4522f.wav,unknown
 clip_08ee6a1d8.wav,unknown
 clip_08ee6b1ed.wav,silence
 clip_08eebaf04.wav,unknown
-clip_08eebfa9b.wav,on
+clip_08eebfa9b.wav,unknown
 clip_08eec137b.wav,unknown
 clip_08eed99c9.wav,no
 clip_08ef0b59a.wav,unknown
@@ -6327,7 +6327,7 @@ clip_0a2ff978f.wav,go
 clip_0a2ffb4a8.wav,silence
 clip_0a30735b2.wav,unknown
 clip_0a31891ff.wav,up
-clip_0a3228f86.wav,go
+clip_0a3228f86.wav,unknown
 clip_0a3239e80.wav,yes
 clip_0a3245320.wav,unknown
 clip_0a3255142.wav,yes
@@ -6895,7 +6895,7 @@ clip_0b12ed427.wav,unknown
 clip_0b1328161.wav,left
 clip_0b132ea2c.wav,no
 clip_0b155e226.wav,unknown
-clip_0b157706b.wav,no
+clip_0b157706b.wav,unknown
 clip_0b1594612.wav,up
 clip_0b16fb627.wav,unknown
 clip_0b18270d3.wav,no
@@ -7001,7 +7001,7 @@ clip_0b4029517.wav,unknown
 clip_0b40a14e1.wav,unknown
 clip_0b40a6302.wav,unknown
 clip_0b412c462.wav,unknown
-clip_0b4131929.wav,silence
+clip_0b4131929.wav,unknown
 clip_0b41d0d42.wav,unknown
 clip_0b41dd46e.wav,unknown
 clip_0b422c64d.wav,silence
@@ -7573,7 +7573,7 @@ clip_0c28f5c8d.wav,no
 clip_0c2974dd7.wav,unknown
 clip_0c29ff3ef.wav,unknown
 clip_0c2a3eb5b.wav,no
-clip_0c2aadcd3.wav,silence
+clip_0c2aadcd3.wav,unknown
 clip_0c2adc959.wav,unknown
 clip_0c2bc2a90.wav,unknown
 clip_0c2bc4adb.wav,unknown
@@ -7774,7 +7774,7 @@ clip_0c816214a.wav,unknown
 clip_0c82e3e6d.wav,unknown
 clip_0c82e816a.wav,no
 clip_0c82ea0b4.wav,stop
-clip_0c83253c9.wav,right
+clip_0c83253c9.wav,unknown
 clip_0c83334b9.wav,unknown
 clip_0c83adf25.wav,unknown
 clip_0c8446700.wav,no
@@ -8150,7 +8150,7 @@ clip_0d267cf9c.wav,unknown
 clip_0d27664d6.wav,unknown
 clip_0d2770378.wav,unknown
 clip_0d27b6bbb.wav,unknown
-clip_0d27d78dd.wav,go
+clip_0d27d78dd.wav,unknown
 clip_0d2850c16.wav,silence
 clip_0d28a072a.wav,up
 clip_0d29a20af.wav,unknown
@@ -8707,7 +8707,7 @@ clip_0dfefe9a2.wav,unknown
 clip_0dff0e1a5.wav,unknown
 clip_0dff5c507.wav,unknown
 clip_0dffc0a38.wav,down
-clip_0dffec319.wav,go
+clip_0dffec319.wav,unknown
 clip_0e00ac9f4.wav,right
 clip_0e01fa846.wav,up
 clip_0e0257e37.wav,up
@@ -8889,7 +8889,7 @@ clip_0e45ecd2d.wav,unknown
 clip_0e4623f72.wav,go
 clip_0e477d328.wav,unknown
 clip_0e479c123.wav,unknown
-clip_0e47dc9fc.wav,go
+clip_0e47dc9fc.wav,unknown
 clip_0e48a36ea.wav,left
 clip_0e48c4e9a.wav,unknown
 clip_0e48c5f65.wav,left
@@ -10456,7 +10456,7 @@ clip_10d3d3f86.wav,stop
 clip_10d3f4bec.wav,right
 clip_10d416b2f.wav,silence
 clip_10d46ed6b.wav,left
-clip_10d470632.wav,silence
+clip_10d470632.wav,unknown
 clip_10d4e2b62.wav,unknown
 clip_10d4f9ed6.wav,unknown
 clip_10d51bcbe.wav,unknown
@@ -11602,7 +11602,7 @@ clip_12a0a84d4.wav,unknown
 clip_12a0c37af.wav,unknown
 clip_12a13db20.wav,unknown
 clip_12a14c084.wav,unknown
-clip_12a20e23d.wav,down
+clip_12a20e23d.wav,unknown
 clip_12a2ee147.wav,unknown
 clip_12a328d7c.wav,yes
 clip_12a33c84e.wav,unknown
@@ -11874,7 +11874,7 @@ clip_13102e180.wav,right
 clip_13106facd.wav,go
 clip_1310a5bb2.wav,unknown
 clip_13110e2e5.wav,right
-clip_131126d1c.wav,down
+clip_131126d1c.wav,unknown
 clip_13117f7d4.wav,silence
 clip_131321fa4.wav,unknown
 clip_1313ce7bc.wav,unknown
@@ -12171,7 +12171,7 @@ clip_138803707.wav,no
 clip_13889d512.wav,down
 clip_1388d327b.wav,no
 clip_1388f0349.wav,unknown
-clip_138909902.wav,stop
+clip_138909902.wav,unknown
 clip_138a23bc6.wav,unknown
 clip_138ab89f0.wav,silence
 clip_138b3d77c.wav,unknown
@@ -12192,7 +12192,7 @@ clip_1392335eb.wav,unknown
 clip_139302f4b.wav,left
 clip_1393b7dd2.wav,unknown
 clip_139536c26.wav,down
-clip_139557889.wav,no
+clip_139557889.wav,unknown
 clip_1395ba19f.wav,down
 clip_13960e6a2.wav,unknown
 clip_13969b4cd.wav,unknown
@@ -15759,7 +15759,7 @@ clip_196f1f194.wav,silence
 clip_196fb5660.wav,no
 clip_1970265b3.wav,unknown
 clip_197036fef.wav,unknown
-clip_19703fa89.wav,right
+clip_19703fa89.wav,unknown
 clip_19713fbfb.wav,unknown
 clip_197165b23.wav,off
 clip_1971b1268.wav,right
@@ -16539,7 +16539,7 @@ clip_1abaddb07.wav,unknown
 clip_1abc29801.wav,left
 clip_1abc656a4.wav,unknown
 clip_1abc8b8c7.wav,right
-clip_1abcc99b7.wav,go
+clip_1abcc99b7.wav,unknown
 clip_1abd8f193.wav,unknown
 clip_1abe57e12.wav,unknown
 clip_1abf0ac2e.wav,go
@@ -16913,7 +16913,7 @@ clip_1b513b745.wav,right
 clip_1b521a955.wav,unknown
 clip_1b5279bdf.wav,unknown
 clip_1b5283842.wav,unknown
-clip_1b5324712.wav,no
+clip_1b5324712.wav,unknown
 clip_1b533e327.wav,unknown
 clip_1b534d296.wav,unknown
 clip_1b53e8c3f.wav,up
@@ -17204,7 +17204,7 @@ clip_1bcf5fcdf.wav,unknown
 clip_1bcf86df0.wav,no
 clip_1bcf8eefb.wav,unknown
 clip_1bcfa614f.wav,yes
-clip_1bcfcc7c8.wav,on
+clip_1bcfcc7c8.wav,unknown
 clip_1bcfe8bbf.wav,unknown
 clip_1bd072c4b.wav,unknown
 clip_1bd14ce75.wav,unknown
@@ -17240,7 +17240,7 @@ clip_1bdcea54b.wav,unknown
 clip_1bdcf422c.wav,unknown
 clip_1bdd20f9c.wav,unknown
 clip_1bdd3254e.wav,unknown
-clip_1bde0ac90.wav,up
+clip_1bde0ac90.wav,unknown
 clip_1bde5d608.wav,unknown
 clip_1bdf1b0fd.wav,unknown
 clip_1bdf320b7.wav,left
@@ -18632,7 +18632,7 @@ clip_1e2423981.wav,unknown
 clip_1e24b4cd6.wav,unknown
 clip_1e24d092e.wav,unknown
 clip_1e24e73e2.wav,silence
-clip_1e26d657d.wav,left
+clip_1e26d657d.wav,unknown
 clip_1e26de809.wav,unknown
 clip_1e26ffc71.wav,unknown
 clip_1e277ba81.wav,unknown
@@ -18898,7 +18898,7 @@ clip_1e861e723.wav,yes
 clip_1e88444fc.wav,on
 clip_1e8886bc2.wav,unknown
 clip_1e88f50f4.wav,silence
-clip_1e895dc07.wav,off
+clip_1e895dc07.wav,unknown
 clip_1e8aa5d94.wav,unknown
 clip_1e8ac01fe.wav,unknown
 clip_1e8aea83e.wav,on
@@ -20208,7 +20208,7 @@ clip_20a849548.wav,down
 clip_20aa41a39.wav,right
 clip_20aa7d62d.wav,unknown
 clip_20aad9324.wav,go
-clip_20ab102be.wav,go
+clip_20ab102be.wav,unknown
 clip_20ab147e7.wav,unknown
 clip_20ab31e94.wav,unknown
 clip_20ab63cb5.wav,unknown
@@ -20687,7 +20687,7 @@ clip_215d3a347.wav,left
 clip_215d6b6c6.wav,unknown
 clip_215de0a01.wav,unknown
 clip_215e58f57.wav,off
-clip_215edf20c.wav,no
+clip_215edf20c.wav,unknown
 clip_215f5ca12.wav,unknown
 clip_21601674d.wav,unknown
 clip_216031c77.wav,unknown
@@ -21854,7 +21854,7 @@ clip_233552830.wav,unknown
 clip_233661828.wav,unknown
 clip_233688c5b.wav,unknown
 clip_23369f140.wav,unknown
-clip_23372f6c7.wav,left
+clip_23372f6c7.wav,unknown
 clip_233742f44.wav,unknown
 clip_233746f33.wav,silence
 clip_233786186.wav,unknown
@@ -22143,7 +22143,7 @@ clip_23bd329c1.wav,go
 clip_23be1a83a.wav,silence
 clip_23be72eb8.wav,unknown
 clip_23becd3af.wav,on
-clip_23bf1ed99.wav,up
+clip_23bf1ed99.wav,unknown
 clip_23bf28aa8.wav,unknown
 clip_23bf3d1b1.wav,off
 clip_23bf41622.wav,off
@@ -22319,7 +22319,7 @@ clip_2410b366a.wav,unknown
 clip_2410dc36c.wav,unknown
 clip_2411210d3.wav,unknown
 clip_241132859.wav,unknown
-clip_241135839.wav,off
+clip_241135839.wav,unknown
 clip_2412af0b1.wav,unknown
 clip_24130ff19.wav,go
 clip_241366acd.wav,unknown
@@ -24157,7 +24157,7 @@ clip_271d93fbd.wav,down
 clip_271da717f.wav,unknown
 clip_271e1f902.wav,left
 clip_271e7a716.wav,unknown
-clip_271e88e25.wav,down
+clip_271e88e25.wav,unknown
 clip_271e9291c.wav,unknown
 clip_271ea8518.wav,unknown
 clip_271ec7541.wav,unknown
@@ -24412,7 +24412,7 @@ clip_278b370e0.wav,unknown
 clip_278b3e160.wav,no
 clip_278b7f02e.wav,unknown
 clip_278cbc2af.wav,silence
-clip_278cd67eb.wav,left
+clip_278cd67eb.wav,unknown
 clip_278d3c4d2.wav,unknown
 clip_278e44726.wav,unknown
 clip_278e71829.wav,go
@@ -24529,7 +24529,7 @@ clip_27b98ebc9.wav,stop
 clip_27b9a8693.wav,up
 clip_27baa309a.wav,on
 clip_27bb4c5ef.wav,unknown
-clip_27bb68a55.wav,silence
+clip_27bb68a55.wav,unknown
 clip_27bb84c35.wav,unknown
 clip_27bbcd461.wav,unknown
 clip_27bd04dca.wav,unknown
@@ -25354,7 +25354,7 @@ clip_290799a88.wav,unknown
 clip_2907d8238.wav,unknown
 clip_290807ead.wav,off
 clip_29081ac89.wav,go
-clip_29087238a.wav,down
+clip_29087238a.wav,unknown
 clip_290875db6.wav,on
 clip_2908b05ba.wav,unknown
 clip_2908f964a.wav,unknown
@@ -26041,7 +26041,7 @@ clip_2a2478279.wav,unknown
 clip_2a2519bf3.wav,right
 clip_2a251e438.wav,unknown
 clip_2a25350ee.wav,silence
-clip_2a25adf5f.wav,down
+clip_2a25adf5f.wav,unknown
 clip_2a269967b.wav,unknown
 clip_2a2725b69.wav,off
 clip_2a27ad46f.wav,unknown
@@ -28586,7 +28586,7 @@ clip_2e519f82b.wav,silence
 clip_2e5235fb1.wav,off
 clip_2e528093e.wav,unknown
 clip_2e53173e8.wav,unknown
-clip_2e531da1e.wav,left
+clip_2e531da1e.wav,unknown
 clip_2e535ef60.wav,silence
 clip_2e53b3dbd.wav,stop
 clip_2e53ee662.wav,unknown
@@ -30074,7 +30074,7 @@ clip_30b0dc580.wav,unknown
 clip_30b169aad.wav,unknown
 clip_30b178636.wav,unknown
 clip_30b1f91b9.wav,unknown
-clip_30b24e35c.wav,go
+clip_30b24e35c.wav,unknown
 clip_30b2914b5.wav,unknown
 clip_30b2f1e09.wav,unknown
 clip_30b40fcb4.wav,down
@@ -30986,7 +30986,7 @@ clip_322e11dab.wav,up
 clip_322e146d8.wav,right
 clip_322e63fae.wav,on
 clip_322f38189.wav,down
-clip_322f9a0f6.wav,down
+clip_322f9a0f6.wav,unknown
 clip_322fe449a.wav,right
 clip_323086221.wav,unknown
 clip_32318fd19.wav,right
@@ -31294,7 +31294,7 @@ clip_32ad4f96d.wav,unknown
 clip_32ae03ada.wav,unknown
 clip_32aef25d2.wav,unknown
 clip_32af5bd35.wav,unknown
-clip_32af6df38.wav,go
+clip_32af6df38.wav,unknown
 clip_32afae42d.wav,unknown
 clip_32afc1863.wav,unknown
 clip_32afc60d5.wav,unknown
@@ -31711,7 +31711,7 @@ clip_33552c9fd.wav,unknown
 clip_33552fa29.wav,stop
 clip_3355ec45f.wav,unknown
 clip_3356662d2.wav,yes
-clip_33566b844.wav,down
+clip_33566b844.wav,unknown
 clip_3356aadac.wav,off
 clip_3356d9677.wav,unknown
 clip_3356e3367.wav,unknown
@@ -32348,7 +32348,7 @@ clip_3459ffdc0.wav,off
 clip_345a1ec87.wav,unknown
 clip_345a41e55.wav,right
 clip_345ab3c7c.wav,left
-clip_345aee0af.wav,no
+clip_345aee0af.wav,unknown
 clip_345af32f7.wav,unknown
 clip_345b6383d.wav,go
 clip_345c2aa0d.wav,up
@@ -32883,7 +32883,7 @@ clip_3541029eb.wav,unknown
 clip_354165b87.wav,unknown
 clip_3541a877f.wav,unknown
 clip_3541fcf9a.wav,unknown
-clip_35425f752.wav,silence
+clip_35425f752.wav,unknown
 clip_35426ed7f.wav,unknown
 clip_3542ca9e5.wav,silence
 clip_3543c1099.wav,left
@@ -32945,7 +32945,7 @@ clip_35566552a.wav,unknown
 clip_3556887cf.wav,right
 clip_3556aecda.wav,no
 clip_3556c3c8d.wav,unknown
-clip_35578470a.wav,silence
+clip_35578470a.wav,unknown
 clip_3557be65e.wav,unknown
 clip_355850b38.wav,unknown
 clip_3558de8c9.wav,unknown
@@ -34137,7 +34137,7 @@ clip_373fcf139.wav,unknown
 clip_3740d6ca0.wav,yes
 clip_3740e0924.wav,unknown
 clip_37410b86e.wav,unknown
-clip_3741abd3d.wav,silence
+clip_3741abd3d.wav,unknown
 clip_374200fab.wav,unknown
 clip_374213eff.wav,yes
 clip_37424c5ed.wav,unknown
@@ -34575,7 +34575,7 @@ clip_37f954044.wav,stop
 clip_37f96e37b.wav,unknown
 clip_37f9bf482.wav,on
 clip_37f9f9608.wav,unknown
-clip_37fa3b0b7.wav,silence
+clip_37fa3b0b7.wav,unknown
 clip_37fa89866.wav,unknown
 clip_37fa9dc73.wav,off
 clip_37fb10743.wav,unknown
@@ -35224,7 +35224,7 @@ clip_3910e67b9.wav,on
 clip_3910f41a3.wav,unknown
 clip_391113fcd.wav,right
 clip_3911bfbf9.wav,unknown
-clip_39127d0cd.wav,down
+clip_39127d0cd.wav,unknown
 clip_39128241b.wav,unknown
 clip_391398185.wav,unknown
 clip_39143c9f6.wav,unknown
@@ -35401,7 +35401,7 @@ clip_395adaa80.wav,unknown
 clip_395b7d321.wav,left
 clip_395bae838.wav,left
 clip_395bb2fd4.wav,unknown
-clip_395c0199b.wav,off
+clip_395c0199b.wav,unknown
 clip_395c09b5f.wav,unknown
 clip_395c3fcd8.wav,unknown
 clip_395c99623.wav,unknown
@@ -35562,7 +35562,7 @@ clip_39a23849e.wav,right
 clip_39a31bfdb.wav,unknown
 clip_39a3238e6.wav,unknown
 clip_39a324906.wav,off
-clip_39a49ddd7.wav,up
+clip_39a49ddd7.wav,unknown
 clip_39a4c364e.wav,left
 clip_39a512156.wav,unknown
 clip_39a5495fd.wav,unknown
@@ -35760,7 +35760,7 @@ clip_39f7c4345.wav,unknown
 clip_39f905f61.wav,unknown
 clip_39f94bf79.wav,silence
 clip_39f9a1b84.wav,unknown
-clip_39fa2dc6a.wav,go
+clip_39fa2dc6a.wav,unknown
 clip_39fa7e408.wav,down
 clip_39fb85f0c.wav,up
 clip_39fbafb57.wav,unknown
@@ -36557,7 +36557,7 @@ clip_3b3542d67.wav,stop
 clip_3b3549468.wav,stop
 clip_3b359e849.wav,unknown
 clip_3b35e625f.wav,unknown
-clip_3b37188be.wav,up
+clip_3b37188be.wav,unknown
 clip_3b3781e6d.wav,on
 clip_3b37b5d32.wav,left
 clip_3b3817a49.wav,left
@@ -37298,7 +37298,7 @@ clip_3c75cdac1.wav,left
 clip_3c763e687.wav,unknown
 clip_3c766db2a.wav,unknown
 clip_3c76f0188.wav,unknown
-clip_3c76f28cf.wav,stop
+clip_3c76f28cf.wav,unknown
 clip_3c77bbf39.wav,on
 clip_3c77c6b89.wav,unknown
 clip_3c77e7b46.wav,silence
@@ -39277,7 +39277,7 @@ clip_3fbbcce23.wav,unknown
 clip_3fbbe4726.wav,unknown
 clip_3fbc4122d.wav,unknown
 clip_3fbc89d1c.wav,unknown
-clip_3fbcc2188.wav,left
+clip_3fbcc2188.wav,unknown
 clip_3fbd253b9.wav,down
 clip_3fbd998b0.wav,unknown
 clip_3fbdad89e.wav,silence
@@ -40056,7 +40056,7 @@ clip_40f615190.wav,no
 clip_40f61cd6d.wav,silence
 clip_40f62abf4.wav,unknown
 clip_40f6b7ecd.wav,unknown
-clip_40f6e9385.wav,down
+clip_40f6e9385.wav,unknown
 clip_40f735de2.wav,unknown
 clip_40f750967.wav,unknown
 clip_40f76d8d9.wav,unknown
@@ -40270,7 +40270,7 @@ clip_415228725.wav,unknown
 clip_4152a47d2.wav,unknown
 clip_4152c3822.wav,off
 clip_41537d232.wav,unknown
-clip_4153ddf8c.wav,on
+clip_4153ddf8c.wav,unknown
 clip_415421824.wav,unknown
 clip_415432d1e.wav,unknown
 clip_4154a1eb2.wav,stop
@@ -40304,7 +40304,7 @@ clip_415e80d4b.wav,unknown
 clip_415e8aee3.wav,unknown
 clip_415ecdab5.wav,unknown
 clip_415faabc6.wav,down
-clip_415fe1849.wav,no
+clip_415fe1849.wav,unknown
 clip_41602b12d.wav,unknown
 clip_416059021.wav,silence
 clip_41605d50c.wav,off
@@ -40653,7 +40653,7 @@ clip_41ec3dfca.wav,silence
 clip_41ecd2007.wav,unknown
 clip_41ecd7ac3.wav,stop
 clip_41ed98ac2.wav,stop
-clip_41efc15ee.wav,no
+clip_41efc15ee.wav,unknown
 clip_41f00054a.wav,unknown
 clip_41f0d3458.wav,silence
 clip_41f109123.wav,unknown
@@ -40766,7 +40766,7 @@ clip_4221a4f05.wav,go
 clip_4221b03b1.wav,unknown
 clip_42227f1db.wav,unknown
 clip_4223959b3.wav,unknown
-clip_4223f0bbd.wav,no
+clip_4223f0bbd.wav,unknown
 clip_4224b9865.wav,unknown
 clip_4224dda8a.wav,off
 clip_4224e0ea5.wav,stop
@@ -40981,7 +40981,7 @@ clip_42796deb0.wav,unknown
 clip_427995bd2.wav,up
 clip_4279d81aa.wav,left
 clip_427ae7afb.wav,unknown
-clip_427b1be6e.wav,on
+clip_427b1be6e.wav,unknown
 clip_427b24fea.wav,go
 clip_427bf97ef.wav,down
 clip_427c4b3c2.wav,yes
@@ -41731,7 +41731,7 @@ clip_43a9660ab.wav,unknown
 clip_43a989fc9.wav,right
 clip_43aacfa5c.wav,down
 clip_43ab2477f.wav,unknown
-clip_43ab4af64.wav,yes
+clip_43ab4af64.wav,unknown
 clip_43ac07ad7.wav,on
 clip_43ac45a95.wav,unknown
 clip_43ac859a2.wav,unknown
@@ -42265,7 +42265,7 @@ clip_447f8bcc9.wav,unknown
 clip_44800685e.wav,unknown
 clip_4480386db.wav,unknown
 clip_44808981e.wav,go
-clip_4481038f6.wav,silence
+clip_4481038f6.wav,unknown
 clip_4481aadce.wav,unknown
 clip_4481cac12.wav,stop
 clip_44827e9f2.wav,on
@@ -42317,7 +42317,7 @@ clip_44900c1e3.wav,up
 clip_44902147f.wav,unknown
 clip_44902233d.wav,unknown
 clip_44904e34a.wav,go
-clip_449082450.wav,silence
+clip_449082450.wav,unknown
 clip_449181ba6.wav,no
 clip_4492064f9.wav,stop
 clip_4492940eb.wav,right
@@ -42771,7 +42771,7 @@ clip_4545056b5.wav,unknown
 clip_454577e58.wav,unknown
 clip_4545badfe.wav,silence
 clip_454617823.wav,unknown
-clip_454684baa.wav,silence
+clip_454684baa.wav,unknown
 clip_4546a861b.wav,unknown
 clip_4546f4b39.wav,unknown
 clip_4547516ae.wav,unknown
@@ -43549,7 +43549,7 @@ clip_4681c148d.wav,go
 clip_4681c6f00.wav,unknown
 clip_468297729.wav,unknown
 clip_46835a4c8.wav,stop
-clip_46836306d.wav,silence
+clip_46836306d.wav,unknown
 clip_46856d62a.wav,unknown
 clip_46857ce08.wav,unknown
 clip_4685da7f0.wav,on
@@ -44041,7 +44041,7 @@ clip_4760c466d.wav,unknown
 clip_4760e5510.wav,silence
 clip_4760f3e88.wav,off
 clip_47614e97e.wav,silence
-clip_4761e8709.wav,silence
+clip_4761e8709.wav,unknown
 clip_4762d20ed.wav,silence
 clip_4762f531c.wav,unknown
 clip_476378251.wav,stop
@@ -44163,7 +44163,7 @@ clip_4791308ea.wav,unknown
 clip_4791badd4.wav,unknown
 clip_479224b5f.wav,unknown
 clip_47924787a.wav,unknown
-clip_47929a3be.wav,no
+clip_47929a3be.wav,unknown
 clip_47931c73e.wav,unknown
 clip_479324847.wav,right
 clip_47937864e.wav,right
@@ -44387,7 +44387,7 @@ clip_47f10e14c.wav,on
 clip_47f16bcd6.wav,unknown
 clip_47f26acc4.wav,off
 clip_47f289b93.wav,right
-clip_47f28b860.wav,up
+clip_47f28b860.wav,unknown
 clip_47f31b2b1.wav,unknown
 clip_47f36b912.wav,unknown
 clip_47f3c6f6e.wav,unknown
@@ -44396,7 +44396,7 @@ clip_47f46fdfb.wav,unknown
 clip_47f4cc57b.wav,right
 clip_47f4d1784.wav,silence
 clip_47f4d313b.wav,off
-clip_47f517077.wav,down
+clip_47f517077.wav,unknown
 clip_47f519129.wav,unknown
 clip_47f62888e.wav,off
 clip_47f66fe1a.wav,up
@@ -46315,7 +46315,7 @@ clip_4b0aa952b.wav,off
 clip_4b0b13910.wav,unknown
 clip_4b0bc5a2b.wav,silence
 clip_4b0c49524.wav,unknown
-clip_4b0c6a215.wav,right
+clip_4b0c6a215.wav,unknown
 clip_4b0cafefe.wav,unknown
 clip_4b0cb8efd.wav,stop
 clip_4b0cc8eef.wav,left
@@ -46468,7 +46468,7 @@ clip_4b3f2f2a5.wav,unknown
 clip_4b3f34d68.wav,unknown
 clip_4b412d738.wav,stop
 clip_4b4200fa7.wav,unknown
-clip_4b42d84e9.wav,left
+clip_4b42d84e9.wav,unknown
 clip_4b42deb46.wav,go
 clip_4b42f9928.wav,off
 clip_4b4321793.wav,unknown
@@ -47707,7 +47707,7 @@ clip_4d34cce26.wav,unknown
 clip_4d35cf805.wav,unknown
 clip_4d36a0659.wav,unknown
 clip_4d36ce877.wav,unknown
-clip_4d3788d0a.wav,off
+clip_4d3788d0a.wav,unknown
 clip_4d38a0ba4.wav,unknown
 clip_4d38ace28.wav,unknown
 clip_4d38f0d43.wav,unknown
@@ -48345,7 +48345,7 @@ clip_4e311a1e2.wav,right
 clip_4e31921cb.wav,silence
 clip_4e31a5b2a.wav,unknown
 clip_4e31d2305.wav,up
-clip_4e321b394.wav,down
+clip_4e321b394.wav,unknown
 clip_4e32e726f.wav,stop
 clip_4e33ed98e.wav,unknown
 clip_4e3437c3b.wav,unknown
@@ -48404,7 +48404,7 @@ clip_4e49e2fc2.wav,off
 clip_4e4a31029.wav,unknown
 clip_4e4a46c04.wav,off
 clip_4e4a49aa6.wav,unknown
-clip_4e4a53d6e.wav,off
+clip_4e4a53d6e.wav,unknown
 clip_4e4a7b09c.wav,no
 clip_4e4b59b4a.wav,up
 clip_4e4b61bae.wav,unknown
@@ -48519,7 +48519,7 @@ clip_4e75c9a7f.wav,unknown
 clip_4e75dea6b.wav,unknown
 clip_4e762cf42.wav,off
 clip_4e764fea9.wav,unknown
-clip_4e76910a8.wav,go
+clip_4e76910a8.wav,unknown
 clip_4e76c4648.wav,unknown
 clip_4e76e3359.wav,silence
 clip_4e77bdcdf.wav,unknown
@@ -49579,7 +49579,7 @@ clip_502d17d5c.wav,up
 clip_502e53fa9.wav,unknown
 clip_502ec63a2.wav,unknown
 clip_50305e107.wav,off
-clip_5030d131b.wav,off
+clip_5030d131b.wav,unknown
 clip_5030fcdad.wav,unknown
 clip_503163384.wav,on
 clip_50316f3e3.wav,no
@@ -49871,7 +49871,7 @@ clip_50a03b5f3.wav,unknown
 clip_50a1bc944.wav,right
 clip_50a3093e7.wav,stop
 clip_50a468224.wav,unknown
-clip_50a544e01.wav,up
+clip_50a544e01.wav,unknown
 clip_50a57b226.wav,unknown
 clip_50a604cab.wav,go
 clip_50a627904.wav,on
@@ -50475,7 +50475,7 @@ clip_518bb8286.wav,on
 clip_518bdeaf0.wav,unknown
 clip_518d7dcfe.wav,unknown
 clip_518e4bf61.wav,silence
-clip_518e7f1c4.wav,off
+clip_518e7f1c4.wav,unknown
 clip_518f0af0b.wav,unknown
 clip_518fac94d.wav,go
 clip_519073e19.wav,unknown
@@ -51805,7 +51805,7 @@ clip_53cc508d0.wav,down
 clip_53ccb1ab2.wav,unknown
 clip_53ccc981d.wav,unknown
 clip_53cd9ae5d.wav,unknown
-clip_53cda4b91.wav,go
+clip_53cda4b91.wav,unknown
 clip_53ce0e23e.wav,stop
 clip_53ce68b60.wav,unknown
 clip_53cedcd48.wav,yes
@@ -53838,7 +53838,7 @@ clip_56ff63028.wav,unknown
 clip_56ffbc29d.wav,unknown
 clip_56ffc4163.wav,unknown
 clip_57005cb4c.wav,unknown
-clip_5700a313e.wav,go
+clip_5700a313e.wav,unknown
 clip_5700c9481.wav,unknown
 clip_5700cd2e7.wav,unknown
 clip_5700e7993.wav,unknown
@@ -54844,7 +54844,7 @@ clip_58a67fc3c.wav,right
 clip_58a6f6944.wav,silence
 clip_58a74412b.wav,unknown
 clip_58a887709.wav,unknown
-clip_58a8a6849.wav,silence
+clip_58a8a6849.wav,unknown
 clip_58a90cb53.wav,silence
 clip_58a92e2ed.wav,unknown
 clip_58aa5beb9.wav,unknown
@@ -55319,7 +55319,7 @@ clip_596651360.wav,go
 clip_59671972e.wav,unknown
 clip_596741693.wav,unknown
 clip_5967826f0.wav,yes
-clip_5967c2274.wav,go
+clip_5967c2274.wav,unknown
 clip_59682a310.wav,no
 clip_59685b9d2.wav,silence
 clip_5968bf03d.wav,unknown
@@ -56190,7 +56190,7 @@ clip_5ad1d5721.wav,unknown
 clip_5ad26c705.wav,off
 clip_5ad279a00.wav,unknown
 clip_5ad27e620.wav,unknown
-clip_5ad2d7133.wav,off
+clip_5ad2d7133.wav,unknown
 clip_5ad2f49e5.wav,unknown
 clip_5ad3063b5.wav,unknown
 clip_5ad365a01.wav,unknown
@@ -56964,7 +56964,7 @@ clip_5bfb29af2.wav,unknown
 clip_5bfb5ce08.wav,up
 clip_5bfb6083e.wav,unknown
 clip_5bfbadd98.wav,unknown
-clip_5bfbe4a79.wav,right
+clip_5bfbe4a79.wav,unknown
 clip_5bfc9bca7.wav,on
 clip_5bfccbd0d.wav,down
 clip_5bfd385b2.wav,unknown
@@ -58101,7 +58101,7 @@ clip_5de5e5b66.wav,unknown
 clip_5de62ad44.wav,unknown
 clip_5de64387a.wav,unknown
 clip_5de77e6a7.wav,unknown
-clip_5de866086.wav,on
+clip_5de866086.wav,unknown
 clip_5de892b6e.wav,go
 clip_5de8f9158.wav,off
 clip_5de91091d.wav,unknown
@@ -58285,7 +58285,7 @@ clip_5e322311f.wav,on
 clip_5e3258cbf.wav,off
 clip_5e3299216.wav,unknown
 clip_5e32ead76.wav,unknown
-clip_5e331b749.wav,go
+clip_5e331b749.wav,unknown
 clip_5e33f55a0.wav,unknown
 clip_5e34528c2.wav,unknown
 clip_5e34b6848.wav,unknown
@@ -58538,7 +58538,7 @@ clip_5e92df8c7.wav,stop
 clip_5e937a88a.wav,unknown
 clip_5e939382d.wav,up
 clip_5e93acb33.wav,unknown
-clip_5e93c8743.wav,off
+clip_5e93c8743.wav,unknown
 clip_5e94954d3.wav,unknown
 clip_5e958edd5.wav,right
 clip_5e95d7fa6.wav,unknown
@@ -58791,7 +58791,7 @@ clip_5eef19eb5.wav,unknown
 clip_5eef34ece.wav,unknown
 clip_5eef40f90.wav,unknown
 clip_5eef6907a.wav,unknown
-clip_5eefad373.wav,go
+clip_5eefad373.wav,unknown
 clip_5ef001207.wav,left
 clip_5ef029422.wav,unknown
 clip_5ef04df8c.wav,unknown
@@ -58958,7 +58958,7 @@ clip_5f31817df.wav,yes
 clip_5f318e91f.wav,unknown
 clip_5f3262d32.wav,unknown
 clip_5f326f25f.wav,unknown
-clip_5f33468f7.wav,left
+clip_5f33468f7.wav,unknown
 clip_5f33f97a6.wav,down
 clip_5f3422a54.wav,yes
 clip_5f343a4ac.wav,unknown
@@ -60484,7 +60484,7 @@ clip_61a390be5.wav,unknown
 clip_61a4b671a.wav,unknown
 clip_61a53e12a.wav,no
 clip_61a63bdf8.wav,silence
-clip_61a6cc3a0.wav,no
+clip_61a6cc3a0.wav,unknown
 clip_61a6db88c.wav,unknown
 clip_61a728bc6.wav,unknown
 clip_61a76418b.wav,unknown
@@ -61286,7 +61286,7 @@ clip_62f1ed365.wav,unknown
 clip_62f2e5ed2.wav,unknown
 clip_62f32fa95.wav,unknown
 clip_62f33797a.wav,stop
-clip_62f3bcb80.wav,right
+clip_62f3bcb80.wav,unknown
 clip_62f3c0902.wav,unknown
 clip_62f3dc18e.wav,unknown
 clip_62f3e5b2a.wav,up
@@ -61963,7 +61963,7 @@ clip_640bed4a8.wav,silence
 clip_640c08e62.wav,yes
 clip_640c2bc3a.wav,off
 clip_640c58ca9.wav,unknown
-clip_640c6f42d.wav,off
+clip_640c6f42d.wav,unknown
 clip_640c99343.wav,unknown
 clip_640d18f2d.wav,unknown
 clip_640e01e3a.wav,unknown
@@ -62150,7 +62150,7 @@ clip_6453dc068.wav,right
 clip_6454f0c79.wav,off
 clip_6455fac9f.wav,unknown
 clip_645630671.wav,unknown
-clip_6456b90da.wav,no
+clip_6456b90da.wav,unknown
 clip_6456ecda6.wav,unknown
 clip_64576b2ee.wav,unknown
 clip_64578be00.wav,on
@@ -62497,7 +62497,7 @@ clip_64e8e1673.wav,unknown
 clip_64ea81859.wav,up
 clip_64eaa5d98.wav,up
 clip_64eaf643c.wav,unknown
-clip_64eb8a6c2.wav,silence
+clip_64eb8a6c2.wav,unknown
 clip_64ebc2f98.wav,unknown
 clip_64ece0ef0.wav,on
 clip_64edf851d.wav,yes
@@ -62897,7 +62897,7 @@ clip_65854a617.wav,off
 clip_6585777fb.wav,down
 clip_6586970ec.wav,unknown
 clip_6586c95e8.wav,unknown
-clip_65871ccd7.wav,silence
+clip_65871ccd7.wav,unknown
 clip_65872cd4d.wav,no
 clip_658753415.wav,left
 clip_6587b1a5f.wav,unknown
@@ -63081,7 +63081,7 @@ clip_65cfc3729.wav,unknown
 clip_65cff3ebd.wav,unknown
 clip_65d01a367.wav,unknown
 clip_65d026714.wav,go
-clip_65d04ad19.wav,yes
+clip_65d04ad19.wav,unknown
 clip_65d142dc9.wav,unknown
 clip_65d147a85.wav,unknown
 clip_65d1f7b52.wav,no
@@ -63312,7 +63312,7 @@ clip_6624b28cb.wav,unknown
 clip_6624fa858.wav,unknown
 clip_662751da9.wav,unknown
 clip_6627a7035.wav,unknown
-clip_6627aa377.wav,on
+clip_6627aa377.wav,unknown
 clip_6627e7a95.wav,go
 clip_66282786c.wav,unknown
 clip_6628296d3.wav,unknown
@@ -64290,7 +64290,7 @@ clip_67c82b4a5.wav,up
 clip_67c858011.wav,unknown
 clip_67c86d0f0.wav,unknown
 clip_67c88bd4c.wav,stop
-clip_67c972d06.wav,silence
+clip_67c972d06.wav,unknown
 clip_67ca66b2c.wav,unknown
 clip_67cade256.wav,yes
 clip_67cae25d9.wav,go
@@ -64804,7 +64804,7 @@ clip_68941580c.wav,unknown
 clip_68943abd5.wav,yes
 clip_68943bfae.wav,unknown
 clip_68945bc15.wav,yes
-clip_6894abfeb.wav,off
+clip_6894abfeb.wav,unknown
 clip_6895357bb.wav,no
 clip_689601824.wav,unknown
 clip_689620d72.wav,no
@@ -65532,7 +65532,7 @@ clip_69b7b6d0a.wav,unknown
 clip_69b8b7739.wav,no
 clip_69b9557a8.wav,unknown
 clip_69bb597a1.wav,down
-clip_69bbf2ea0.wav,silence
+clip_69bbf2ea0.wav,unknown
 clip_69be48c0d.wav,unknown
 clip_69be57c9c.wav,unknown
 clip_69be5e585.wav,unknown
@@ -65547,7 +65547,7 @@ clip_69c170a7a.wav,on
 clip_69c1887a5.wav,unknown
 clip_69c21f048.wav,yes
 clip_69c27ca7c.wav,silence
-clip_69c33c228.wav,silence
+clip_69c33c228.wav,unknown
 clip_69c393cd1.wav,unknown
 clip_69c39da3b.wav,stop
 clip_69c3ab355.wav,unknown
@@ -66948,7 +66948,7 @@ clip_6bffb50ee.wav,down
 clip_6bffd62fb.wav,unknown
 clip_6c00b7392.wav,unknown
 clip_6c00f6065.wav,unknown
-clip_6c01252ea.wav,go
+clip_6c01252ea.wav,unknown
 clip_6c02aa84c.wav,unknown
 clip_6c02f5242.wav,down
 clip_6c0342ff7.wav,unknown
@@ -69069,7 +69069,7 @@ clip_6f803fded.wav,stop
 clip_6f82349b1.wav,unknown
 clip_6f8252c85.wav,unknown
 clip_6f82a409c.wav,down
-clip_6f8367609.wav,no
+clip_6f8367609.wav,unknown
 clip_6f83b016d.wav,go
 clip_6f840c954.wav,unknown
 clip_6f843e31a.wav,no
@@ -69575,7 +69575,7 @@ clip_705454eb7.wav,unknown
 clip_705478404.wav,unknown
 clip_7055bdb33.wav,no
 clip_7056091e4.wav,unknown
-clip_70570d2b6.wav,down
+clip_70570d2b6.wav,unknown
 clip_7057d213c.wav,stop
 clip_7057fc79b.wav,silence
 clip_705815966.wav,unknown
@@ -70668,7 +70668,7 @@ clip_721d8ace7.wav,right
 clip_721da8947.wav,unknown
 clip_721dba23f.wav,silence
 clip_721dcfea0.wav,left
-clip_721e09b05.wav,left
+clip_721e09b05.wav,unknown
 clip_721e3892b.wav,stop
 clip_721e7a4e0.wav,on
 clip_721e7c370.wav,unknown
@@ -71307,7 +71307,7 @@ clip_7325357bb.wav,unknown
 clip_7325704b3.wav,unknown
 clip_7325b76ba.wav,unknown
 clip_7325ecb68.wav,unknown
-clip_732783cbd.wav,silence
+clip_732783cbd.wav,unknown
 clip_732794607.wav,silence
 clip_7327ca986.wav,right
 clip_732970b9b.wav,on
@@ -71315,7 +71315,7 @@ clip_732ab8b60.wav,right
 clip_732af8ec5.wav,unknown
 clip_732b422db.wav,unknown
 clip_732b98045.wav,unknown
-clip_732bc9c2e.wav,go
+clip_732bc9c2e.wav,unknown
 clip_732bf657f.wav,unknown
 clip_732d0da3a.wav,yes
 clip_732df53c5.wav,unknown
@@ -72917,7 +72917,7 @@ clip_75c539dc6.wav,unknown
 clip_75c5912af.wav,silence
 clip_75c63c3ca.wav,silence
 clip_75c65eab5.wav,unknown
-clip_75c6b3d0c.wav,right
+clip_75c6b3d0c.wav,unknown
 clip_75c6bea13.wav,down
 clip_75c6ce860.wav,silence
 clip_75c6f1e02.wav,silence
@@ -73144,7 +73144,7 @@ clip_762887014.wav,down
 clip_7628d13c4.wav,off
 clip_76297a5de.wav,silence
 clip_7629a0879.wav,unknown
-clip_7629f6a1a.wav,up
+clip_7629f6a1a.wav,unknown
 clip_762a60ee9.wav,unknown
 clip_762aa8b23.wav,off
 clip_762bac849.wav,on
@@ -73211,7 +73211,7 @@ clip_763f3ef9e.wav,unknown
 clip_763f92c72.wav,unknown
 clip_76402ea08.wav,off
 clip_76405a960.wav,yes
-clip_7640bb2df.wav,yes
+clip_7640bb2df.wav,unknown
 clip_764100757.wav,up
 clip_764138bd8.wav,silence
 clip_76415e63a.wav,no
@@ -73324,7 +73324,7 @@ clip_766b4d015.wav,unknown
 clip_766bc41b1.wav,unknown
 clip_766c0fa1b.wav,on
 clip_766cc53af.wav,no
-clip_766d7f454.wav,off
+clip_766d7f454.wav,unknown
 clip_766da19d2.wav,unknown
 clip_766dd79a0.wav,unknown
 clip_766de4dd9.wav,right
@@ -74065,7 +74065,7 @@ clip_779792a46.wav,unknown
 clip_7798297a1.wav,unknown
 clip_77982b2be.wav,unknown
 clip_779841ef0.wav,unknown
-clip_77984c607.wav,go
+clip_77984c607.wav,unknown
 clip_779856aa6.wav,unknown
 clip_7798cbc3f.wav,unknown
 clip_7798df257.wav,go
@@ -74229,7 +74229,7 @@ clip_77da06c75.wav,on
 clip_77da314cd.wav,go
 clip_77daa6dae.wav,unknown
 clip_77dbb77aa.wav,unknown
-clip_77dd18715.wav,right
+clip_77dd18715.wav,unknown
 clip_77dd20248.wav,unknown
 clip_77de12212.wav,unknown
 clip_77df2157f.wav,stop
@@ -75412,7 +75412,7 @@ clip_79b526d67.wav,unknown
 clip_79b6f3c31.wav,silence
 clip_79b77b416.wav,unknown
 clip_79b80eee7.wav,unknown
-clip_79b8450fb.wav,down
+clip_79b8450fb.wav,unknown
 clip_79b911fcd.wav,unknown
 clip_79b92fc5c.wav,unknown
 clip_79b996835.wav,unknown
@@ -76059,7 +76059,7 @@ clip_7adb1740e.wav,unknown
 clip_7adb2a420.wav,silence
 clip_7adb7c9d5.wav,silence
 clip_7adb9032f.wav,yes
-clip_7adbb68a6.wav,stop
+clip_7adbb68a6.wav,unknown
 clip_7adcf8762.wav,unknown
 clip_7adcfc66b.wav,unknown
 clip_7add4cb90.wav,unknown
@@ -76103,7 +76103,7 @@ clip_7ae9d235f.wav,unknown
 clip_7aea8ded7.wav,unknown
 clip_7aeb1d86d.wav,unknown
 clip_7aeb64535.wav,on
-clip_7aeb7431f.wav,left
+clip_7aeb7431f.wav,unknown
 clip_7aebcbdb4.wav,unknown
 clip_7aebcd56f.wav,unknown
 clip_7aebdd395.wav,unknown
@@ -76220,7 +76220,7 @@ clip_7b1c8fd67.wav,unknown
 clip_7b1cb37d9.wav,unknown
 clip_7b1d0f56f.wav,unknown
 clip_7b1d1dc0d.wav,yes
-clip_7b1d61ca9.wav,no
+clip_7b1d61ca9.wav,unknown
 clip_7b1d8d8eb.wav,unknown
 clip_7b1e3d192.wav,stop
 clip_7b1f1380c.wav,unknown
@@ -76284,7 +76284,7 @@ clip_7b3784623.wav,right
 clip_7b37e04be.wav,unknown
 clip_7b37e8fe8.wav,unknown
 clip_7b38091ef.wav,on
-clip_7b38ab9d1.wav,on
+clip_7b38ab9d1.wav,unknown
 clip_7b38dfb1c.wav,unknown
 clip_7b3ab6d91.wav,unknown
 clip_7b3ae0858.wav,unknown
@@ -77097,7 +77097,7 @@ clip_7c86a19f9.wav,unknown
 clip_7c88137cd.wav,unknown
 clip_7c885fafd.wav,unknown
 clip_7c8864493.wav,no
-clip_7c8893f2e.wav,silence
+clip_7c8893f2e.wav,unknown
 clip_7c88a2ed7.wav,unknown
 clip_7c88c1651.wav,unknown
 clip_7c8908443.wav,go
@@ -77258,7 +77258,7 @@ clip_7ccd2b6ce.wav,unknown
 clip_7ccd38d26.wav,unknown
 clip_7ccd3a764.wav,unknown
 clip_7ccd6f35e.wav,unknown
-clip_7ccd83b12.wav,off
+clip_7ccd83b12.wav,unknown
 clip_7ccded4de.wav,no
 clip_7ccebaef6.wav,stop
 clip_7ccf0bf91.wav,unknown
@@ -77418,7 +77418,7 @@ clip_7d05dd3d1.wav,unknown
 clip_7d0610d47.wav,unknown
 clip_7d06e1aa5.wav,unknown
 clip_7d070f5f7.wav,unknown
-clip_7d075662d.wav,go
+clip_7d075662d.wav,unknown
 clip_7d0791111.wav,unknown
 clip_7d079d29f.wav,unknown
 clip_7d07b1164.wav,down
@@ -77552,7 +77552,7 @@ clip_7d38f7c41.wav,unknown
 clip_7d38f9121.wav,unknown
 clip_7d3903dfd.wav,unknown
 clip_7d3906dd9.wav,unknown
-clip_7d396bda4.wav,silence
+clip_7d396bda4.wav,unknown
 clip_7d39d2b11.wav,go
 clip_7d3a62911.wav,yes
 clip_7d3af1a14.wav,up
@@ -77560,7 +77560,7 @@ clip_7d3bdd425.wav,silence
 clip_7d3bf467e.wav,go
 clip_7d3c9ed30.wav,unknown
 clip_7d3d31ae7.wav,off
-clip_7d3ec52a4.wav,down
+clip_7d3ec52a4.wav,unknown
 clip_7d3f892f7.wav,unknown
 clip_7d3f8d7c8.wav,stop
 clip_7d3fbcd18.wav,go
@@ -78274,7 +78274,7 @@ clip_7e703c608.wav,stop
 clip_7e707a470.wav,unknown
 clip_7e70c686e.wav,unknown
 clip_7e70f5392.wav,unknown
-clip_7e71aa72a.wav,silence
+clip_7e71aa72a.wav,unknown
 clip_7e7215103.wav,stop
 clip_7e722a73a.wav,silence
 clip_7e722c3ac.wav,go
@@ -79330,7 +79330,7 @@ clip_801ae139d.wav,unknown
 clip_801b5f7c8.wav,up
 clip_801bcf37f.wav,unknown
 clip_801cb6a7a.wav,unknown
-clip_801d019bc.wav,no
+clip_801d019bc.wav,unknown
 clip_801d0560c.wav,no
 clip_801d0aba3.wav,unknown
 clip_801e572bc.wav,yes
@@ -79403,7 +79403,7 @@ clip_80382e697.wav,unknown
 clip_8038357c2.wav,go
 clip_803a3c8e7.wav,unknown
 clip_803a656cc.wav,unknown
-clip_803ac7ad6.wav,on
+clip_803ac7ad6.wav,unknown
 clip_803ad2f4b.wav,unknown
 clip_803ad844f.wav,stop
 clip_803b72854.wav,unknown
@@ -80794,7 +80794,7 @@ clip_827673929.wav,unknown
 clip_827677bf5.wav,go
 clip_8276d4895.wav,yes
 clip_82770b709.wav,unknown
-clip_827710a60.wav,right
+clip_827710a60.wav,unknown
 clip_827785f10.wav,on
 clip_8277ca163.wav,stop
 clip_827844516.wav,unknown
@@ -81058,7 +81058,7 @@ clip_82e80e9f7.wav,no
 clip_82e82ace5.wav,unknown
 clip_82e8c351c.wav,go
 clip_82ea166eb.wav,unknown
-clip_82ea2d127.wav,silence
+clip_82ea2d127.wav,unknown
 clip_82ea2d258.wav,unknown
 clip_82ea67ace.wav,silence
 clip_82eb1579c.wav,no
@@ -81545,7 +81545,7 @@ clip_83a3d55f6.wav,off
 clip_83a4e2113.wav,unknown
 clip_83a552a0c.wav,no
 clip_83a575556.wav,go
-clip_83a577f07.wav,left
+clip_83a577f07.wav,unknown
 clip_83a5bb4a7.wav,off
 clip_83a5d934c.wav,right
 clip_83a5de0fd.wav,unknown
@@ -82401,7 +82401,7 @@ clip_8508a919a.wav,unknown
 clip_8508eef55.wav,silence
 clip_8509990d2.wav,unknown
 clip_8509fb934.wav,unknown
-clip_850a64583.wav,go
+clip_850a64583.wav,unknown
 clip_850b291e1.wav,unknown
 clip_850b6077d.wav,unknown
 clip_850c38278.wav,right
@@ -82438,7 +82438,7 @@ clip_851908064.wav,unknown
 clip_85191be86.wav,unknown
 clip_85195ef9f.wav,right
 clip_8519be945.wav,no
-clip_8519c265f.wav,silence
+clip_8519c265f.wav,unknown
 clip_8519c76af.wav,unknown
 clip_851ab65e2.wav,silence
 clip_851abc17f.wav,unknown
@@ -82976,7 +82976,7 @@ clip_85f8b7227.wav,unknown
 clip_85f8c9a7f.wav,on
 clip_85f917232.wav,stop
 clip_85f9623d7.wav,unknown
-clip_85f9beac0.wav,go
+clip_85f9beac0.wav,unknown
 clip_85f9e19b9.wav,unknown
 clip_85fa92b4a.wav,unknown
 clip_85faa811a.wav,off
@@ -83027,7 +83027,7 @@ clip_860ee5e1e.wav,silence
 clip_860ee77f8.wav,silence
 clip_860f087de.wav,unknown
 clip_860f0be5a.wav,unknown
-clip_860f28d7a.wav,on
+clip_860f28d7a.wav,unknown
 clip_860f61354.wav,unknown
 clip_860fc246e.wav,unknown
 clip_8610316b9.wav,silence
@@ -83568,7 +83568,7 @@ clip_86e9249bb.wav,unknown
 clip_86e96640c.wav,down
 clip_86e98dc04.wav,left
 clip_86e9be39c.wav,unknown
-clip_86ea7671a.wav,off
+clip_86ea7671a.wav,unknown
 clip_86ea79f4e.wav,unknown
 clip_86ea9be9e.wav,stop
 clip_86eabcd10.wav,no
@@ -83617,7 +83617,7 @@ clip_86fe94f09.wav,silence
 clip_86ff6bcf0.wav,unknown
 clip_86ffd92f8.wav,unknown
 clip_86fffa3ec.wav,unknown
-clip_87004fff2.wav,go
+clip_87004fff2.wav,unknown
 clip_870064d2f.wav,unknown
 clip_870085d6a.wav,unknown
 clip_87008891b.wav,unknown
@@ -83827,7 +83827,7 @@ clip_8754d33a0.wav,silence
 clip_87552e6c7.wav,unknown
 clip_875578246.wav,unknown
 clip_87558a3ec.wav,unknown
-clip_8756decf4.wav,left
+clip_8756decf4.wav,unknown
 clip_875714ff3.wav,unknown
 clip_87577655c.wav,unknown
 clip_8757bb825.wav,unknown
@@ -84041,7 +84041,7 @@ clip_879ff2913.wav,up
 clip_87a0796f8.wav,unknown
 clip_87a0a9a56.wav,unknown
 clip_87a0f330f.wav,unknown
-clip_87a159387.wav,off
+clip_87a159387.wav,unknown
 clip_87a1a461f.wav,unknown
 clip_87a28d996.wav,silence
 clip_87a2a0ca6.wav,unknown
@@ -84385,7 +84385,7 @@ clip_882307d79.wav,unknown
 clip_882392e9b.wav,right
 clip_8823c1c87.wav,unknown
 clip_88242fbe8.wav,unknown
-clip_88246a4d7.wav,silence
+clip_88246a4d7.wav,unknown
 clip_8824e7384.wav,unknown
 clip_88252a9be.wav,unknown
 clip_882570f79.wav,on
@@ -84418,7 +84418,7 @@ clip_882d9b398.wav,go
 clip_882db04d2.wav,unknown
 clip_882ec955e.wav,on
 clip_882ecb1e6.wav,down
-clip_882ed95d3.wav,left
+clip_882ed95d3.wav,unknown
 clip_882efe749.wav,unknown
 clip_882f47057.wav,unknown
 clip_882fcd756.wav,unknown
@@ -84458,7 +84458,7 @@ clip_883e0d99b.wav,go
 clip_883e2a8a7.wav,on
 clip_883e9174c.wav,down
 clip_883f19afc.wav,left
-clip_883f354ec.wav,left
+clip_883f354ec.wav,unknown
 clip_883f50706.wav,unknown
 clip_883fb4dda.wav,unknown
 clip_883feb9e8.wav,unknown
@@ -85404,7 +85404,7 @@ clip_89c44310f.wav,unknown
 clip_89c44cfd2.wav,unknown
 clip_89c5300ee.wav,right
 clip_89c566feb.wav,unknown
-clip_89c57c9ff.wav,on
+clip_89c57c9ff.wav,unknown
 clip_89c5e4092.wav,unknown
 clip_89c63a859.wav,unknown
 clip_89c796594.wav,unknown
@@ -86056,7 +86056,7 @@ clip_8acb9653e.wav,unknown
 clip_8acbdb738.wav,unknown
 clip_8acca8116.wav,no
 clip_8acd1fd58.wav,unknown
-clip_8acd2b961.wav,left
+clip_8acd2b961.wav,unknown
 clip_8acd4003e.wav,unknown
 clip_8acd82fee.wav,unknown
 clip_8acd8e8a8.wav,unknown
@@ -87468,7 +87468,7 @@ clip_8d1374f58.wav,unknown
 clip_8d13ac4a7.wav,unknown
 clip_8d14952ec.wav,yes
 clip_8d14ee915.wav,up
-clip_8d1568397.wav,silence
+clip_8d1568397.wav,unknown
 clip_8d1593171.wav,unknown
 clip_8d16118d6.wav,off
 clip_8d17df86d.wav,unknown
@@ -87692,7 +87692,7 @@ clip_8d7c484d1.wav,down
 clip_8d7c7be54.wav,up
 clip_8d7d0553c.wav,up
 clip_8d7d65083.wav,right
-clip_8d7e31837.wav,go
+clip_8d7e31837.wav,unknown
 clip_8d7ea7567.wav,unknown
 clip_8d7f8a004.wav,unknown
 clip_8d803cacb.wav,unknown
@@ -88130,7 +88130,7 @@ clip_8e392c624.wav,up
 clip_8e39c40a2.wav,unknown
 clip_8e3a0db45.wav,unknown
 clip_8e3a99e41.wav,unknown
-clip_8e3abadce.wav,right
+clip_8e3abadce.wav,unknown
 clip_8e3b48301.wav,on
 clip_8e3b4b70c.wav,unknown
 clip_8e3b585b3.wav,unknown
@@ -88415,7 +88415,7 @@ clip_8ea90ceaa.wav,unknown
 clip_8ea9b14ae.wav,yes
 clip_8ea9ca3a3.wav,unknown
 clip_8eaa13edd.wav,unknown
-clip_8eaa33665.wav,off
+clip_8eaa33665.wav,unknown
 clip_8eaa74abe.wav,stop
 clip_8eaa856f1.wav,up
 clip_8eab399a9.wav,on
@@ -88884,7 +88884,7 @@ clip_8f5f6a01c.wav,yes
 clip_8f60660cd.wav,unknown
 clip_8f60bcf2f.wav,unknown
 clip_8f6180cb4.wav,unknown
-clip_8f61a8999.wav,no
+clip_8f61a8999.wav,unknown
 clip_8f61e7e38.wav,unknown
 clip_8f6203654.wav,unknown
 clip_8f6237b06.wav,silence
@@ -89110,7 +89110,7 @@ clip_8fbbc7adb.wav,yes
 clip_8fbc4e777.wav,unknown
 clip_8fbc8ed5f.wav,silence
 clip_8fbdfe3d9.wav,down
-clip_8fbe23fd1.wav,stop
+clip_8fbe23fd1.wav,unknown
 clip_8fbe40614.wav,unknown
 clip_8fbe4f299.wav,silence
 clip_8fbe5577a.wav,no
@@ -89528,7 +89528,7 @@ clip_906372284.wav,stop
 clip_90637da42.wav,no
 clip_906476aa5.wav,left
 clip_906478a2b.wav,on
-clip_9064be806.wav,silence
+clip_9064be806.wav,unknown
 clip_9064dcbe3.wav,stop
 clip_90654cf83.wav,unknown
 clip_90660892b.wav,down
@@ -89623,7 +89623,7 @@ clip_9082d3950.wav,unknown
 clip_908349e6f.wav,right
 clip_908395bb4.wav,right
 clip_90839b092.wav,unknown
-clip_9084042a2.wav,up
+clip_9084042a2.wav,unknown
 clip_908434c0c.wav,go
 clip_90847aeb3.wav,unknown
 clip_90848589a.wav,unknown
@@ -90370,7 +90370,7 @@ clip_91a322a85.wav,no
 clip_91a397d08.wav,unknown
 clip_91a3da1c3.wav,unknown
 clip_91a3e460a.wav,unknown
-clip_91a5d2468.wav,silence
+clip_91a5d2468.wav,unknown
 clip_91a5d425b.wav,go
 clip_91a6b95de.wav,unknown
 clip_91a81d364.wav,unknown
@@ -90474,7 +90474,7 @@ clip_91ce4019d.wav,unknown
 clip_91cec81fa.wav,yes
 clip_91cf05396.wav,unknown
 clip_91cf7c14c.wav,unknown
-clip_91cf9c44b.wav,left
+clip_91cf9c44b.wav,unknown
 clip_91d073b63.wav,unknown
 clip_91d091f30.wav,unknown
 clip_91d12f71a.wav,off
@@ -90555,7 +90555,7 @@ clip_91ea9db51.wav,unknown
 clip_91ead78bf.wav,unknown
 clip_91eb2c1c8.wav,unknown
 clip_91eb8ac2a.wav,silence
-clip_91ebc49f2.wav,down
+clip_91ebc49f2.wav,unknown
 clip_91ec0a433.wav,unknown
 clip_91ec17082.wav,unknown
 clip_91ec5283b.wav,unknown
@@ -90569,7 +90569,7 @@ clip_91f01b905.wav,unknown
 clip_91f037b5e.wav,unknown
 clip_91f16706d.wav,down
 clip_91f1d835c.wav,left
-clip_91f2ab542.wav,go
+clip_91f2ab542.wav,unknown
 clip_91f33c3d9.wav,unknown
 clip_91f39c66d.wav,silence
 clip_91f3cf7e1.wav,unknown
@@ -90981,7 +90981,7 @@ clip_92a040852.wav,unknown
 clip_92a084d96.wav,unknown
 clip_92a0bf5b1.wav,unknown
 clip_92a0c3afe.wav,up
-clip_92a0dcca6.wav,silence
+clip_92a0dcca6.wav,unknown
 clip_92a117d84.wav,yes
 clip_92a1532d4.wav,unknown
 clip_92a1a9e35.wav,unknown
@@ -91278,7 +91278,7 @@ clip_9324d7bc1.wav,unknown
 clip_9324ee38d.wav,unknown
 clip_932500928.wav,unknown
 clip_93254de30.wav,unknown
-clip_9325c5d54.wav,left
+clip_9325c5d54.wav,unknown
 clip_9325dd815.wav,off
 clip_93268181d.wav,unknown
 clip_9326da533.wav,unknown
@@ -91357,7 +91357,7 @@ clip_934432a6c.wav,unknown
 clip_93450aa21.wav,right
 clip_93450e76f.wav,unknown
 clip_934526ba6.wav,silence
-clip_9345588b1.wav,stop
+clip_9345588b1.wav,unknown
 clip_934589150.wav,left
 clip_9345dbd63.wav,unknown
 clip_9346703dd.wav,unknown
@@ -91370,7 +91370,7 @@ clip_934a6392c.wav,unknown
 clip_934a7c9aa.wav,silence
 clip_934b35a54.wav,on
 clip_934c03dba.wav,yes
-clip_934c40dea.wav,on
+clip_934c40dea.wav,unknown
 clip_934c84a37.wav,unknown
 clip_934cc9124.wav,left
 clip_934ddfa11.wav,down
@@ -91466,7 +91466,7 @@ clip_936fe2b7f.wav,unknown
 clip_937030493.wav,off
 clip_93705dcda.wav,unknown
 clip_937177066.wav,unknown
-clip_937202a50.wav,stop
+clip_937202a50.wav,unknown
 clip_9373c97fd.wav,unknown
 clip_9373fed85.wav,silence
 clip_93742cc82.wav,stop
@@ -91981,7 +91981,7 @@ clip_9444ce575.wav,unknown
 clip_9446380a7.wav,unknown
 clip_9446814ca.wav,go
 clip_9446d67ef.wav,unknown
-clip_9447719f6.wav,go
+clip_9447719f6.wav,unknown
 clip_944915696.wav,unknown
 clip_9449369db.wav,unknown
 clip_9449ae668.wav,unknown
@@ -92958,7 +92958,7 @@ clip_95d824559.wav,down
 clip_95d84e9f7.wav,go
 clip_95d86514b.wav,unknown
 clip_95d8d70a6.wav,unknown
-clip_95d95d11c.wav,off
+clip_95d95d11c.wav,unknown
 clip_95d975edd.wav,unknown
 clip_95d9d98e5.wav,yes
 clip_95da0e618.wav,off
@@ -93002,7 +93002,7 @@ clip_95ed64421.wav,up
 clip_95ed95cb9.wav,unknown
 clip_95ee13155.wav,unknown
 clip_95ee1df05.wav,unknown
-clip_95ef19331.wav,left
+clip_95ef19331.wav,unknown
 clip_95ef1a356.wav,yes
 clip_95ef9593a.wav,unknown
 clip_95f03303a.wav,yes
@@ -93259,7 +93259,7 @@ clip_9655746a6.wav,unknown
 clip_965589625.wav,up
 clip_9655bd53a.wav,up
 clip_9655c56ae.wav,left
-clip_9656da212.wav,down
+clip_9656da212.wav,unknown
 clip_96576881e.wav,unknown
 clip_9657e8bf1.wav,unknown
 clip_96585319c.wav,unknown
@@ -94079,7 +94079,7 @@ clip_9799bda87.wav,unknown
 clip_979a487e2.wav,left
 clip_979ac1b8c.wav,silence
 clip_979b14073.wav,unknown
-clip_979b602cf.wav,on
+clip_979b602cf.wav,unknown
 clip_979bc3f3f.wav,stop
 clip_979bfaa04.wav,up
 clip_979c17198.wav,unknown
@@ -94340,7 +94340,7 @@ clip_97fa623d3.wav,unknown
 clip_97fad6a40.wav,unknown
 clip_97fbfde07.wav,unknown
 clip_97fd15162.wav,up
-clip_97fdb4bfc.wav,on
+clip_97fdb4bfc.wav,unknown
 clip_97fe2c285.wav,up
 clip_97ffd1865.wav,unknown
 clip_980055a52.wav,unknown
@@ -94842,7 +94842,7 @@ clip_98b57d830.wav,on
 clip_98b57f92a.wav,off
 clip_98b61ed5a.wav,unknown
 clip_98b7378ba.wav,unknown
-clip_98b7f6643.wav,yes
+clip_98b7f6643.wav,unknown
 clip_98b82c9dd.wav,off
 clip_98b87610e.wav,unknown
 clip_98b93170a.wav,unknown
@@ -96097,7 +96097,7 @@ clip_9ad028f0b.wav,unknown
 clip_9ad0bd076.wav,no
 clip_9ad18cab0.wav,unknown
 clip_9ad1bee5d.wav,unknown
-clip_9ad36d35d.wav,silence
+clip_9ad36d35d.wav,unknown
 clip_9ad376c63.wav,unknown
 clip_9ad39d5a0.wav,silence
 clip_9ad39ff34.wav,unknown
@@ -96219,7 +96219,7 @@ clip_9b01aa08d.wav,go
 clip_9b01dc429.wav,unknown
 clip_9b02832a8.wav,yes
 clip_9b02aced2.wav,unknown
-clip_9b02d7085.wav,off
+clip_9b02d7085.wav,unknown
 clip_9b02dca8a.wav,unknown
 clip_9b0349efe.wav,unknown
 clip_9b03b5d37.wav,unknown
@@ -96599,7 +96599,7 @@ clip_9b9c0bdfc.wav,unknown
 clip_9b9c958d8.wav,unknown
 clip_9b9caa838.wav,stop
 clip_9b9db43fe.wav,unknown
-clip_9b9df0607.wav,left
+clip_9b9df0607.wav,unknown
 clip_9b9df4ae2.wav,unknown
 clip_9b9e2e42e.wav,unknown
 clip_9b9e93cf6.wav,right
@@ -96811,7 +96811,7 @@ clip_9bf272257.wav,unknown
 clip_9bf2f6f7c.wav,unknown
 clip_9bf35f081.wav,unknown
 clip_9bf420885.wav,stop
-clip_9bf4fe87b.wav,down
+clip_9bf4fe87b.wav,unknown
 clip_9bf5281d6.wav,up
 clip_9bf75dc3d.wav,no
 clip_9bf82a7bf.wav,right
@@ -97376,7 +97376,7 @@ clip_9cd8fa16a.wav,unknown
 clip_9cd93a9a4.wav,unknown
 clip_9cd9488db.wav,unknown
 clip_9cda13cc0.wav,off
-clip_9cdb7f2bd.wav,down
+clip_9cdb7f2bd.wav,unknown
 clip_9cdbe4d74.wav,silence
 clip_9cdc3e85d.wav,silence
 clip_9cdca3765.wav,unknown
@@ -97916,7 +97916,7 @@ clip_9dc448364.wav,on
 clip_9dc540a2d.wav,stop
 clip_9dc56bf25.wav,unknown
 clip_9dc6c842b.wav,unknown
-clip_9dc753e07.wav,go
+clip_9dc753e07.wav,unknown
 clip_9dc79e654.wav,unknown
 clip_9dc8d7f06.wav,no
 clip_9dc90d719.wav,left
@@ -99550,7 +99550,7 @@ clip_a063b90c7.wav,unknown
 clip_a063f75fc.wav,unknown
 clip_a0644719d.wav,yes
 clip_a065180a9.wav,off
-clip_a065fadfe.wav,left
+clip_a065fadfe.wav,unknown
 clip_a066115ee.wav,unknown
 clip_a0663f92e.wav,go
 clip_a06785b4a.wav,unknown
@@ -99897,7 +99897,7 @@ clip_a0f84d0bc.wav,unknown
 clip_a0f8985fd.wav,unknown
 clip_a0f8a1e56.wav,unknown
 clip_a0f8e8032.wav,unknown
-clip_a0f90009c.wav,silence
+clip_a0f90009c.wav,unknown
 clip_a0f93988a.wav,unknown
 clip_a0f98090c.wav,unknown
 clip_a0fa18462.wav,unknown
@@ -100047,9 +100047,9 @@ clip_a1387646a.wav,unknown
 clip_a13937eb8.wav,unknown
 clip_a1393f83a.wav,unknown
 clip_a139d63a0.wav,unknown
-clip_a13a8bc37.wav,left
+clip_a13a8bc37.wav,unknown
 clip_a13ac2321.wav,unknown
-clip_a13afa5f1.wav,silence
+clip_a13afa5f1.wav,unknown
 clip_a13b9fc1f.wav,unknown
 clip_a13c4dfa7.wav,down
 clip_a13cfa9e1.wav,go
@@ -100086,7 +100086,7 @@ clip_a1471a598.wav,silence
 clip_a14752ac3.wav,go
 clip_a1476f77f.wav,stop
 clip_a14839daf.wav,unknown
-clip_a148491af.wav,up
+clip_a148491af.wav,unknown
 clip_a14867a2e.wav,off
 clip_a1494271c.wav,down
 clip_a14977f85.wav,unknown
@@ -102119,7 +102119,7 @@ clip_a47dd19a7.wav,unknown
 clip_a47de04da.wav,unknown
 clip_a47e07346.wav,unknown
 clip_a47e6c69b.wav,unknown
-clip_a47ea3b92.wav,off
+clip_a47ea3b92.wav,unknown
 clip_a47f1ecaf.wav,unknown
 clip_a47f42466.wav,unknown
 clip_a47f45c0e.wav,unknown
@@ -102463,7 +102463,7 @@ clip_a4fac9558.wav,unknown
 clip_a4fb7c1c4.wav,silence
 clip_a4fb861d8.wav,unknown
 clip_a4fc02d03.wav,no
-clip_a4fc7d636.wav,silence
+clip_a4fc7d636.wav,unknown
 clip_a4fc7de5a.wav,unknown
 clip_a4fcd426b.wav,unknown
 clip_a4fcf1ec9.wav,no
@@ -102970,7 +102970,7 @@ clip_a5bdba2b7.wav,right
 clip_a5bdc98d0.wav,left
 clip_a5be57837.wav,unknown
 clip_a5beb80a7.wav,unknown
-clip_a5bec82de.wav,go
+clip_a5bec82de.wav,unknown
 clip_a5bfa841a.wav,silence
 clip_a5c0c665b.wav,unknown
 clip_a5c1c360e.wav,unknown
@@ -103376,7 +103376,7 @@ clip_a65f1ebd4.wav,unknown
 clip_a65fd82c6.wav,unknown
 clip_a66060921.wav,unknown
 clip_a661656aa.wav,unknown
-clip_a662a9b5f.wav,on
+clip_a662a9b5f.wav,unknown
 clip_a662bc619.wav,unknown
 clip_a66398a28.wav,unknown
 clip_a663aed4b.wav,unknown
@@ -104105,7 +104105,7 @@ clip_a7856eff4.wav,unknown
 clip_a7861bea6.wav,right
 clip_a78627f59.wav,unknown
 clip_a7869d44b.wav,unknown
-clip_a7869d945.wav,stop
+clip_a7869d945.wav,unknown
 clip_a786d2d13.wav,unknown
 clip_a7871c4aa.wav,on
 clip_a7877a808.wav,unknown
@@ -104117,7 +104117,7 @@ clip_a78987a10.wav,down
 clip_a789fc7a9.wav,unknown
 clip_a78ae529f.wav,unknown
 clip_a78b014de.wav,unknown
-clip_a78b464ba.wav,yes
+clip_a78b464ba.wav,unknown
 clip_a78be97b5.wav,unknown
 clip_a78bed39b.wav,unknown
 clip_a78bfdb65.wav,unknown
@@ -104612,7 +104612,7 @@ clip_a85c7eb62.wav,no
 clip_a85ca29ef.wav,left
 clip_a85cbd692.wav,up
 clip_a85d40c95.wav,silence
-clip_a85d4758d.wav,silence
+clip_a85d4758d.wav,unknown
 clip_a85d4965a.wav,left
 clip_a85ddda31.wav,unknown
 clip_a85e0ffb8.wav,go
@@ -105656,7 +105656,7 @@ clip_a9fc7a49d.wav,off
 clip_a9fcfc64e.wav,right
 clip_a9fd22657.wav,unknown
 clip_a9fdfe888.wav,unknown
-clip_a9fdff4e9.wav,down
+clip_a9fdff4e9.wav,unknown
 clip_a9fe0e93c.wav,go
 clip_a9fe5040f.wav,unknown
 clip_a9fec02e9.wav,unknown
@@ -105732,7 +105732,7 @@ clip_aa1a10cec.wav,unknown
 clip_aa1a6dce8.wav,stop
 clip_aa1abaed8.wav,unknown
 clip_aa1b1bf23.wav,unknown
-clip_aa1c276f7.wav,off
+clip_aa1c276f7.wav,unknown
 clip_aa1d08b74.wav,unknown
 clip_aa1d63048.wav,unknown
 clip_aa1ddfe2f.wav,no
@@ -105852,7 +105852,7 @@ clip_aa5032df4.wav,unknown
 clip_aa50496dc.wav,unknown
 clip_aa505dc89.wav,up
 clip_aa507eede.wav,unknown
-clip_aa516699d.wav,no
+clip_aa516699d.wav,unknown
 clip_aa52ce08a.wav,unknown
 clip_aa5373566.wav,unknown
 clip_aa538bcc9.wav,down
@@ -105964,7 +105964,7 @@ clip_aa7e92905.wav,off
 clip_aa7ef9b52.wav,unknown
 clip_aa7f2648e.wav,unknown
 clip_aa7f42c3e.wav,unknown
-clip_aa7f63a27.wav,down
+clip_aa7f63a27.wav,unknown
 clip_aa7f918c6.wav,go
 clip_aa7fd9dc8.wav,stop
 clip_aa80164be.wav,unknown
@@ -106229,7 +106229,7 @@ clip_aae6f2e7d.wav,stop
 clip_aae712acc.wav,on
 clip_aae77a55b.wav,unknown
 clip_aae828911.wav,no
-clip_aae8d1835.wav,yes
+clip_aae8d1835.wav,unknown
 clip_aae920a6e.wav,off
 clip_aae93815c.wav,unknown
 clip_aae93e184.wav,unknown
@@ -106344,7 +106344,7 @@ clip_ab11454fe.wav,off
 clip_ab1149c4a.wav,off
 clip_ab1157f5a.wav,no
 clip_ab11aaac3.wav,no
-clip_ab11c6905.wav,silence
+clip_ab11c6905.wav,unknown
 clip_ab11cf5d9.wav,unknown
 clip_ab13b3d61.wav,left
 clip_ab13b9d91.wav,unknown
@@ -106969,7 +106969,7 @@ clip_ac1c1e9f9.wav,unknown
 clip_ac1c3cab6.wav,unknown
 clip_ac1c7e8c0.wav,unknown
 clip_ac1c9ea36.wav,no
-clip_ac1cc3ad3.wav,up
+clip_ac1cc3ad3.wav,unknown
 clip_ac1e716ad.wav,left
 clip_ac1e77cd7.wav,silence
 clip_ac208982b.wav,unknown
@@ -107896,7 +107896,7 @@ clip_adadb36c6.wav,off
 clip_adae54162.wav,unknown
 clip_adae87668.wav,unknown
 clip_adaec90a4.wav,on
-clip_adaf57466.wav,up
+clip_adaf57466.wav,unknown
 clip_adaf7476d.wav,unknown
 clip_adb04a2b0.wav,down
 clip_adb0563a6.wav,unknown
@@ -108447,7 +108447,7 @@ clip_ae8d2aa8c.wav,unknown
 clip_ae8d5d1f6.wav,unknown
 clip_ae8d8825d.wav,on
 clip_ae8d8b09e.wav,unknown
-clip_ae8f44468.wav,up
+clip_ae8f44468.wav,unknown
 clip_ae8fad5fe.wav,unknown
 clip_ae90137a2.wav,unknown
 clip_ae904254e.wav,go
@@ -108704,9 +108704,9 @@ clip_aef38de5e.wav,unknown
 clip_aef391ccb.wav,unknown
 clip_aef3d89aa.wav,left
 clip_aef4ba99d.wav,unknown
-clip_aef50d8f3.wav,no
+clip_aef50d8f3.wav,unknown
 clip_aef594ee7.wav,unknown
-clip_aef651c91.wav,down
+clip_aef651c91.wav,unknown
 clip_aef68b6ce.wav,go
 clip_aef6f42fd.wav,unknown
 clip_aef71c79d.wav,up
@@ -109623,7 +109623,7 @@ clip_b06ed0044.wav,unknown
 clip_b06f5239b.wav,unknown
 clip_b0702326f.wav,unknown
 clip_b07032927.wav,unknown
-clip_b0706bf9c.wav,down
+clip_b0706bf9c.wav,unknown
 clip_b07083855.wav,yes
 clip_b070e87be.wav,up
 clip_b0711a395.wav,on
@@ -110173,7 +110173,7 @@ clip_b140da892.wav,unknown
 clip_b14159330.wav,unknown
 clip_b1417c2a8.wav,unknown
 clip_b1418ddb7.wav,silence
-clip_b14196d2b.wav,no
+clip_b14196d2b.wav,unknown
 clip_b1419829d.wav,stop
 clip_b141d64fa.wav,silence
 clip_b14200d8d.wav,unknown
@@ -110215,7 +110215,7 @@ clip_b15107d1d.wav,silence
 clip_b15119dbe.wav,unknown
 clip_b1514b805.wav,silence
 clip_b15156c40.wav,unknown
-clip_b1517d8d3.wav,up
+clip_b1517d8d3.wav,unknown
 clip_b152a7fba.wav,unknown
 clip_b15322e6e.wav,unknown
 clip_b1534c72d.wav,yes
@@ -110749,7 +110749,7 @@ clip_b222d8d83.wav,right
 clip_b222edf67.wav,unknown
 clip_b224e48d0.wav,off
 clip_b224f16f8.wav,unknown
-clip_b226454a9.wav,up
+clip_b226454a9.wav,unknown
 clip_b2269b0ac.wav,go
 clip_b2273bec3.wav,up
 clip_b227611c3.wav,silence
@@ -110943,7 +110943,7 @@ clip_b272f8069.wav,unknown
 clip_b2732dbb5.wav,unknown
 clip_b27358995.wav,unknown
 clip_b2740df80.wav,no
-clip_b2755399b.wav,on
+clip_b2755399b.wav,unknown
 clip_b2759e20c.wav,silence
 clip_b275b9a17.wav,unknown
 clip_b27605442.wav,unknown
@@ -111210,7 +111210,7 @@ clip_b2de3fba4.wav,yes
 clip_b2dee8540.wav,unknown
 clip_b2dfa60a1.wav,off
 clip_b2e0c3083.wav,unknown
-clip_b2e11e5eb.wav,down
+clip_b2e11e5eb.wav,unknown
 clip_b2e170759.wav,unknown
 clip_b2e1946dd.wav,stop
 clip_b2e1e0a8e.wav,unknown
@@ -111604,7 +111604,7 @@ clip_b38b1754e.wav,up
 clip_b38b3639f.wav,unknown
 clip_b38b9791a.wav,unknown
 clip_b38cb97c9.wav,go
-clip_b38ce504f.wav,up
+clip_b38ce504f.wav,unknown
 clip_b38d653b9.wav,unknown
 clip_b38e8df56.wav,off
 clip_b38f0a91d.wav,unknown
@@ -112046,7 +112046,7 @@ clip_b44682769.wav,yes
 clip_b446cc3f2.wav,unknown
 clip_b4488f8f4.wav,unknown
 clip_b448d9b62.wav,stop
-clip_b4495efef.wav,go
+clip_b4495efef.wav,unknown
 clip_b449e3b37.wav,unknown
 clip_b44b9c4db.wav,unknown
 clip_b44bf16b9.wav,unknown
@@ -113987,7 +113987,7 @@ clip_b76fd8c19.wav,left
 clip_b770dedbc.wav,unknown
 clip_b771a82f5.wav,on
 clip_b771c20fe.wav,unknown
-clip_b771d7e76.wav,yes
+clip_b771d7e76.wav,unknown
 clip_b7725dfd3.wav,unknown
 clip_b7725f95f.wav,unknown
 clip_b7725ff43.wav,unknown
@@ -114031,7 +114031,7 @@ clip_b78070af2.wav,unknown
 clip_b780a2a68.wav,unknown
 clip_b781ff7b8.wav,unknown
 clip_b78249926.wav,unknown
-clip_b7826890c.wav,up
+clip_b7826890c.wav,unknown
 clip_b782c738e.wav,silence
 clip_b783295ef.wav,unknown
 clip_b783533b3.wav,go
@@ -114429,7 +114429,7 @@ clip_b8291c075.wav,unknown
 clip_b829cb84b.wav,unknown
 clip_b829fcffb.wav,unknown
 clip_b82a3bf66.wav,unknown
-clip_b82a5337f.wav,left
+clip_b82a5337f.wav,unknown
 clip_b82aa866d.wav,unknown
 clip_b82ae9936.wav,off
 clip_b82b4fe0b.wav,unknown
@@ -114962,7 +114962,7 @@ clip_b90d472af.wav,unknown
 clip_b90d6668a.wav,silence
 clip_b90d7ddf1.wav,unknown
 clip_b90e7e838.wav,unknown
-clip_b90eb5cd8.wav,silence
+clip_b90eb5cd8.wav,unknown
 clip_b90ff7de4.wav,unknown
 clip_b91087140.wav,unknown
 clip_b910d89c7.wav,unknown
@@ -115755,7 +115755,7 @@ clip_ba4cf52ca.wav,unknown
 clip_ba4cfa02e.wav,unknown
 clip_ba4d069f7.wav,unknown
 clip_ba4d138df.wav,unknown
-clip_ba4d45969.wav,silence
+clip_ba4d45969.wav,unknown
 clip_ba4d73561.wav,unknown
 clip_ba4dfd28d.wav,unknown
 clip_ba4e18094.wav,unknown
@@ -116100,7 +116100,7 @@ clip_bad1569be.wav,off
 clip_bad15859e.wav,unknown
 clip_bad166b37.wav,silence
 clip_bad193c9e.wav,silence
-clip_bad21c107.wav,silence
+clip_bad21c107.wav,unknown
 clip_bad253319.wav,unknown
 clip_bad29983c.wav,unknown
 clip_bad5d2c8a.wav,up
@@ -116353,7 +116353,7 @@ clip_bb47f0468.wav,unknown
 clip_bb4836a39.wav,unknown
 clip_bb488fb93.wav,unknown
 clip_bb48ac0eb.wav,no
-clip_bb491ba5b.wav,right
+clip_bb491ba5b.wav,unknown
 clip_bb49772f5.wav,unknown
 clip_bb49c4542.wav,unknown
 clip_bb49da21b.wav,unknown
@@ -116727,7 +116727,7 @@ clip_bbef80d7d.wav,unknown
 clip_bbef945a7.wav,unknown
 clip_bbefe50f8.wav,unknown
 clip_bbf057578.wav,up
-clip_bbf0a2381.wav,right
+clip_bbf0a2381.wav,unknown
 clip_bbf14764b.wav,unknown
 clip_bbf199b28.wav,no
 clip_bbf26043b.wav,unknown
@@ -118102,7 +118102,7 @@ clip_be2fe6d01.wav,off
 clip_be30768cd.wav,unknown
 clip_be30c6dba.wav,unknown
 clip_be30d328c.wav,silence
-clip_be3129812.wav,left
+clip_be3129812.wav,unknown
 clip_be31c814a.wav,stop
 clip_be31f4666.wav,unknown
 clip_be331c6fd.wav,off
@@ -118124,7 +118124,7 @@ clip_be38f0024.wav,unknown
 clip_be39035fd.wav,unknown
 clip_be3974ca6.wav,yes
 clip_be39bf5a0.wav,silence
-clip_be39e019e.wav,down
+clip_be39e019e.wav,unknown
 clip_be39f91ef.wav,unknown
 clip_be3aa37c9.wav,no
 clip_be3ad2faa.wav,unknown
@@ -118428,7 +118428,7 @@ clip_beb688cc9.wav,unknown
 clip_beb6aa094.wav,no
 clip_beb93c01b.wav,unknown
 clip_beb970eee.wav,unknown
-clip_beb9722b7.wav,yes
+clip_beb9722b7.wav,unknown
 clip_beb9a52f6.wav,no
 clip_beba2dc9f.wav,no
 clip_bebafd6be.wav,unknown
@@ -119176,7 +119176,7 @@ clip_bfebca278.wav,unknown
 clip_bfec34202.wav,unknown
 clip_bfec925d9.wav,unknown
 clip_bfecccbab.wav,down
-clip_bfed66990.wav,go
+clip_bfed66990.wav,unknown
 clip_bfed6b023.wav,unknown
 clip_bfeda383a.wav,silence
 clip_bfee9bfa0.wav,unknown
@@ -121175,7 +121175,7 @@ clip_c34e0f229.wav,unknown
 clip_c34e18afa.wav,left
 clip_c34ee3bba.wav,left
 clip_c34f4ff4d.wav,unknown
-clip_c34f56ded.wav,no
+clip_c34f56ded.wav,unknown
 clip_c34f9ab81.wav,go
 clip_c34fa5913.wav,unknown
 clip_c34fd0deb.wav,no
@@ -122610,7 +122610,7 @@ clip_c5a235ec0.wav,unknown
 clip_c5a25778a.wav,unknown
 clip_c5a2d0a35.wav,stop
 clip_c5a2f10d0.wav,unknown
-clip_c5a315723.wav,go
+clip_c5a315723.wav,unknown
 clip_c5a32e81f.wav,left
 clip_c5a37c32c.wav,unknown
 clip_c5a40f03d.wav,go
@@ -123428,7 +123428,7 @@ clip_c6f2f9068.wav,unknown
 clip_c6f34eeae.wav,unknown
 clip_c6f447064.wav,unknown
 clip_c6f487596.wav,right
-clip_c6f4af18d.wav,go
+clip_c6f4af18d.wav,unknown
 clip_c6f5315e9.wav,unknown
 clip_c6f54ff16.wav,down
 clip_c6f5a66e3.wav,stop
@@ -124966,7 +124966,7 @@ clip_c95abff2b.wav,down
 clip_c95adc16b.wav,unknown
 clip_c95aff25b.wav,silence
 clip_c95b43a3b.wav,go
-clip_c95b787d7.wav,no
+clip_c95b787d7.wav,unknown
 clip_c95bd4f0a.wav,right
 clip_c95bf79a1.wav,unknown
 clip_c95c04d65.wav,unknown
@@ -125173,7 +125173,7 @@ clip_c9b6e1f69.wav,unknown
 clip_c9b78ce26.wav,up
 clip_c9b7eeb2f.wav,unknown
 clip_c9b81355d.wav,unknown
-clip_c9b893ae4.wav,no
+clip_c9b893ae4.wav,unknown
 clip_c9b8ebb3c.wav,unknown
 clip_c9b951ed4.wav,unknown
 clip_c9ba2de40.wav,stop
@@ -125263,7 +125263,7 @@ clip_c9d94a366.wav,unknown
 clip_c9da9576e.wav,off
 clip_c9dacdd9c.wav,unknown
 clip_c9db82c45.wav,unknown
-clip_c9dba894e.wav,stop
+clip_c9dba894e.wav,unknown
 clip_c9dbfa21e.wav,on
 clip_c9dcb93c5.wav,unknown
 clip_c9dccd5a7.wav,unknown
@@ -126331,7 +126331,7 @@ clip_cb89ae6b7.wav,unknown
 clip_cb8a30766.wav,unknown
 clip_cb8ab5625.wav,off
 clip_cb8b7d0f2.wav,stop
-clip_cb8b86f8c.wav,off
+clip_cb8b86f8c.wav,unknown
 clip_cb8c02213.wav,right
 clip_cb8cf6417.wav,left
 clip_cb8d635f7.wav,unknown
@@ -126527,7 +126527,7 @@ clip_cbe7b07c7.wav,unknown
 clip_cbe81186c.wav,right
 clip_cbe818f32.wav,right
 clip_cbe8c23d8.wav,go
-clip_cbe925d21.wav,off
+clip_cbe925d21.wav,unknown
 clip_cbe999751.wav,unknown
 clip_cbe9e3420.wav,off
 clip_cbea6f19b.wav,go
@@ -127741,7 +127741,7 @@ clip_cdcf61427.wav,unknown
 clip_cdd002a36.wav,up
 clip_cdd17bae6.wav,unknown
 clip_cdd1913c7.wav,silence
-clip_cdd1aa31e.wav,on
+clip_cdd1aa31e.wav,unknown
 clip_cdd2b5a45.wav,unknown
 clip_cdd2d52c6.wav,no
 clip_cdd30275b.wav,unknown
@@ -127887,7 +127887,7 @@ clip_ce0947245.wav,silence
 clip_ce099fd5a.wav,left
 clip_ce09a0370.wav,unknown
 clip_ce0a092f2.wav,right
-clip_ce0a0f191.wav,silence
+clip_ce0a0f191.wav,unknown
 clip_ce0a268d0.wav,yes
 clip_ce0a27156.wav,unknown
 clip_ce0b1da20.wav,off
@@ -127950,7 +127950,7 @@ clip_ce229b8e2.wav,right
 clip_ce2324b13.wav,no
 clip_ce2461936.wav,no
 clip_ce2500cb1.wav,unknown
-clip_ce2535b21.wav,silence
+clip_ce2535b21.wav,unknown
 clip_ce25c72d8.wav,unknown
 clip_ce25f6b83.wav,unknown
 clip_ce26210af.wav,unknown
@@ -128517,7 +128517,7 @@ clip_cf124962b.wav,silence
 clip_cf1276401.wav,unknown
 clip_cf12d66c7.wav,no
 clip_cf14638a4.wav,unknown
-clip_cf1531f68.wav,silence
+clip_cf1531f68.wav,unknown
 clip_cf1545d3d.wav,no
 clip_cf15488c6.wav,unknown
 clip_cf156862f.wav,unknown
@@ -128857,7 +128857,7 @@ clip_cf9928a9e.wav,unknown
 clip_cf9a5df3d.wav,unknown
 clip_cf9ab6f96.wav,right
 clip_cf9bad2c0.wav,on
-clip_cf9c0703b.wav,right
+clip_cf9c0703b.wav,unknown
 clip_cf9c090f4.wav,up
 clip_cf9c8a24a.wav,unknown
 clip_cf9cf256a.wav,left
@@ -128988,7 +128988,7 @@ clip_cfd4676cd.wav,right
 clip_cfd4d566f.wav,unknown
 clip_cfd570956.wav,up
 clip_cfd577b5f.wav,stop
-clip_cfd60f594.wav,up
+clip_cfd60f594.wav,unknown
 clip_cfd76bae3.wav,on
 clip_cfd7df2e8.wav,unknown
 clip_cfd895358.wav,unknown
@@ -129703,7 +129703,7 @@ clip_d108f43f8.wav,go
 clip_d1090958f.wav,silence
 clip_d1094bf2b.wav,left
 clip_d10b43903.wav,unknown
-clip_d10b5c720.wav,go
+clip_d10b5c720.wav,unknown
 clip_d10be4ad1.wav,silence
 clip_d10c7358c.wav,no
 clip_d10d4083d.wav,unknown
@@ -129976,7 +129976,7 @@ clip_d183c857f.wav,unknown
 clip_d18416bbd.wav,unknown
 clip_d1841cf37.wav,unknown
 clip_d1842830a.wav,right
-clip_d184a1e1b.wav,yes
+clip_d184a1e1b.wav,unknown
 clip_d185321dd.wav,go
 clip_d18541038.wav,unknown
 clip_d1856f45c.wav,unknown
@@ -130566,7 +130566,7 @@ clip_d2764f9db.wav,unknown
 clip_d276c0f9f.wav,unknown
 clip_d2771bceb.wav,right
 clip_d277713d6.wav,unknown
-clip_d2784ed9d.wav,left
+clip_d2784ed9d.wav,unknown
 clip_d27995427.wav,unknown
 clip_d27a74519.wav,go
 clip_d27abb82b.wav,unknown
@@ -130944,7 +130944,7 @@ clip_d3214b680.wav,unknown
 clip_d3216763b.wav,down
 clip_d32173101.wav,unknown
 clip_d32189c6a.wav,unknown
-clip_d3218f19f.wav,left
+clip_d3218f19f.wav,unknown
 clip_d321f38cb.wav,no
 clip_d321f3bea.wav,silence
 clip_d322c6410.wav,unknown
@@ -131530,7 +131530,7 @@ clip_d40c40ca4.wav,down
 clip_d40e5da4b.wav,unknown
 clip_d40f007c8.wav,unknown
 clip_d40f0ecf9.wav,unknown
-clip_d40f1bf25.wav,silence
+clip_d40f1bf25.wav,unknown
 clip_d40f317e0.wav,off
 clip_d40f5b58e.wav,unknown
 clip_d40f7e2a5.wav,unknown
@@ -131840,7 +131840,7 @@ clip_d4876a289.wav,unknown
 clip_d487be78d.wav,unknown
 clip_d487e0fe6.wav,unknown
 clip_d4882c45a.wav,unknown
-clip_d48866594.wav,left
+clip_d48866594.wav,unknown
 clip_d48888107.wav,go
 clip_d4891bee6.wav,unknown
 clip_d489be314.wav,unknown
@@ -131849,7 +131849,7 @@ clip_d48a447ff.wav,unknown
 clip_d48aa1287.wav,unknown
 clip_d48ab3580.wav,unknown
 clip_d48ad4024.wav,down
-clip_d48af7693.wav,stop
+clip_d48af7693.wav,unknown
 clip_d48d1d183.wav,yes
 clip_d48d726c1.wav,unknown
 clip_d48df985c.wav,off
@@ -132645,7 +132645,7 @@ clip_d5e87d326.wav,unknown
 clip_d5e8af459.wav,no
 clip_d5e90c97e.wav,unknown
 clip_d5e93dc10.wav,unknown
-clip_d5e9415d9.wav,left
+clip_d5e9415d9.wav,unknown
 clip_d5e95ca95.wav,go
 clip_d5e97a1c9.wav,down
 clip_d5e97b04d.wav,unknown
@@ -133015,7 +133015,7 @@ clip_d67994a68.wav,unknown
 clip_d679baa24.wav,unknown
 clip_d67a20421.wav,no
 clip_d67aa1a3b.wav,unknown
-clip_d67ae87c0.wav,go
+clip_d67ae87c0.wav,unknown
 clip_d67b037fe.wav,unknown
 clip_d67b4cca2.wav,go
 clip_d67b56603.wav,unknown
@@ -133385,7 +133385,7 @@ clip_d70fe0141.wav,right
 clip_d7101df1b.wav,unknown
 clip_d710999b1.wav,go
 clip_d7120d999.wav,unknown
-clip_d7129a6e9.wav,no
+clip_d7129a6e9.wav,unknown
 clip_d7129aea1.wav,unknown
 clip_d7130a748.wav,down
 clip_d713307b2.wav,unknown
@@ -133600,7 +133600,7 @@ clip_d765a0b82.wav,unknown
 clip_d765cf506.wav,go
 clip_d7661ddc7.wav,unknown
 clip_d7664a6e6.wav,go
-clip_d7665a375.wav,off
+clip_d7665a375.wav,unknown
 clip_d766afcaf.wav,left
 clip_d76767145.wav,unknown
 clip_d767aba6c.wav,down
@@ -134430,7 +134430,7 @@ clip_d8b94a3df.wav,unknown
 clip_d8ba0f0f2.wav,unknown
 clip_d8ba4dcae.wav,unknown
 clip_d8ba81958.wav,unknown
-clip_d8bae81d9.wav,up
+clip_d8bae81d9.wav,unknown
 clip_d8bafde1e.wav,unknown
 clip_d8bb633a3.wav,right
 clip_d8bcb999b.wav,unknown
@@ -134937,7 +134937,7 @@ clip_d97df9b42.wav,unknown
 clip_d97e60833.wav,unknown
 clip_d97ed3655.wav,unknown
 clip_d97f39e51.wav,unknown
-clip_d98002643.wav,right
+clip_d98002643.wav,unknown
 clip_d9805d1f2.wav,unknown
 clip_d9814546d.wav,unknown
 clip_d981bb903.wav,unknown
@@ -135048,7 +135048,7 @@ clip_d9b450fa9.wav,unknown
 clip_d9b49d7ea.wav,no
 clip_d9b4f50a6.wav,unknown
 clip_d9b52df83.wav,unknown
-clip_d9b7996b2.wav,silence
+clip_d9b7996b2.wav,unknown
 clip_d9b8da9c8.wav,unknown
 clip_d9b92230c.wav,unknown
 clip_d9b93d915.wav,unknown
@@ -135162,7 +135162,7 @@ clip_d9dec8aaf.wav,left
 clip_d9df1c362.wav,unknown
 clip_d9e0358e1.wav,unknown
 clip_d9e07b66d.wav,on
-clip_d9e135dd4.wav,off
+clip_d9e135dd4.wav,unknown
 clip_d9e195b42.wav,unknown
 clip_d9e1b4997.wav,go
 clip_d9e327360.wav,off
@@ -136641,7 +136641,7 @@ clip_dc50d20e4.wav,no
 clip_dc5115746.wav,silence
 clip_dc51a7981.wav,unknown
 clip_dc52535d4.wav,left
-clip_dc52aa635.wav,down
+clip_dc52aa635.wav,unknown
 clip_dc53b3741.wav,off
 clip_dc53e1495.wav,unknown
 clip_dc5445918.wav,unknown
@@ -137141,7 +137141,7 @@ clip_dd1e7dbe2.wav,unknown
 clip_dd1e8c181.wav,stop
 clip_dd1edf0d3.wav,unknown
 clip_dd1f51950.wav,on
-clip_dd1f52ea1.wav,silence
+clip_dd1f52ea1.wav,unknown
 clip_dd1f5dfad.wav,unknown
 clip_dd1f62eac.wav,off
 clip_dd208f8f3.wav,down
@@ -137435,7 +137435,7 @@ clip_dd982b22a.wav,off
 clip_dd982e387.wav,unknown
 clip_dd983d4e8.wav,unknown
 clip_dd98cd040.wav,left
-clip_dd99882fe.wav,silence
+clip_dd99882fe.wav,unknown
 clip_dd99aa5bd.wav,no
 clip_dd99be838.wav,unknown
 clip_dd99f2f4c.wav,unknown
@@ -137726,7 +137726,7 @@ clip_de08067a7.wav,unknown
 clip_de084d858.wav,unknown
 clip_de0865cc3.wav,unknown
 clip_de08cfef4.wav,on
-clip_de091938c.wav,yes
+clip_de091938c.wav,unknown
 clip_de0996539.wav,off
 clip_de09c211d.wav,unknown
 clip_de0a9bf1f.wav,unknown
@@ -138505,7 +138505,7 @@ clip_df4f82d63.wav,unknown
 clip_df4f8f3ad.wav,unknown
 clip_df50078a5.wav,up
 clip_df50144df.wav,unknown
-clip_df502a71b.wav,yes
+clip_df502a71b.wav,unknown
 clip_df5108342.wav,unknown
 clip_df51161cc.wav,unknown
 clip_df51172d2.wav,unknown
@@ -138684,7 +138684,7 @@ clip_df9750e8d.wav,off
 clip_df9761953.wav,unknown
 clip_df9859e8d.wav,unknown
 clip_df985fbe9.wav,down
-clip_df98834c6.wav,silence
+clip_df98834c6.wav,unknown
 clip_df98a99b2.wav,unknown
 clip_df991a734.wav,down
 clip_df993d4f2.wav,unknown
@@ -138780,7 +138780,7 @@ clip_dfc4444b5.wav,unknown
 clip_dfc498f83.wav,unknown
 clip_dfc5c22b0.wav,no
 clip_dfc5db702.wav,no
-clip_dfc682b7d.wav,left
+clip_dfc682b7d.wav,unknown
 clip_dfc6a77af.wav,stop
 clip_dfc71ad2a.wav,unknown
 clip_dfc754fdd.wav,on
@@ -138802,7 +138802,7 @@ clip_dfcdc355a.wav,unknown
 clip_dfce2a701.wav,unknown
 clip_dfce7f52a.wav,no
 clip_dfcef774a.wav,unknown
-clip_dfcf47932.wav,go
+clip_dfcf47932.wav,unknown
 clip_dfcf55c91.wav,unknown
 clip_dfcfd1725.wav,unknown
 clip_dfcfdff83.wav,unknown
@@ -139627,7 +139627,7 @@ clip_e12e02092.wav,unknown
 clip_e12e3b090.wav,unknown
 clip_e12e69eab.wav,off
 clip_e12f00986.wav,unknown
-clip_e12f28cae.wav,go
+clip_e12f28cae.wav,unknown
 clip_e12ff4e04.wav,unknown
 clip_e130543c3.wav,unknown
 clip_e130d79b1.wav,off
@@ -140282,7 +140282,7 @@ clip_e23271015.wav,unknown
 clip_e2329fdf3.wav,off
 clip_e233024b0.wav,down
 clip_e2334b456.wav,unknown
-clip_e233a365e.wav,no
+clip_e233a365e.wav,unknown
 clip_e233bfe9b.wav,silence
 clip_e2343d344.wav,down
 clip_e234c82d2.wav,stop
@@ -140441,7 +140441,7 @@ clip_e274eff33.wav,unknown
 clip_e274f02c7.wav,unknown
 clip_e27532626.wav,unknown
 clip_e275c278f.wav,unknown
-clip_e275ddab2.wav,off
+clip_e275ddab2.wav,unknown
 clip_e2763cc22.wav,yes
 clip_e27695063.wav,unknown
 clip_e276a7635.wav,unknown
@@ -140575,7 +140575,7 @@ clip_e2a770bb0.wav,unknown
 clip_e2a77612e.wav,unknown
 clip_e2a861add.wav,on
 clip_e2a88dc69.wav,down
-clip_e2a921e21.wav,down
+clip_e2a921e21.wav,unknown
 clip_e2a9a827d.wav,stop
 clip_e2a9fe43f.wav,unknown
 clip_e2aa1a6c3.wav,down
@@ -141025,7 +141025,7 @@ clip_e3603b1d6.wav,unknown
 clip_e36078d89.wav,unknown
 clip_e3610d321.wav,on
 clip_e3610fc45.wav,on
-clip_e361e317e.wav,stop
+clip_e361e317e.wav,unknown
 clip_e3622775d.wav,no
 clip_e362726e2.wav,unknown
 clip_e36277805.wav,silence
@@ -141855,7 +141855,7 @@ clip_e4ad417dc.wav,unknown
 clip_e4ad4a185.wav,unknown
 clip_e4ada8e14.wav,right
 clip_e4adea1e2.wav,up
-clip_e4ae589f9.wav,no
+clip_e4ae589f9.wav,unknown
 clip_e4ae9d125.wav,go
 clip_e4aeb39e8.wav,up
 clip_e4af4e50b.wav,unknown
@@ -142837,7 +142837,7 @@ clip_e64a172ae.wav,unknown
 clip_e64adff65.wav,unknown
 clip_e64b302f0.wav,down
 clip_e64c00418.wav,unknown
-clip_e64d86dbd.wav,right
+clip_e64d86dbd.wav,unknown
 clip_e64dc3589.wav,off
 clip_e64e78da6.wav,up
 clip_e64f14f4e.wav,unknown
@@ -143431,7 +143431,7 @@ clip_e745fcc5b.wav,yes
 clip_e7461e1f6.wav,unknown
 clip_e746a66a9.wav,unknown
 clip_e746dcb44.wav,right
-clip_e7478fe88.wav,silence
+clip_e7478fe88.wav,unknown
 clip_e748242e9.wav,off
 clip_e74913247.wav,yes
 clip_e7492d075.wav,unknown
@@ -143586,7 +143586,7 @@ clip_e7804654e.wav,right
 clip_e780ab2a5.wav,left
 clip_e780ae306.wav,off
 clip_e780d2c65.wav,unknown
-clip_e7813a7d5.wav,left
+clip_e7813a7d5.wav,unknown
 clip_e78215ca6.wav,up
 clip_e78222c97.wav,unknown
 clip_e78510bad.wav,unknown
@@ -144945,7 +144945,7 @@ clip_e9b2e51c9.wav,unknown
 clip_e9b37d94c.wav,stop
 clip_e9b3c2682.wav,unknown
 clip_e9b3df1d3.wav,up
-clip_e9b43521a.wav,silence
+clip_e9b43521a.wav,unknown
 clip_e9b5ea449.wav,unknown
 clip_e9b5efb3f.wav,on
 clip_e9b61cdbc.wav,unknown
@@ -145397,7 +145397,7 @@ clip_ea72c3717.wav,unknown
 clip_ea748a915.wav,left
 clip_ea74ac2aa.wav,unknown
 clip_ea7566fb4.wav,go
-clip_ea7584f28.wav,stop
+clip_ea7584f28.wav,unknown
 clip_ea765ccca.wav,unknown
 clip_ea768481d.wav,unknown
 clip_ea769a09c.wav,on
@@ -145472,7 +145472,7 @@ clip_ea9007fa7.wav,unknown
 clip_ea9035727.wav,up
 clip_ea9054912.wav,on
 clip_ea9065634.wav,silence
-clip_ea90c299f.wav,silence
+clip_ea90c299f.wav,unknown
 clip_ea911f5e4.wav,unknown
 clip_ea9139dbc.wav,unknown
 clip_ea9157ebf.wav,go
@@ -145731,7 +145731,7 @@ clip_eaff77ce3.wav,unknown
 clip_eb002ebf2.wav,unknown
 clip_eb0074334.wav,stop
 clip_eb015d889.wav,unknown
-clip_eb02175d1.wav,on
+clip_eb02175d1.wav,unknown
 clip_eb033a363.wav,unknown
 clip_eb037a643.wav,unknown
 clip_eb0448d15.wav,up
@@ -146323,7 +146323,7 @@ clip_ebfcebd16.wav,go
 clip_ebfcfec81.wav,unknown
 clip_ebfd27d06.wav,unknown
 clip_ebfd6851d.wav,left
-clip_ebfd881a0.wav,on
+clip_ebfd881a0.wav,unknown
 clip_ebfdd9e14.wav,unknown
 clip_ebfe6d12f.wav,unknown
 clip_ebff962c2.wav,unknown
@@ -147196,7 +147196,7 @@ clip_ed71421f7.wav,silence
 clip_ed71c4bce.wav,on
 clip_ed720a9ff.wav,unknown
 clip_ed72d23bc.wav,unknown
-clip_ed72fa99e.wav,silence
+clip_ed72fa99e.wav,unknown
 clip_ed741e2f7.wav,no
 clip_ed74f12c0.wav,unknown
 clip_ed753bca6.wav,unknown
@@ -147691,7 +147691,7 @@ clip_ee4480989.wav,unknown
 clip_ee44d63b8.wav,unknown
 clip_ee44f0782.wav,unknown
 clip_ee45a13f8.wav,unknown
-clip_ee45ef3c5.wav,on
+clip_ee45ef3c5.wav,unknown
 clip_ee463b6cc.wav,unknown
 clip_ee473a23e.wav,unknown
 clip_ee47a8f02.wav,unknown
@@ -147804,7 +147804,7 @@ clip_ee7b2c379.wav,no
 clip_ee7b99aca.wav,silence
 clip_ee7bdf37b.wav,unknown
 clip_ee7c6543b.wav,unknown
-clip_ee7d976f7.wav,up
+clip_ee7d976f7.wav,unknown
 clip_ee7d9b48c.wav,unknown
 clip_ee7dc88e6.wav,unknown
 clip_ee7dd2c36.wav,silence
@@ -148371,7 +148371,7 @@ clip_ef64dab04.wav,unknown
 clip_ef65cfb1a.wav,unknown
 clip_ef665c833.wav,unknown
 clip_ef666bdff.wav,unknown
-clip_ef6713e4e.wav,no
+clip_ef6713e4e.wav,unknown
 clip_ef67e7435.wav,unknown
 clip_ef695c727.wav,no
 clip_ef6b288b9.wav,unknown
@@ -148820,7 +148820,7 @@ clip_f02b18bcc.wav,unknown
 clip_f02beff82.wav,unknown
 clip_f02c38f26.wav,unknown
 clip_f02c462a1.wav,silence
-clip_f02ca0f9b.wav,up
+clip_f02ca0f9b.wav,unknown
 clip_f02cb3df4.wav,no
 clip_f02ceb3fa.wav,unknown
 clip_f02d7f7fa.wav,no
@@ -148941,7 +148941,7 @@ clip_f05f82f36.wav,unknown
 clip_f05f970cf.wav,unknown
 clip_f05fc1d69.wav,unknown
 clip_f05fcf347.wav,unknown
-clip_f0607a155.wav,on
+clip_f0607a155.wav,unknown
 clip_f0609a7bc.wav,up
 clip_f06163b6d.wav,no
 clip_f061ef797.wav,unknown
@@ -149405,7 +149405,7 @@ clip_f1163c0b8.wav,off
 clip_f116ccb47.wav,unknown
 clip_f116d9d00.wav,no
 clip_f116f1bb1.wav,unknown
-clip_f1176e7c4.wav,left
+clip_f1176e7c4.wav,unknown
 clip_f117a79ae.wav,unknown
 clip_f117fa05f.wav,unknown
 clip_f11896c60.wav,unknown
@@ -149466,7 +149466,7 @@ clip_f13097774.wav,unknown
 clip_f130ca124.wav,silence
 clip_f131a1fe9.wav,unknown
 clip_f131dfdbf.wav,unknown
-clip_f13218897.wav,no
+clip_f13218897.wav,unknown
 clip_f13255abd.wav,go
 clip_f13261493.wav,unknown
 clip_f132a4a3b.wav,unknown
@@ -149654,7 +149654,7 @@ clip_f18072d49.wav,unknown
 clip_f181fdaf2.wav,unknown
 clip_f1820c995.wav,unknown
 clip_f18279a72.wav,unknown
-clip_f182b4981.wav,silence
+clip_f182b4981.wav,unknown
 clip_f1830f9e9.wav,unknown
 clip_f184064b9.wav,yes
 clip_f1842fbf0.wav,unknown
@@ -150845,7 +150845,7 @@ clip_f369e3db1.wav,unknown
 clip_f36a11fdb.wav,silence
 clip_f36a1b302.wav,unknown
 clip_f36afc966.wav,unknown
-clip_f36b33b65.wav,off
+clip_f36b33b65.wav,unknown
 clip_f36b6e9f6.wav,unknown
 clip_f36bb4188.wav,right
 clip_f36d193ef.wav,go
@@ -150907,7 +150907,7 @@ clip_f386a3c07.wav,unknown
 clip_f387a3845.wav,unknown
 clip_f387b8128.wav,no
 clip_f387cf342.wav,stop
-clip_f387fac0a.wav,yes
+clip_f387fac0a.wav,unknown
 clip_f387fdd20.wav,unknown
 clip_f3882ec4f.wav,off
 clip_f3887ee0c.wav,down
@@ -151154,7 +151154,7 @@ clip_f3fa761fa.wav,stop
 clip_f3faed8d7.wav,unknown
 clip_f3faf58b8.wav,unknown
 clip_f3fb22f99.wav,up
-clip_f3fb6b455.wav,no
+clip_f3fb6b455.wav,unknown
 clip_f3fb937a5.wav,unknown
 clip_f3fcc4213.wav,unknown
 clip_f3fcfb979.wav,go
@@ -151277,7 +151277,7 @@ clip_f42c7e3ef.wav,unknown
 clip_f42cb7eb2.wav,unknown
 clip_f42d5e81e.wav,unknown
 clip_f42d99e61.wav,unknown
-clip_f42db881a.wav,down
+clip_f42db881a.wav,unknown
 clip_f42e4032e.wav,unknown
 clip_f42e4843a.wav,on
 clip_f42fea5b3.wav,left
@@ -151628,7 +151628,7 @@ clip_f4c5e3414.wav,off
 clip_f4c6c643d.wav,unknown
 clip_f4c6d71d6.wav,unknown
 clip_f4c72f1c3.wav,stop
-clip_f4c74ef25.wav,off
+clip_f4c74ef25.wav,unknown
 clip_f4c8be8ee.wav,no
 clip_f4c9bcdab.wav,unknown
 clip_f4c9be37c.wav,unknown
@@ -152093,7 +152093,7 @@ clip_f586f0cb0.wav,up
 clip_f586fea92.wav,unknown
 clip_f5879076c.wav,unknown
 clip_f587cda0c.wav,silence
-clip_f587ef33d.wav,off
+clip_f587ef33d.wav,unknown
 clip_f58843c6c.wav,unknown
 clip_f58982238.wav,unknown
 clip_f589b68ae.wav,unknown
@@ -152153,7 +152153,7 @@ clip_f59dcf417.wav,unknown
 clip_f59e14ac3.wav,unknown
 clip_f59e8b80b.wav,no
 clip_f59ebe794.wav,unknown
-clip_f59f0749d.wav,up
+clip_f59f0749d.wav,unknown
 clip_f59fb9e7f.wav,unknown
 clip_f59fcfadb.wav,off
 clip_f59ffdba4.wav,unknown
@@ -152736,7 +152736,7 @@ clip_f69a0ac81.wav,unknown
 clip_f69a2a37d.wav,unknown
 clip_f69a35aa1.wav,off
 clip_f69a3f86d.wav,unknown
-clip_f69a79218.wav,yes
+clip_f69a79218.wav,unknown
 clip_f69afe126.wav,left
 clip_f69b3ab22.wav,down
 clip_f69c13946.wav,go
@@ -154552,7 +154552,7 @@ clip_f986073ec.wav,unknown
 clip_f9869e927.wav,left
 clip_f98728bf7.wav,unknown
 clip_f98741fbe.wav,silence
-clip_f98761f61.wav,left
+clip_f98761f61.wav,unknown
 clip_f987b9036.wav,unknown
 clip_f988c1f23.wav,off
 clip_f9895277a.wav,unknown
@@ -155368,7 +155368,7 @@ clip_fad6d3cd9.wav,right
 clip_fad7b0e95.wav,unknown
 clip_fad81ea9d.wav,unknown
 clip_fad8ffef0.wav,no
-clip_fad95aec9.wav,left
+clip_fad95aec9.wav,unknown
 clip_fada7faf2.wav,unknown
 clip_fadb75f4c.wav,down
 clip_fadc4aa2f.wav,no
@@ -155757,7 +155757,7 @@ clip_fb6c3ef80.wav,off
 clip_fb6c7ddcf.wav,go
 clip_fb6df75b4.wav,silence
 clip_fb6e2061f.wav,unknown
-clip_fb6eb5ab2.wav,silence
+clip_fb6eb5ab2.wav,unknown
 clip_fb6edeb1b.wav,unknown
 clip_fb7028bdf.wav,unknown
 clip_fb705d819.wav,unknown
@@ -155988,7 +155988,7 @@ clip_fbcddc5aa.wav,unknown
 clip_fbce5b3ce.wav,unknown
 clip_fbce8c7bf.wav,unknown
 clip_fbcea0b76.wav,stop
-clip_fbcebd597.wav,go
+clip_fbcebd597.wav,unknown
 clip_fbcf3b5ac.wav,unknown
 clip_fbcf46fcc.wav,off
 clip_fbcfc144d.wav,off
@@ -156979,7 +156979,7 @@ clip_fd6c23929.wav,off
 clip_fd6d1274c.wav,unknown
 clip_fd6da9153.wav,stop
 clip_fd6dc11de.wav,unknown
-clip_fd6e172bf.wav,go
+clip_fd6e172bf.wav,unknown
 clip_fd6e4e4bf.wav,unknown
 clip_fd6e5fa06.wav,unknown
 clip_fd6e6b523.wav,unknown
@@ -158476,7 +158476,7 @@ clip_ffe1d0692.wav,on
 clip_ffe1e7d4e.wav,unknown
 clip_ffe20c97b.wav,unknown
 clip_ffe41873c.wav,up
-clip_ffe458ec0.wav,silence
+clip_ffe458ec0.wav,unknown
 clip_ffe49ff01.wav,off
 clip_ffe50ac33.wav,stop
 clip_ffe51fc9a.wav,unknown
