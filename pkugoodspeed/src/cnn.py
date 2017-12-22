@@ -248,14 +248,17 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    optimizer = SGD(0.004)
+    N_epoch = 300
+    learning_rate = 0.01
+    decay_rate = 7.0/1000
+    momentum = 0.9
+    optimizer = SGD(lr=learning_rate, momentum=momentum, decay=decay_rate, nesterov=False)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
     model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
     
     ### Train the model
     print("TRAINING BEGINS!")
-    N_epoch = 300
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
