@@ -54,7 +54,7 @@ hyper_dropout1 = 0.36
 hyper_dropout2 = 0.48
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.56
-hyper_dropout5 = 0.6
+hyper_dropout5 = 0.7
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -254,7 +254,7 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(1000))
+    model.add(Dense(1200))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
