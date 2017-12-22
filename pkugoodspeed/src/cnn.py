@@ -266,7 +266,7 @@ if __name__ == '__main__':
     N_epoch = 5
     learning_rate = 0.01
     decay_rate = 7.0/1000
-    momentum = 0.9
+    momentum = 0.0
     optimizer = SGD(lr=learning_rate, momentum=momentum, decay=decay_rate, nesterov=False)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
