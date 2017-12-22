@@ -224,28 +224,28 @@ if __name__ == '__main__':
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
-    model.add(Conv2D(100, kernel_size = (9, 9), padding = 'same'))
+    model.add(Conv2D(1, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.02))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
-    model.add(Conv2D(200, kernel_size = (7, 7), padding = 'same'))
+    model.add(Conv2D(2, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
-    model.add(Conv2D(400, kernel_size = (5, 5), padding = 'same'))
+    model.add(Conv2D(4, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
-    model.add(Conv2D(600, kernel_size = (3, 3), padding = 'same'))
+    model.add(Conv2D(6, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.005))
     #model.add(BatchNormalization())
@@ -254,7 +254,7 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(1200))
+    model.add(Dense(12))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
@@ -266,7 +266,7 @@ if __name__ == '__main__':
     N_epoch = 300
     learning_rate = 0.01
     decay_rate = 0.01
-    momentum = 0.1
+    momentum = 0.
     optimizer = SGD(lr=learning_rate, momentum=momentum, decay=decay_rate, nesterov=False)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
@@ -277,6 +277,7 @@ if __name__ == '__main__':
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
+    print("LEARNING RATE: ", model.optimizer.lr)
     print("FIRST SECTION TRAINING ENDS!")
     train_accu = list(res.history['acc'])
     train_loss = list(res.history['loss'])
