@@ -33,6 +33,7 @@ mpl.rcParams['ytick.minor.size'] = 2
 from sklearn.utils import shuffle
 
 # Keras
+from keras import backend as K
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
@@ -263,7 +264,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 300
+    N_epoch = 200
     learning_rate = 0.01
     decay_rate = 0.01
     momentum = 0.
@@ -277,7 +278,7 @@ if __name__ == '__main__':
     res = model.fit(train_x, train_y, batch_size = 128, epochs = N_epoch, 
     verbose = 1, validation_data = (test_x, test_y), 
     class_weight = cls_wts)
-    print("LEARNING RATE: ", model.optimizer.lr)
+    print("LEARNING RATE: ", K.eval(model.optimizer.lr))
     print("FIRST SECTION TRAINING ENDS!")
     train_accu = list(res.history['acc'])
     train_loss = list(res.history['loss'])
