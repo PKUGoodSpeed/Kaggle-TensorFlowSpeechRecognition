@@ -48,8 +48,8 @@ hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.5
-hyper_dropout0 = 0.1
-hyper_dropout1 = 0.2
+hyper_dropout0 = 0.17
+hyper_dropout1 = 0.36
 hyper_dropout2 = 0.48
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.56
@@ -137,9 +137,10 @@ def comp_cls_wts(y, pwr = 0.2):
 def getPrediction(model, path, mp):
     files = os.listdir(path)
     files.sort()
-    dic = {'fname':[], 'label':[] }
+    dic = {'fname':[], 'label':[], 'prob':[] }
     batch_size = 10000
     y = []
+    pro = []
     N = len(files)
     for i in range(0, N, batch_size):
         fnames = files[i: min(i+batch_size, N)]
@@ -156,11 +157,14 @@ def getPrediction(model, path, mp):
         nx, ny, nz = np.shape(x)
         x = x.reshape(nx, ny, nz, 1)
         ty = model.predict_classes(x, batch_size=128)
-        print "\n\n"
-        for p in ty:
+        sy = model.predict(x, batch_size=128)
+        for j,p in enumerate(ty):
             y.append(mp[p])
+            pro.append(1.*sy[j][p]/np.sum(sy[j]))
+        print "\n\n"
     dic['fname'] = files
     dic['label'] = y
+    dic['prob'] = pro
     df = pd.DataFrame(dic)
     return df
 
@@ -218,37 +222,47 @@ if __name__ == '__main__':
     print("CONSTRUCTING MODEL!")
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    model.add(Conv2D(72, kernel_size = (9, 9), padding = 'same'))
+    
+    model.add(Conv2D(100, kernel_size = (9, 9), padding = 'same'))
+    model.add(LeakyReLU(alpha=0.01))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     #model.add(BatchNormalization())
-    model.add(Activation('relu'))
+    #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
-    model.add(Conv2D(144, kernel_size = (7, 7), padding = 'same'))
+    
+    model.add(Conv2D(200, kernel_size = (7, 7), padding = 'same'))
+    model.add(LeakyReLU(alpha=0.01))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     #model.add(BatchNormalization())
-    model.add(Activation('relu'))
+    #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
-    model.add(Conv2D(288, kernel_size = (5, 5), padding = 'same'))
+    
+    model.add(Conv2D(400, kernel_size = (5, 5), padding = 'same'))
+    model.add(LeakyReLU(alpha=0.02))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     #model.add(BatchNormalization())
-    model.add(Activation('relu'))
+    #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
-    model.add(Conv2D(576, kernel_size = (3, 3), padding = 'same'))
+    
+    model.add(Conv2D(600, kernel_size = (3, 3), padding = 'same'))
+    model.add(LeakyReLU(alpha=0.01))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     #model.add(BatchNormalization())
-    model.add(Activation('relu'))
+    #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
+    
     model.add(Flatten())
+    
     model.add(Dense(1024))
     #model.add(BatchNormalization())
-    model.add(Activation('relu'))
+    model.add(LeakyReLU(alpha=0.01))
     model.add(Dropout(hyper_dropout5))
     model.add(Dense(n_cls, activation = 'softmax'))
     model.summary()
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 300
+    N_epoch = 1
     learning_rate = 0.01
     decay_rate = 7.0/1000
     momentum = 0.9
@@ -271,7 +285,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[200:]
+    statics = test_accu[1:]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -279,7 +293,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[200:]
+    statics = train_accu[1:]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
