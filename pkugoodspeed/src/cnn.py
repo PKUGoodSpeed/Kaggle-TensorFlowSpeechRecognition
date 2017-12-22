@@ -263,10 +263,10 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 5
+    N_epoch = 300
     learning_rate = 0.01
-    decay_rate = 7.0/1000
-    momentum = 0.0
+    decay_rate = 0.01
+    momentum = 0.1
     optimizer = SGD(lr=learning_rate, momentum=momentum, decay=decay_rate, nesterov=False)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
@@ -286,7 +286,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[0:]
+    statics = test_accu[200:]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -294,7 +294,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[0:]
+    statics = train_accu[200:]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
