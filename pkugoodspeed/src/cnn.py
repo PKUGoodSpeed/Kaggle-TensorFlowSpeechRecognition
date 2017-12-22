@@ -40,6 +40,7 @@ from keras.layers import Flatten, Conv2D, MaxPooling2D
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
 from keras.layers.normalization import BatchNormalization
+from keras.layers.advanced_activations import LeakyReLU, PReLU
 
 hyper_pwr = 0.5
 hyper_train_ratio = 0.9
