@@ -225,36 +225,36 @@ if __name__ == '__main__':
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
     model.add(Conv2D(100, kernel_size = (9, 9), padding = 'same'))
-    model.add(LeakyReLU(alpha=0.02))
     model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(LeakyReLU(alpha=0.02))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
     model.add(Conv2D(200, kernel_size = (7, 7), padding = 'same'))
-    model.add(LeakyReLU(alpha=0.01))
     model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
     model.add(Conv2D(400, kernel_size = (5, 5), padding = 'same'))
-    model.add(LeakyReLU(alpha=0.01))
     model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
     model.add(Conv2D(600, kernel_size = (3, 3), padding = 'same'))
-    model.add(LeakyReLU(alpha=0.005))
     model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(LeakyReLU(alpha=0.005))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
     
     model.add(Flatten())
     
-    model.add(Dense(800))
+    model.add(Dense(1000))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
@@ -263,7 +263,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 3
+    N_epoch = 5
     learning_rate = 0.01
     decay_rate = 7.0/1000
     momentum = 0.9
