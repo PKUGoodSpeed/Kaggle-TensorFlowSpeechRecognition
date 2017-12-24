@@ -50,11 +50,11 @@ hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.5
-hyper_dropout0 = 0.17
-hyper_dropout1 = 0.36
-hyper_dropout2 = 0.48
+hyper_dropout0 = 0.2
+hyper_dropout1 = 0.6
+hyper_dropout2 = 0.6
 hyper_dropout3 = 0.64
-hyper_dropout4 = 0.56
+hyper_dropout4 = 0.6
 hyper_dropout5 = 0.7
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
@@ -248,7 +248,7 @@ if __name__ == '__main__':
     
     model.add(Conv2D(600, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.005))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
