@@ -55,7 +55,7 @@ hyper_dropout1 = 0.6
 hyper_dropout2 = 0.6
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.6
-hyper_dropout5 = 0.5
+hyper_dropout5 = 0.7
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -255,11 +255,11 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(256))
+    model.add(Dense(320))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
-    model.add(Dense(64))
+    model.add(Dense(80))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
@@ -268,8 +268,8 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 600
-    learning_rate = 0.002
+    N_epoch = 700
+    learning_rate = 0.001
     decay_rate = 0.01
     momentum = 0.9
     optimizer = SGD(learning_rate)
@@ -292,7 +292,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[200:]
+    statics = test_accu[500:]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -300,7 +300,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[200:]
+    statics = train_accu[500:]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
