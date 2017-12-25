@@ -255,11 +255,11 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(1200))
+    model.add(Dense(256))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
-    model.add(Dense(240))
+    model.add(Dense(64))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
