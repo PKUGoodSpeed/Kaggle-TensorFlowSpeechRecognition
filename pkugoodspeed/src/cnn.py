@@ -259,7 +259,7 @@ if __name__ == '__main__':
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
-    model.add(Dense(300))
+    model.add(Dense(240))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
