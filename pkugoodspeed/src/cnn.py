@@ -268,7 +268,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 600
+    N_epoch = 700
     learning_rate = 0.0017
     decay_rate = 0.01
     momentum = 0.9
