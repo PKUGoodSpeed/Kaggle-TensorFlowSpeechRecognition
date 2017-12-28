@@ -246,14 +246,13 @@ if __name__ == '__main__':
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
-    '''
-    model.add(Conv2D(720, kernel_size = (3, 3), padding = 'same'))
+    model.add(Conv2D(256, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     #model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
-    '''
+    
     
     model.add(Flatten())
     
@@ -267,8 +266,8 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 550
-    learning_rate = 0.003
+    N_epoch = 600
+    learning_rate = 0.002
     decay_rate = 0.01
     momentum = 0.9
     optimizer = SGD(learning_rate)
