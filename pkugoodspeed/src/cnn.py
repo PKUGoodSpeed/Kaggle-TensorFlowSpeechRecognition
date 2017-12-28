@@ -43,19 +43,19 @@ from keras.utils import np_utils, plot_model
 from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 
-hyper_pwr = 0.5
+hyper_pwr = 0.6
 hyper_train_ratio = 0.9
 hyper_n = 25
 hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
-hyper_delta = 0.5
+hyper_delta = 0.3
 hyper_dropout0 = 0.2
-hyper_dropout1 = 0.6
-hyper_dropout2 = 0.6
-hyper_dropout3 = 0.64
-hyper_dropout4 = 0.6
-hyper_dropout5 = 0.7
+hyper_dropout1 = 0.5
+hyper_dropout2 = 0.5
+hyper_dropout3 = 0.5
+hyper_dropout4 = 0.5
+hyper_dropout5 = 0.5
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -225,51 +225,50 @@ if __name__ == '__main__':
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
-    model.add(Conv2D(120, kernel_size = (9, 9), padding = 'same'))
+    model.add(Conv2D(32, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.02))
+    #model.add(LeakyReLU(alpha=0.02))
     #model.add(BatchNormalization())
-    #model.add(Activation('relu'))
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
-    model.add(Conv2D(240, kernel_size = (7, 7), padding = 'same'))
+    model.add(Conv2D(64, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
+    #model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
-    #model.add(Activation('relu'))
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
-    model.add(Conv2D(480, kernel_size = (5, 5), padding = 'same'))
+    model.add(Conv2D(128, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
+    #model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
-    #model.add(Activation('relu'))
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
+    '''
     model.add(Conv2D(720, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
+    #model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
-    #model.add(Activation('relu'))
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
+    '''
     
     model.add(Flatten())
     
-    model.add(Dense(500))
+    model.add(Dense(256))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
-    model.add(Dense(100))
-    #model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout5))
+    
     model.add(Dense(n_cls, activation = 'softmax'))
     model.summary()
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 600
-    learning_rate = 0.0015
+    N_epoch = 550
+    learning_rate = 0.003
     decay_rate = 0.01
     momentum = 0.9
     optimizer = SGD(learning_rate)
