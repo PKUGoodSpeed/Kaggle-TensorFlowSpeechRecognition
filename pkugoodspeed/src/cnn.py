@@ -255,11 +255,11 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(320))
+    model.add(Dense(500))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
-    model.add(Dense(80))
+    model.add(Dense(100))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
@@ -268,8 +268,8 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 700
-    learning_rate = 0.001
+    N_epoch = 600
+    learning_rate = 0.0015
     decay_rate = 0.01
     momentum = 0.9
     optimizer = SGD(learning_rate)
