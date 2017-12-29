@@ -273,8 +273,8 @@ if __name__ == '__main__':
     ''' First training section '''
     ### Compile the model
     N_epoch = 450
-    learning_rate = 0.17
-    decay_rate = 1./1.7
+    learning_rate = 0.06
+    decay_rate = 1./1.5
     optimizer = SGD(learning_rate)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
