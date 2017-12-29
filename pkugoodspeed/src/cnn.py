@@ -54,7 +54,7 @@ hyper_delta = 0.1
 hyper_dropout0 = 0.2
 hyper_dropout1 = 0.4
 hyper_dropout2 = 0.7
-hyper_dropout3 = 0.7
+hyper_dropout3 = 0.75
 hyper_dropout4 = 0.6
 hyper_dropout5 = 0.7
 
