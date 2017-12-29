@@ -44,7 +44,7 @@ from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.callbacks import LearningRateScheduler
 
-hyper_pwr = 0.56
+hyper_pwr = 0.5
 hyper_train_ratio = 0.9
 hyper_n = 25
 hyper_m = 15
@@ -52,11 +52,11 @@ hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.3
 hyper_dropout0 = 0.2
-hyper_dropout1 = 0.6
-hyper_dropout2 = 0.7
-hyper_dropout3 = 0.7
-hyper_dropout4 = 0.6
-hyper_dropout5 = 0.64
+hyper_dropout1 = 0.4
+hyper_dropout2 = 0.6
+hyper_dropout3 = 0.6
+hyper_dropout4 = 0.4
+hyper_dropout5 = 0.7
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -226,28 +226,28 @@ if __name__ == '__main__':
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
-    model.add(Conv2D(120, kernel_size = (6, 6), padding = 'same'))
+    model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
-    model.add(Conv2D(240, kernel_size = (5, 5), padding = 'same'))
+    model.add(Conv2D(128, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
-    model.add(Conv2D(480, kernel_size = (4, 4), padding = 'same'))
+    model.add(Conv2D(256, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
-    model.add(Conv2D(720, kernel_size = (3, 3), padding = 'same'))
+    model.add(Conv2D(512, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
@@ -257,7 +257,7 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(360))
+    model.add(Dense(1024))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
