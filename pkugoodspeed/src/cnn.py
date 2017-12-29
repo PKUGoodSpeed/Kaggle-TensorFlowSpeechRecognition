@@ -52,11 +52,11 @@ hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.3
 hyper_dropout0 = 0.2
-hyper_dropout1 = 0.5
-hyper_dropout2 = 0.5
-hyper_dropout3 = 0.5
-hyper_dropout4 = 0.5
-hyper_dropout5 = 0.5
+hyper_dropout1 = 0.6
+hyper_dropout2 = 0.7
+hyper_dropout3 = 0.7
+hyper_dropout4 = 0.6
+hyper_dropout5 = 0.6
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -226,28 +226,28 @@ if __name__ == '__main__':
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
-    model.add(Conv2D(1, kernel_size = (9, 9), padding = 'same'))
+    model.add(Conv2D(100, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     #model.add(LeakyReLU(alpha=0.02))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
-    model.add(Conv2D(1, kernel_size = (7, 7), padding = 'same'))
+    model.add(Conv2D(200, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     #model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
-    model.add(Conv2D(1, kernel_size = (5, 5), padding = 'same'))
+    model.add(Conv2D(400, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     #model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
-    model.add(Conv2D(1, kernel_size = (3, 3), padding = 'same'))
+    model.add(Conv2D(600, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     #model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
@@ -257,7 +257,12 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(256))
+    model.add(Dense(512))
+    #model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dropout(hyper_dropout5))
+    
+    model.add(Dense(96))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
@@ -267,8 +272,8 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 65
-    learning_rate = 0.1
+    N_epoch = 450
+    learning_rate = 0.17
     decay_rate = 1./1.7
     optimizer = SGD(learning_rate)
     loss = 'categorical_crossentropy'
@@ -282,7 +287,7 @@ if __name__ == '__main__':
     def scheduler(epoch):
         global learning_rate
         global decay_rate
-        if epoch%7 == 0:
+        if epoch%50 == 0:
             learning_rate *= decay_rate
             print("CURRENT LEARNING RATE = ", learning_rate)
         return learning_rate
@@ -301,7 +306,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[60:]
+    statics = test_accu[400:]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -309,7 +314,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[60:]
+    statics = train_accu[400:]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
