@@ -257,12 +257,12 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(512))
+    model.add(Dense(320))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     
-    model.add(Dense(96))
+    model.add(Dense(80))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
@@ -272,9 +272,9 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 450
-    learning_rate = 0.06
-    decay_rate = 1./1.5
+    N_epoch = 480
+    learning_rate = 0.025
+    decay_rate = 1./1.25
     optimizer = SGD(learning_rate)
     loss = 'categorical_crossentropy'
     metrics = ['accuracy']
@@ -287,7 +287,7 @@ if __name__ == '__main__':
     def scheduler(epoch):
         global learning_rate
         global decay_rate
-        if epoch%50 == 0:
+        if epoch%40 == 0:
             learning_rate *= decay_rate
             print("CURRENT LEARNING RATE = ", learning_rate)
         return learning_rate
