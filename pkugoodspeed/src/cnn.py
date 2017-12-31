@@ -44,18 +44,18 @@ from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.callbacks import LearningRateScheduler
 
-hyper_pwr = 0.3
+hyper_pwr = 0.5
 hyper_train_ratio = 0.9
 hyper_n = 25
 hyper_m = 15
 hyper_NR = 208
 hyper_NC = 112
-hyper_delta = 0.1
+hyper_delta = 0.3
 hyper_dropout0 = 0.2
 hyper_dropout1 = 0.4
-hyper_dropout2 = 0.7
-hyper_dropout3 = 0.75
-hyper_dropout4 = 0.6
+hyper_dropout2 = 0.6
+hyper_dropout3 = 0.6
+hyper_dropout4 = 0.4
 hyper_dropout5 = 0.7
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
@@ -228,28 +228,28 @@ if __name__ == '__main__':
     
     model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
+    model.add(LeakyReLU(alpha=0.3))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
     model.add(Conv2D(128, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
+    model.add(LeakyReLU(alpha=0.2))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
     model.add(Conv2D(256, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
+    model.add(LeakyReLU(alpha=0.1))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
     model.add(Conv2D(512, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
+    model.add(LeakyReLU(alpha=0.1))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
@@ -267,7 +267,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 420
+    N_epoch = 480
     learning_rate = 0.025
     decay_rate = 1./1.25
     optimizer = SGD(learning_rate)
@@ -282,7 +282,7 @@ if __name__ == '__main__':
     def scheduler(epoch):
         global learning_rate
         global decay_rate
-        if epoch%35 == 0:
+        if epoch%40 == 0:
             learning_rate *= decay_rate
             print("CURRENT LEARNING RATE = ", learning_rate)
         return learning_rate
