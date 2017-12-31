@@ -52,10 +52,10 @@ hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.3
 hyper_dropout0 = 0.2
-hyper_dropout1 = 0.5
+hyper_dropout1 = 0.4
 hyper_dropout2 = 0.6
 hyper_dropout3 = 0.6
-hyper_dropout4 = 0.5
+hyper_dropout4 = 0.4
 hyper_dropout5 = 0.7
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
@@ -228,28 +228,28 @@ if __name__ == '__main__':
     
     model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.3))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
     model.add(Conv2D(128, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.2))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
     model.add(Conv2D(256, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.1))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
     model.add(Conv2D(512, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.1))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
