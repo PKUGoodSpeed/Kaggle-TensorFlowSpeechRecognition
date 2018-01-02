@@ -224,7 +224,9 @@ if __name__ == '__main__':
     ### Construct the model
     print("CONSTRUCTING MODEL!")
     model = Sequential()
-    model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
+    model.add(Conv2D(32, kernel_size = (11, 11), input_shape = (img_r, img_c, 1), padding = 'same'))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(LeakyReLU(alpha=0.01))
     
     model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
@@ -235,9 +237,9 @@ if __name__ == '__main__':
     
     model.add(Conv2D(128, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
+    #model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
-    #model.add(Activation('relu'))
+    model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
     model.add(Conv2D(256, kernel_size = (5, 5), padding = 'same'))
