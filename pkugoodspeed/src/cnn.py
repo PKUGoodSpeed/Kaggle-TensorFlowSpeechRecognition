@@ -55,7 +55,7 @@ hyper_dropout0 = 0.2
 hyper_dropout1 = 0.45
 hyper_dropout2 = 0.6
 hyper_dropout3 = 0.6
-hyper_dropout4 = 0.45
+hyper_dropout4 = 0.6
 hyper_dropout5 = 0.7
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
