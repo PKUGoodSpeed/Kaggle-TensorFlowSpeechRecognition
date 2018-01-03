@@ -69,7 +69,7 @@ def load_audio_data(path, ltoi):
     raw = {'x': [], 'y': [], 'label':[]}
     for i, folder in enumerate(os.listdir(path)):
         for filename in os.listdir(path + '/' + folder):
-            rate, sample = wavfile.read(data_dir + '/' + folder + '/' + filename)
+            rate, sample = wavfile.read(path + '/' + folder + '/' + filename)
             assert(rate == 16000)
             if folder == 'silence':
                 length = len(sample)
