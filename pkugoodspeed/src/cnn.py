@@ -46,10 +46,10 @@ from keras.callbacks import LearningRateScheduler
 
 hyper_pwr = 0.3
 hyper_train_ratio = 0.88
-hyper_n = 25
-hyper_m = 15
-hyper_NR = 208
-hyper_NC = 112
+hyper_n = 20
+hyper_m = 6
+hyper_NR = 160
+hyper_NC = 80
 hyper_delta = 0.3
 hyper_dropout0 = 0.2
 hyper_dropout1 = 0.36
