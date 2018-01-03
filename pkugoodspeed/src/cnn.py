@@ -253,8 +253,10 @@ if __name__ == '__main__':
     print("PROCESSING FFT!")
     train_x = fft_convert(tr_x, rate = 16000, n = hyper_n, m = hyper_m, 
     NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
+    del tr_x
     test_x = fft_convert(ts_x, rate = 16000, n = hyper_n, m = hyper_m, 
     NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
+    del ts_x
     img_r, img_c = np.shape(train_x)[1:]
     train_x = train_x.reshape(len(train_x), img_r, img_c, 1)
     test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
