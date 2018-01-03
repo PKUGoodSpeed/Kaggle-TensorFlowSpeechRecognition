@@ -356,7 +356,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[]
+    statics = test_accu[:]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -364,7 +364,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[]
+    statics = train_accu[:]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
