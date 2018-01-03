@@ -52,12 +52,12 @@ hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.3
 hyper_dropout0 = 0.2
-hyper_dropout1 = 0.32
+hyper_dropout1 = 0.36
 hyper_dropout2 = 0.6
 hyper_dropout3 = 0.6
 hyper_dropout4 = 0.4
 hyper_dropout5 = 0.7
-N_NOISE = 500
+N_NOISE = 600
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
