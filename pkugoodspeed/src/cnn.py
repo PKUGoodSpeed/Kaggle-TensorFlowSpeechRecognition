@@ -189,9 +189,12 @@ if __name__ == '__main__':
         label2idx[lab] = i
         idmap[i] = lab
     raw_df = load_audio_data(data_dir, label2idx)
-    print raw_df[:30]
+    raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset', label2idx), ignore_index=True)
+    raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
     print label2idx
     print idmap
+    for lab in TAGET_LABELS:
+        print lab, len(raw_df[raw_df.label == lab])
     
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
