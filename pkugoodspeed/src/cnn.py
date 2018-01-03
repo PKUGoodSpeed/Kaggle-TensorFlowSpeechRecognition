@@ -246,29 +246,27 @@ if __name__ == '__main__':
     
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
-    tr_x, tr_y, ts_x, ts_y = train_test_split(raw_df, ratio=hyper_train_ratio)
+    train_x, train_y, test_x, test_y = train_test_split(raw_df, ratio=hyper_train_ratio)
     del raw_df
     
     ## Preprocessing x data
     print("PROCESSING FFT!")
-    train_x = fft_convert(tr_x, rate = 16000, n = hyper_n, m = hyper_m, 
+    train_x = fft_convert(train_x, rate = 16000, n = hyper_n, m = hyper_m, 
     NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
-    del tr_x
-    test_x = fft_convert(ts_x, rate = 16000, n = hyper_n, m = hyper_m, 
+    test_x = fft_convert(test_x, rate = 16000, n = hyper_n, m = hyper_m, 
     NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
-    del ts_x
     img_r, img_c = np.shape(train_x)[1:]
     train_x = train_x.reshape(len(train_x), img_r, img_c, 1)
     test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
     
     ## Compute class weights
-    cls_wts = comp_cls_wts(tr_y, pwr = hyper_pwr)
+    cls_wts = comp_cls_wts(train_y, pwr = hyper_pwr)
     print cls_wts
     
     ## Preprocessing y data
     n_cls = len(TAGET_LABELS)
-    train_y = np_utils.to_categorical(tr_y, n_cls)
-    test_y = np_utils.to_categorical(ts_y, n_cls)
+    train_y = np_utils.to_categorical(train_y, n_cls)
+    test_y = np_utils.to_categorical(test_y, n_cls)
     print("INPUT SHAPES:")
     print("train_x: ", np.shape(train_x))
     print("train_y: ", np.shape(train_y))
