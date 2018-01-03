@@ -118,6 +118,7 @@ def _gen_colored_noise(spectral_shape):
     return normalize(np.fft.irfft( flat_spectrum * spectral_shape).real)
     
 def generate_noise_data():
+    spectrum_len = samples_to_generate // 2 + 1
     lab = ['silence']*(5*N_NOISE)
     y = [10]*(5*N_NOISE)
     x = []
