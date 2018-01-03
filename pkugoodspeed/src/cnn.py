@@ -52,7 +52,7 @@ hyper_NR = 208
 hyper_NC = 112
 hyper_delta = 0.3
 hyper_dropout0 = 0.2
-hyper_dropout1 = 0.4
+hyper_dropout1 = 0.32
 hyper_dropout2 = 0.6
 hyper_dropout3 = 0.6
 hyper_dropout4 = 0.4
@@ -222,13 +222,14 @@ if __name__ == '__main__':
         os.system('rm {0}/silence/README.md'.format(data_dir))
     
     ## Loading raw data Frame
-    print("LOADING RAW DATA!")
+    print("LOADING RAW DATA...")
     label2idx = {}
     idmap = {}
     for i,lab in enumerate(TAGET_LABELS):
         label2idx[lab] = i
         idmap[i] = lab
     raw_df = load_audio_data(data_dir, label2idx)
+    print "LOADING RAW DATA FINISHED!"
     print "LOADING NEW DATA..."
     raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset', label2idx), ignore_index=True)
     print "LOADING NEW DATA FINISHED!"
@@ -317,7 +318,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 480
+    N_epoch = 2
     learning_rate = 0.025
     decay_rate = 1./1.25
     optimizer = SGD(learning_rate)
@@ -355,7 +356,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[400:]
+    statics = test_accu[]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -363,7 +364,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[400:]
+    statics = train_accu[]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
