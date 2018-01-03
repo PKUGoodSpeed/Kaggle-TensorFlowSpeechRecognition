@@ -46,13 +46,13 @@ from keras.callbacks import LearningRateScheduler
 
 hyper_pwr = 0.3
 hyper_train_ratio = 0.9
-hyper_n = 30
+hyper_n = 25
 hyper_m = 15
-hyper_NR = 256
-hyper_NC = 80
+hyper_NR = 200
+hyper_NC = 96
 hyper_delta = 0.3
 hyper_dropout0 = 0.2
-hyper_dropout1 = 0.45
+hyper_dropout1 = 0.2
 hyper_dropout2 = 0.6
 hyper_dropout3 = 0.6
 hyper_dropout4 = 0.6
@@ -224,14 +224,11 @@ if __name__ == '__main__':
     ### Construct the model
     print("CONSTRUCTING MODEL!")
     model = Sequential()
-    model.add(Conv2D(32, kernel_size = (11, 11), input_shape = (img_r, img_c, 1), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
-    model.add(Dropout(hyper_dropout0))
+    model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
     model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
+    model.add(LeakyReLU(alpha=0.02))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
@@ -261,6 +258,11 @@ if __name__ == '__main__':
     model.add(Flatten())
     
     model.add(Dense(1024))
+    #model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dropout(hyper_dropout5))
+    
+    model.add(Dense(128))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
