@@ -57,6 +57,7 @@ hyper_dropout2 = 0.6
 hyper_dropout3 = 0.6
 hyper_dropout4 = 0.4
 hyper_dropout5 = 0.7
+N_NOISE = 600
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -88,6 +89,45 @@ def load_audio_data(path, ltoi):
                 raw['y'].append(ltoi[label])
                 raw['label'].append(label)
     return pd.DataFrame(raw)
+    
+# Generating noise
+np.random.seed(1337)
+sample_rate = 16000
+samples_to_generate = 16000
+def to_16bit(samples):
+    # assume +1 corresponds to +32767 and -1 corresponds to -32767
+    # (note that we don't use -32768)
+    # 
+    # does not convert the samples to int16 for the moment
+    return np.clip(32767 * samples, -32767, +32767)
+
+def normalize(samples):
+    """normalizes a sample to unit standard deviation (assuming the mean is zero)"""
+    std = samples.std()
+    if std > 0:
+        return samples / std
+    else:
+        return samples
+
+def _gen_colored_noise(spectral_shape):
+    # helper function generating a noise spectrum
+    # and applying a shape to it
+    flat_spectrum = np.random.normal(size = samples_to_generate // 2 + 1) + \
+            1j * np.random.normal(size = samples_to_generate // 2 + 1)
+
+    return normalize(np.fft.irfft( flat_spectrum * spectral_shape).real)
+    
+def generate_noise_data():
+    lab = ['silence']*(5*N_NOISE)
+    y = [10]*(5*N_NOISE)
+    x = []
+    for i in range(N_NOISE):
+        x.append(np.random.normal(size = samples_to_generate))
+        x.append(_gen_colored_noise(1. / (np.sqrt(np.arange(spectrum_len) + 1.))))
+        x.append(_gen_colored_noise(np.sqrt(np.arange(spectrum_len))))
+        x.append(_gen_colored_noise(1. / (np.arange(spectrum_len) + 1)))
+        x.append(_gen_colored_noise(np.arange(spectrum_len)))
+    return pd.DataFrame({'x': x, 'y': y, 'label': lab})
 
 # Split train, test sets, and also return label_map
 def train_test_split(df, ratio = 0.7):
@@ -189,8 +229,14 @@ if __name__ == '__main__':
         label2idx[lab] = i
         idmap[i] = lab
     raw_df = load_audio_data(data_dir, label2idx)
+    print "LOADING NEW DATA..."
     raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset', label2idx), ignore_index=True)
-    raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
+    print "LOADING NEW DATA FINISHED!"
+    print "LOADING NOISE DATA..."
+    raw_df = raw_df.append(generate_noise_data(), ignore_index=True)
+    print "LOADING NOISE DATA FINISHED!"
+    ## print "LOADING NOISY DATA..."
+    ## raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
     print label2idx
     print idmap
     for lab in TAGET_LABELS:
@@ -199,6 +245,7 @@ if __name__ == '__main__':
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
     tr_x, tr_y, ts_x, ts_y = train_test_split(raw_df, ratio=hyper_train_ratio)
+    del raw_df
     
     ## Preprocessing x data
     print("PROCESSING FFT!")
@@ -300,6 +347,10 @@ if __name__ == '__main__':
     train_loss = list(res.history['loss'])
     test_accu = list(res.history['val_acc'])
     test_loss = list(res.history['val_loss'])
+    del train_x
+    del train_y
+    del test_x
+    del test_y
     
     ## Plot results
     steps = [i for i in range(len(test_accu))]
