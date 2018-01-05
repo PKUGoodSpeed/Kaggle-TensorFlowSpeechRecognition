@@ -358,7 +358,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 480
+    N_epoch = 4
     learning_rate = 0.025
     decay_rate = 1./1.25
     optimizer = SGD(learning_rate)
@@ -396,7 +396,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[400:]
+    statics = test_accu
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -404,7 +404,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[400:]
+    statics = train_accu
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
