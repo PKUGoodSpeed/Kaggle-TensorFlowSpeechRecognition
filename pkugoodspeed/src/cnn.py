@@ -44,6 +44,9 @@ from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.callbacks import LearningRateScheduler
 
+## time
+import time
+
 hyper_pwr = 0.3
 hyper_train_ratio = 0.88
 hyper_n = 20
@@ -57,7 +60,7 @@ hyper_dropout2 = 0.64
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.7
-N_NOISE = 600
+N_NOISE = 800
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -248,6 +251,9 @@ if __name__ == '__main__':
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
     train_x, train_y, test_x, test_y = train_test_split(raw_df, ratio=hyper_train_ratio)
     del raw_df
+    
+    print "SLEEP FOR 60 SEC..."
+    time.sleep(60)
     
     ## Preprocessing x data
     print("PROCESSING FFT!")
