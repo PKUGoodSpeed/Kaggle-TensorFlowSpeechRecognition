@@ -222,6 +222,7 @@ def getPrediction(model, path, mp):
             x.append(sample)
         x = fft_convert(x, rate = 16000, n = hyper_n, m = hyper_m, 
         NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
+        x = np.array(x)
         nx, ny, nz = np.shape(x)
         x = x.reshape(nx, ny, nz, 1)
         ty = model.predict_classes(x, batch_size=128)
