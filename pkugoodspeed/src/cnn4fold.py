@@ -255,7 +255,6 @@ if __name__ == '__main__':
         idmap[i] = lab
     raw_df = load_audio_data(data_dir, label2idx)
     print "LOADING RAW DATA FINISHED!"
-    '''
     print "LOADING NEW DATA..."
     raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset', label2idx), ignore_index=True)
     print "LOADING NEW DATA FINISHED!"
@@ -264,7 +263,7 @@ if __name__ == '__main__':
     print "LOADING NOISE DATA FINISHED!"
     print "LOADING NOISY DATA..."
     raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
-    print "LOADING NOISY DATA FINISHED!"'''
+    print "LOADING NOISY DATA FINISHED!"
     print label2idx
     print idmap
     for lab in TAGET_LABELS:

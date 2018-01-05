@@ -252,9 +252,6 @@ if __name__ == '__main__':
     train_x, train_y, test_x, test_y = train_test_split(raw_df, ratio=hyper_train_ratio)
     del raw_df
     
-    print "SLEEP FOR 60 SEC..."
-    time.sleep(60)
-    
     ## Preprocessing x data
     print("PROCESSING FFT!")
     train_x = fft_convert(train_x, rate = 16000, n = hyper_n, m = hyper_m, 
