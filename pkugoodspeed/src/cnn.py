@@ -57,7 +57,7 @@ hyper_dropout2 = 0.64
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.7
-N_NOISE = 720
+N_NOISE = 600
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -237,8 +237,8 @@ if __name__ == '__main__':
     print "LOADING NOISE DATA..."
     raw_df = raw_df.append(generate_noise_data(), ignore_index=True)
     print "LOADING NOISE DATA FINISHED!"
-    ## print "LOADING NOISY DATA..."
-    ## raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
+    print "LOADING NOISY DATA..."
+    raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
     print label2idx
     print idmap
     for lab in TAGET_LABELS:
