@@ -170,7 +170,7 @@ def four_fold_split(df):
         y1 += tmp_df.y.tolist()[: tmp_n]
         y2 += tmp_df.y.tolist()[tmp_n: 2*tmp_n]
         y3 += tmp_df.y.tolist()[2*tmp_n: 3*tmp_n]
-        y2 += tmp_df.y.tolist()[3*tmp_n: ]
+        y4 += tmp_df.y.tolist()[3*tmp_n: ]
     return np.array(x1), np.array(x2), np.array(x3), np.array(x4), np.array(y1), np.array(y2), np.array(y3), np.array(y4)
 
 # Using fft to convert input x's
