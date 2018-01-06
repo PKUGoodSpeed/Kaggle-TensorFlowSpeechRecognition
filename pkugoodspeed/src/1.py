@@ -44,20 +44,20 @@ from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.callbacks import LearningRateScheduler
 
-hyper_pwr = 0.4
+hyper_pwr = 0.3
 hyper_train_ratio = 0.88
-hyper_n = 20
-hyper_m = 6
-hyper_NR = 160
-hyper_NC = 80
+hyper_n = 16
+hyper_m = 0
+hyper_NR = 128
+hyper_NC = 64
 hyper_delta = 0.3
 hyper_dropout0 = 0.2
-hyper_dropout1 = 0.34
+hyper_dropout1 = 0.36
 hyper_dropout2 = 0.64
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.7
-N_NOISE = 900
+N_NOISE = 600
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -149,30 +149,6 @@ def train_test_split(df, ratio = 0.7):
         test_y += tmp_df.y.tolist()[tmp_n: ]
     return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y)
 
-# Split train, test sets, and also return label_map
-def four_fold_split(df):
-    x1 = []
-    x2 = []
-    x3 = []
-    x4 = []
-    y1 = []
-    y2 = []
-    y3 = []
-    y4 = []
-    for i in set(df.y.tolist()):
-        tmp_df = df[df.y == i]
-        tmp_df = shuffle(tmp_df)
-        tmp_n = int(len(tmp_df)*0.3)
-        x1 += tmp_df.x.tolist()[: tmp_n]
-        x2 += tmp_df.x.tolist()[tmp_n: 2*tmp_n]
-        x3 += tmp_df.x.tolist()[2*tmp_n: 3*tmp_n]
-        x4 += tmp_df.x.tolist()[3*tmp_n: ]
-        y1 += tmp_df.y.tolist()[: tmp_n]
-        y2 += tmp_df.y.tolist()[tmp_n: 2*tmp_n]
-        y3 += tmp_df.y.tolist()[2*tmp_n: 3*tmp_n]
-        y4 += tmp_df.y.tolist()[3*tmp_n: ]
-    return np.array(x1), np.array(x2), np.array(x3), np.array(x4), np.array(y1), np.array(y2), np.array(y3), np.array(y4)
-
 # Using fft to convert input x's
 def fft_convert(samples, rate = 16000, n = 25, m = 16, NR = 256, NC = 128, delta = 1.E-10):
     '''
@@ -189,7 +165,7 @@ def fft_convert(samples, rate = 16000, n = 25, m = 16, NR = 256, NC = 128, delta
         spec = np.pad(spec, [(0,p1), (0, p2)], mode='constant')
         spec = spec[:NR, :NC]
         res.append(spec)
-    return list(np.log(np.array(res) + delta))
+    return np.log(np.array(res) + delta)
     
 # Function to compute class weights
 def comp_cls_wts(y, pwr = 0.2):
@@ -222,7 +198,6 @@ def getPrediction(model, path, mp):
             x.append(sample)
         x = fft_convert(x, rate = 16000, n = hyper_n, m = hyper_m, 
         NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
-        x = np.array(x)
         nx, ny, nz = np.shape(x)
         x = x.reshape(nx, ny, nz, 1)
         ty = model.predict_classes(x, batch_size=128)
@@ -264,7 +239,6 @@ if __name__ == '__main__':
     print "LOADING NOISE DATA FINISHED!"
     print "LOADING NOISY DATA..."
     raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
-    print "LOADING NOISY DATA FINISHED!"
     print label2idx
     print idmap
     for lab in TAGET_LABELS:
@@ -272,31 +246,18 @@ if __name__ == '__main__':
     
     ## Parsing the data Frame into train and test sets
     print("SPLITTING DATA INTO TRAIN AND TEST SETS!")
-    x1, x2, x3, x4, y1, y2, y3, y4 = four_fold_split(raw_df)
+    train_x, train_y, test_x, test_y = train_test_split(raw_df, ratio=hyper_train_ratio)
     del raw_df
     
     ## Preprocessing x data
     print("PROCESSING FFT!")
-    train_x = []
-    train_x += fft_convert(x1, rate = 16000, n = hyper_n, m = hyper_m, 
+    train_x = fft_convert(train_x, rate = 16000, n = hyper_n, m = hyper_m, 
     NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
-    del x1
-    train_x += fft_convert(x2, rate = 16000, n = hyper_n, m = hyper_m, 
+    test_x = fft_convert(test_x, rate = 16000, n = hyper_n, m = hyper_m, 
     NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
-    del x2
-    train_x += fft_convert(x3, rate = 16000, n = hyper_n, m = hyper_m, 
-    NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
-    del x3
-    train_x = np.array(train_x)
-    test_x = fft_convert(x4, rate = 16000, n = hyper_n, m = hyper_m, 
-    NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
-    del x4
-    test_x = np.array(test_x)
     img_r, img_c = np.shape(train_x)[1:]
     train_x = train_x.reshape(len(train_x), img_r, img_c, 1)
     test_x = test_x.reshape(len(test_x), img_r, img_c, 1)
-    train_y = np.concatenate([y1, y2, y3])
-    test_y = y4
     
     ## Compute class weights
     cls_wts = comp_cls_wts(train_y, pwr = hyper_pwr)
@@ -358,7 +319,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 480
+    N_epoch = 240
     learning_rate = 0.025
     decay_rate = 1./1.25
     optimizer = SGD(learning_rate)
@@ -373,7 +334,7 @@ if __name__ == '__main__':
     def scheduler(epoch):
         global learning_rate
         global decay_rate
-        if epoch%40 == 0:
+        if epoch%20 == 0:
             learning_rate *= decay_rate
             print("CURRENT LEARNING RATE = ", learning_rate)
         return learning_rate
@@ -396,7 +357,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[400: ]
+    statics = test_accu[200:]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -404,7 +365,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[400: ]
+    statics = train_accu[200:]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
