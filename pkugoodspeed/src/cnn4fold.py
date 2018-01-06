@@ -52,7 +52,7 @@ hyper_NR = 160
 hyper_NC = 80
 hyper_delta = 0.3
 hyper_dropout0 = 0.2
-hyper_dropout1 = 0.34
+hyper_dropout1 = 0.36
 hyper_dropout2 = 0.64
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
@@ -317,28 +317,28 @@ if __name__ == '__main__':
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
-    model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
+    model.add(Conv2D(100, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
-    model.add(Conv2D(128, kernel_size = (7, 7), padding = 'same'))
+    model.add(Conv2D(200, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
-    model.add(Conv2D(256, kernel_size = (5, 5), padding = 'same'))
+    model.add(Conv2D(400, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
-    model.add(Conv2D(512, kernel_size = (3, 3), padding = 'same'))
+    model.add(Conv2D(600, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
@@ -348,7 +348,7 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(1024))
+    model.add(Dense(1200))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
