@@ -44,7 +44,7 @@ from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.callbacks import LearningRateScheduler
 
-hyper_pwr = 0.5
+hyper_pwr = 0.32
 hyper_train_ratio = 0.88
 hyper_n = 20
 hyper_m = 6
