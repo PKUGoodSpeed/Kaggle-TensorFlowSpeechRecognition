@@ -315,8 +315,10 @@ if __name__ == '__main__':
     ### Construct the model
     print("CONSTRUCTING MODEL!")
     model = Sequential()
-    model.add(Conv2D(32, kernel_size = (11, 11), padding = 'same', input_shape = (img_r, img_c, 1)))
-    model.add(MaxPooling2D(pool_size = (4, 2)))
+    model.add(MaxPooling2D(pool_size = (2, 1), input_shape = (img_r, img_c, 1)))
+    
+    model.add(Conv2D(32, kernel_size = (11, 11), padding = 'same'))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.02))
     model.add(Dropout(hyper_dropout0))
     
