@@ -47,9 +47,9 @@ from keras.callbacks import LearningRateScheduler
 hyper_pwr = 0.32
 hyper_train_ratio = 0.88
 hyper_n = 20
-hyper_m = 6
+hyper_m = 10
 hyper_NR = 160
-hyper_NC = 80
+hyper_NC = 96
 hyper_delta = 0.3
 hyper_dropout0 = 0.17
 hyper_dropout1 = 0.36
@@ -57,7 +57,7 @@ hyper_dropout2 = 0.64
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.7
-N_NOISE = 900
+N_NOISE = 950
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -315,12 +315,8 @@ if __name__ == '__main__':
     ### Construct the model
     print("CONSTRUCTING MODEL!")
     model = Sequential()
-    model.add(MaxPooling2D(pool_size = (2, 1), input_shape = (img_r, img_c, 1)))
-    
-    model.add(Conv2D(32, kernel_size = (11, 11), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
-    model.add(Dropout(hyper_dropout0))
+    model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
+    #model.add(AveragePooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
     model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
@@ -354,6 +350,11 @@ if __name__ == '__main__':
     model.add(Flatten())
     
     model.add(Dense(1024))
+    #model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dropout(hyper_dropout5))
+    
+    model.add(Dense(128))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
@@ -416,29 +417,6 @@ if __name__ == '__main__':
         f.write(str(acc) + ' ')
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
-    
-    
-    print("VISUALIZATION:")
-        ## Plotting the results
-    fig, axes = plt.subplots(2,2, figsize = (12, 12))
-    fig.subplots_adjust(hspace = 0.4, wspace = 0.4)
-
-    axes[0][0].set_title('Loss')
-    axes[0][0].plot(steps, train_loss, label = 'train loss')
-    axes[0][0].plot(steps, test_loss, label = 'test loss')
-    axes[0][0].set_xlabel('# of steps')
-    axes[0][0].legend()
-
-    axes[0][1].set_title('Accuracy')
-    axes[0][1].plot(steps, train_accu, label = 'train accuracy')
-    axes[0][1].plot(steps, test_accu, label = 'test accuracy')
-    axes[0][1].set_xlabel('# of steps')
-    axes[0][1].legend()
-    
-    plt.savefig('../cnn2_output/convrg_rst.png')
-    
-    ## show model configuration
-    plot_model(model, to_file = '../cnn2_output/model.png')
     
     ## Getting prediction
     df = getPrediction(model, '../data/test/audio',idmap)
