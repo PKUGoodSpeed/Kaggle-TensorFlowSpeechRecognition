@@ -364,8 +364,8 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 480
-    learning_rate = 0.027
+    N_epoch = 540
+    learning_rate = 0.03
     decay_rate = 1./1.20
     optimizer = SGD(learning_rate)
     loss = 'categorical_crossentropy'
