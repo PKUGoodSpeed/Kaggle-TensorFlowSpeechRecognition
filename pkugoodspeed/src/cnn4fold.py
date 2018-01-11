@@ -44,7 +44,7 @@ from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.callbacks import LearningRateScheduler
 
-hyper_pwr = 0.32
+hyper_pwr = 0.4
 hyper_train_ratio = 0.88
 hyper_n = 20
 hyper_m = 10
@@ -52,7 +52,7 @@ hyper_NR = 160
 hyper_NC = 96
 hyper_delta = 0.3
 hyper_dropout0 = 0.17
-hyper_dropout1 = 0.36
+hyper_dropout1 = 0.44
 hyper_dropout2 = 0.64
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
@@ -317,6 +317,9 @@ if __name__ == '__main__':
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     #model.add(AveragePooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
+    model.add(Conv2D(32, kernel_size = (11, 11), padding = 'same'))
+    model.add(MaxPooling2D(pool_size = (2, 2)))
+    model.add(LeakyReLU(alpha=0.01))
     
     model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
@@ -379,7 +382,7 @@ if __name__ == '__main__':
     def scheduler(epoch):
         global learning_rate
         global decay_rate
-        if epoch%30 == 0:
+        if epoch%40 == 0:
             learning_rate *= decay_rate
             print("CURRENT LEARNING RATE = ", learning_rate)
         return learning_rate
