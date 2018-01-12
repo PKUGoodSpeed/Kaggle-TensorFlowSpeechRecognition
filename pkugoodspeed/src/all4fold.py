@@ -48,18 +48,24 @@ hyper_NR = 160
 hyper_NC = 96
 hyper_delta = 0.3
 hyper_dropout0 = 0.12
-hyper_dropout1 = 0.25
-hyper_dropout2 = 0.5
-hyper_dropout3 = 0.75
+hyper_dropout1 = 0.36
+hyper_dropout2 = 0.64
+hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.7
-N_NOISE = 900
+N_NOISE = 720
 
-TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
+TAGET_LABELS = ['bird', 'yes', 'six', 'eight', 'two', 'house', 'five', 'zero',
+'four', 'seven', 'nine', 'bed', 'up', 'happy', 'sheila', 'wow', 'go', 'one',
+'down', 'left', 'three', 'tree', 'right', 'off', 'on', 'dog', 'cat', 'marvin', 
+'stop', 'no', 'silence', 'unknown']
+
+print len(TAGET_LABELS)
+print len(set(TAGET_LABELS))
 
 
 ## Function for loading the audio data, return a dataFrame
-def load_audio_data(path):
+def load_audio_data(path, ltoi):
     '''
     path: audio file path
     return: pd.DataFrame
@@ -67,21 +73,24 @@ def load_audio_data(path):
     raw = {'x': [], 'y': [], 'label':[]}
     for i, folder in enumerate(os.listdir(path)):
         for filename in os.listdir(path + '/' + folder):
-            rate, sample = wavfile.read(data_dir + '/' + folder + '/' + filename)
+            rate, sample = wavfile.read(path + '/' + folder + '/' + filename)
             assert(rate == 16000)
             if folder == 'silence':
                 length = len(sample)
                 for j in range(int(length/rate)):
                     raw['x'].append(np.array(sample[j*rate: (j+1)*rate]))
-                    raw['y'].append(i)
+                    raw['y'].append(ltoi['silence'])
                     raw['label'].append('silence')
             else:
                 p = max(0, rate - len(sample))
                 sample = np.pad(sample, [(0,p)], mode='constant')
                 sample = sample[:rate]
                 raw['x'].append(np.array(sample))
-                raw['y'].append(i)
-                raw['label'].append(folder)
+                label = folder
+                if folder not in TAGET_LABELS:
+                    label = 'unknown'
+                raw['y'].append(ltoi[label])
+                raw['label'].append(label)
     return pd.DataFrame(raw)
     
 # Generating noise
@@ -249,15 +258,19 @@ if __name__ == '__main__':
         idmap[i] = lab
     raw_df = load_audio_data(data_dir, label2idx)
     print "LOADING RAW DATA FINISHED!"
-    print "LOADING NEW DATA..."
-    raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset', label2idx), ignore_index=True)
-    print "LOADING NEW DATA FINISHED!"
+    
     print "LOADING NOISE DATA..."
     raw_df = raw_df.append(generate_noise_data(), ignore_index=True)
     print "LOADING NOISE DATA FINISHED!"
+    '''
+    print "LOADING NEW DATA..."
+    raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset', label2idx), ignore_index=True)
+    print "LOADING NEW DATA FINISHED!"
+    
     print "LOADING NOISY DATA..."
     raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
     print "LOADING NOISY DATA FINISHED!"
+    '''
     print label2idx
     print idmap
     for lab in TAGET_LABELS:
