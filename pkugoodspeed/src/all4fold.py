@@ -53,7 +53,7 @@ hyper_dropout2 = 0.64
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.7
-N_NOISE = 720
+N_NOISE = 600
 
 TAGET_LABELS = ['bird', 'yes', 'six', 'eight', 'two', 'house', 'five', 'zero',
 'four', 'seven', 'nine', 'bed', 'up', 'happy', 'sheila', 'wow', 'go', 'one',
