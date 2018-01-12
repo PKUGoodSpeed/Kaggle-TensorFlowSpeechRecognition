@@ -361,12 +361,12 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(1024, kernel_regularizer=regularizers.l2(0.001)))
+    model.add(Dense(1024, kernel_regularizer=regularizers.l2(0.002)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     
-    model.add(Dense(256, kernel_regularizer=regularizers.l2(0.005)))
+    model.add(Dense(256, kernel_regularizer=regularizers.l2(0.01)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
