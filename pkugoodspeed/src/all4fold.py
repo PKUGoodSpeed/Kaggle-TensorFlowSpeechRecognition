@@ -58,7 +58,7 @@ N_NOISE = 720
 TAGET_LABELS = ['bird', 'yes', 'six', 'eight', 'two', 'house', 'five', 'zero',
 'four', 'seven', 'nine', 'bed', 'up', 'happy', 'sheila', 'wow', 'go', 'one',
 'down', 'left', 'three', 'tree', 'right', 'off', 'on', 'dog', 'cat', 'marvin', 
-'stop', 'no', 'silence', 'unknown']
+'stop', 'no', 'silence']
 
 print len(TAGET_LABELS)
 print len(set(TAGET_LABELS))
