@@ -43,6 +43,7 @@ from keras.utils import np_utils, plot_model
 from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.callbacks import LearningRateScheduler
+from keras import regularizers
 
 hyper_pwr = 0.17
 hyper_train_ratio = 0.88
@@ -52,11 +53,11 @@ hyper_NR = 160
 hyper_NC = 96
 hyper_delta = 0.3
 hyper_dropout0 = 0.12
-hyper_dropout1 = 0.36
+hyper_dropout1 = 0.32
 hyper_dropout2 = 0.64
 hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
-hyper_dropout5 = 0.7
+hyper_dropout5 = 0.6
 N_NOISE = 600
 
 TAGET_LABELS = ['bird', 'yes', 'six', 'eight', 'two', 'house', 'five', 'zero',
@@ -231,6 +232,7 @@ def getPrediction(model, path):
             x.append(sample)
         x = fft_convert(x, rate = 16000, n = hyper_n, m = hyper_m, 
         NR = hyper_NR, NC = hyper_NC, delta = hyper_delta)
+        x = np.array(x)
         nx, ny, nz = np.shape(x)
         x = x.reshape(nx, ny, nz, 1)
         ty = model.predict_classes(x, batch_size=128)
@@ -342,14 +344,14 @@ if __name__ == '__main__':
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
-    model.add(Conv2D(256, kernel_size = (5, 5), padding = 'same'))
+    model.add(Conv2D(512, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
-    model.add(Conv2D(512, kernel_size = (3, 3), padding = 'same'))
+    model.add(Conv2D(768, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
@@ -359,12 +361,12 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(1024))
+    model.add(Dense(1024, kernel_regularizer=regularizers.l2(0.001)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     
-    model.add(Dense(256))
+    model.add(Dense(256, kernel_regularizer=regularizers.l2(0.005)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
