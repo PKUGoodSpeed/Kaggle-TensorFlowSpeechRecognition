@@ -33,12 +33,16 @@ mpl.rcParams['ytick.minor.size'] = 2
 from sklearn.utils import shuffle
 
 # Keras
+from keras import backend as K
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
 from keras.layers import Flatten, Conv2D, MaxPooling2D
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
+from keras.layers.normalization import BatchNormalization
+from keras.layers.advanced_activations import LeakyReLU, PReLU
+from keras.callbacks import LearningRateScheduler
 
 hyper_pwr = 0.17
 hyper_train_ratio = 0.88
