@@ -40,7 +40,7 @@ from keras.layers import Flatten, Conv2D, MaxPooling2D
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
 
-hyper_pwr = 0.4
+hyper_pwr = 0.17
 hyper_train_ratio = 0.88
 hyper_n = 20
 hyper_m = 10
@@ -52,7 +52,7 @@ hyper_dropout1 = 0.25
 hyper_dropout2 = 0.5
 hyper_dropout3 = 0.75
 hyper_dropout4 = 0.5
-hyper_dropout5 = 0.6
+hyper_dropout5 = 0.7
 N_NOISE = 900
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
@@ -347,7 +347,7 @@ if __name__ == '__main__':
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     
-    model.add(Dense(128))
+    model.add(Dense(256))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
