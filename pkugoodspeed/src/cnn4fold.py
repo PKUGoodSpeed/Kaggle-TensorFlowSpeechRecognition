@@ -43,21 +43,22 @@ from keras.utils import np_utils, plot_model
 from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.callbacks import LearningRateScheduler
+from keras import regularizers
 
-hyper_pwr = 0.4
+hyper_pwr = 0.42
 hyper_train_ratio = 0.88
-hyper_n = 20
-hyper_m = 10
-hyper_NR = 160
-hyper_NC = 96
+hyper_n = 25
+hyper_m = 15
+hyper_NR = 208
+hyper_NC = 112
 hyper_delta = 0.3
-hyper_dropout0 = 0.17
-hyper_dropout1 = 0.36
-hyper_dropout2 = 0.6
-hyper_dropout3 = 0.7
-hyper_dropout4 = 0.6
-hyper_dropout5 = 0.7
-N_NOISE = 900
+hyper_dropout0 = 0.12
+hyper_dropout1 = 0.17
+hyper_dropout2 = 0.32
+hyper_dropout3 = 0.64
+hyper_dropout4 = 0.5
+hyper_dropout5 = 0.5
+N_NOISE = 600
 
 TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
@@ -162,7 +163,7 @@ def four_fold_split(df):
     for i in set(df.y.tolist()):
         tmp_df = df[df.y == i]
         tmp_df = shuffle(tmp_df)
-        tmp_n = int(len(tmp_df)*0.3)
+        tmp_n = int(len(tmp_df)*0.32)
         x1 += tmp_df.x.tolist()[: tmp_n]
         x2 += tmp_df.x.tolist()[tmp_n: 2*tmp_n]
         x3 += tmp_df.x.tolist()[2*tmp_n: 3*tmp_n]
@@ -315,28 +316,24 @@ if __name__ == '__main__':
     ### Construct the model
     print("CONSTRUCTING MODEL!")
     model = Sequential()
-    model.add(MaxPooling2D(pool_size = (2, 1), input_shape = (img_r, img_c, 1)))
+    model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     #model.add(AveragePooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    model.add(Conv2D(50, kernel_size = (7, 7), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    model.add(LeakyReLU(alpha=0.01))
-    model.add(Dropout(hyper_dropout0))
     
-    model.add(Conv2D(100, kernel_size = (6, 6), padding = 'same'))
+    model.add(Conv2D(100, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
-    model.add(Conv2D(200, kernel_size = (5, 5), padding = 'same'))
+    model.add(Conv2D(200, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
     #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
-    model.add(Conv2D(400, kernel_size = (4, 4), padding = 'same'))
+    model.add(Conv2D(400, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
@@ -353,12 +350,12 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(1200))
+    model.add(Dense(1200, kernel_regularizer=regularizers.l2(0.01)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     
-    model.add(Dense(120))
+    model.add(Dense(120, kernel_regularizer=regularizers.l2(0.02)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
@@ -368,7 +365,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 540
+    N_epoch = 360
     learning_rate = 0.03
     decay_rate = 1./1.20
     optimizer = SGD(learning_rate)
@@ -383,7 +380,7 @@ if __name__ == '__main__':
     def scheduler(epoch):
         global learning_rate
         global decay_rate
-        if epoch%40 == 0:
+        if epoch%20 == 0:
             learning_rate *= decay_rate
             print("CURRENT LEARNING RATE = ", learning_rate)
         return learning_rate
@@ -406,7 +403,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[400: ]
+    statics = test_accu[200: ]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -414,7 +411,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[400: ]
+    statics = train_accu[200: ]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
