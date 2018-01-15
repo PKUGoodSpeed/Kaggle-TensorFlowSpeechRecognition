@@ -47,6 +47,7 @@ from keras import regularizers
 
 hyper_pwr = 0.45
 hyper_train_ratio = 0.88
+Amp_ratio = 3.2
 hyper_n = 20
 hyper_m = 6
 hyper_NR = 160
@@ -124,11 +125,11 @@ def generate_noise_data():
     y = [10]*(5*N_NOISE)
     x = []
     for i in range(N_NOISE):
-        x.append(np.random.normal(size = samples_to_generate))
-        x.append(_gen_colored_noise(1. / (np.sqrt(np.arange(spectrum_len) + 1.))))
-        x.append(_gen_colored_noise(np.sqrt(np.arange(spectrum_len))))
-        x.append(_gen_colored_noise(1. / (np.arange(spectrum_len) + 1)))
-        x.append(_gen_colored_noise(np.arange(spectrum_len)))
+        x.append(to_16bit(np.random.normal(size = samples_to_generate)/Amp_ratio))
+        x.append(to_16bit(_gen_colored_noise(1. / (np.sqrt(np.arange(spectrum_len) + 1.)))/Amp_ratio))
+        x.append(to_16bit(_gen_colored_noise(np.sqrt(np.arange(spectrum_len)))/Amp_ratio))
+        x.append(to_16bit(_gen_colored_noise(1. / (np.arange(spectrum_len) + 1))/Amp_ratio))
+        x.append(to_16bit(_gen_colored_noise(np.arange(spectrum_len))/Amp_ratio))
     return pd.DataFrame({'x': x, 'y': y, 'label': lab})
 
 # Split train, test sets, and also return label_map
