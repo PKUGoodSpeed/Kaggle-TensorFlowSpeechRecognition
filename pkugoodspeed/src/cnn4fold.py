@@ -52,7 +52,7 @@ hyper_m = 6
 hyper_NR = 160
 hyper_NC = 80
 hyper_delta = 0.3
-hyper_dropout0 = 0.12
+hyper_dropout0 = 0.1
 hyper_dropout1 = 0.32
 hyper_dropout2 = 0.64
 hyper_dropout3 = 0.64
@@ -317,6 +317,7 @@ if __name__ == '__main__':
     print("CONSTRUCTING MODEL!")
     model = Sequential()
     model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
+    model.add(Dropout(hyper_dropout0))
     ## model.add(AveragePooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
     model.add(Conv2D(120, kernel_size = (9, 9), padding = 'same'))
