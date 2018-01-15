@@ -35,39 +35,27 @@ from sklearn.utils import shuffle
 # Keras
 from keras import backend as K
 from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation
-from keras.layers import Flatten, Conv2D, MaxPooling2D
+from keras.models import Sequential, Model
+from keras.layers import Dense, Dropout, Activation, GlobalMaxPooling2D, GlobalAveragePooling2D
+from keras.layers import Flatten, Conv2D, MaxPooling2D, AveragePooling2D, Input
 from keras.optimizers import SGD, Adam, RMSprop, Adadelta
 from keras.utils import np_utils, plot_model
 from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU, PReLU
 from keras.callbacks import LearningRateScheduler
 from keras import regularizers
+from keras.applications.vgg16 import VGG16
 
-hyper_pwr = 0.36
+hyper_pwr = 0.4
 hyper_train_ratio = 0.88
 hyper_n = 20
 hyper_m = 6
 hyper_NR = 160
 hyper_NC = 80
 hyper_delta = 0.3
-hyper_dropout0 = 0.12
-hyper_dropout1 = 0.15
-hyper_dropout2 = 0.5
-hyper_dropout3 = 0.7
-hyper_dropout4 = 0.5
-hyper_dropout5 = 0.7
 N_NOISE = 800
 
-TAGET_LABELS = ['bird', 'yes', 'six', 'eight', 'two', 'house', 'five', 'zero',
-'four', 'seven', 'nine', 'bed', 'up', 'happy', 'sheila', 'wow', 'go', 'one',
-'down', 'left', 'three', 'tree', 'right', 'off', 'on', 'dog', 'cat', 'marvin', 
-'stop', 'no', 'silence']
-
-print len(TAGET_LABELS)
-print len(set(TAGET_LABELS))
-
+TAGET_LABELS = ['yes', 'no', 'up', 'down', 'left', 'right', 'on', 'off', 'stop', 'go', 'silence', 'unknown']
 
 ## Function for loading the audio data, return a dataFrame
 def load_audio_data(path, ltoi):
@@ -147,17 +135,15 @@ def train_test_split(df, ratio = 0.7):
     test_y = []
     train_x = []
     train_y = []
-    label_map = {}
     for i in set(df.y.tolist()):
         tmp_df = df[df.y == i]
-        label_map[i] = tmp_df.label.tolist()[0]
         tmp_df = shuffle(tmp_df)
         tmp_n = int(len(tmp_df)*ratio)
         train_x += tmp_df.x.tolist()[: tmp_n]
         test_x += tmp_df.x.tolist()[tmp_n: ]
         train_y += tmp_df.y.tolist()[: tmp_n]
         test_y += tmp_df.y.tolist()[tmp_n: ]
-    return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y), label_map
+    return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y)
 
 # Split train, test sets, and also return label_map
 def four_fold_split(df):
@@ -172,7 +158,7 @@ def four_fold_split(df):
     for i in set(df.y.tolist()):
         tmp_df = df[df.y == i]
         tmp_df = shuffle(tmp_df)
-        tmp_n = int(len(tmp_df)*0.3)
+        tmp_n = int(len(tmp_df)*0.32)
         x1 += tmp_df.x.tolist()[: tmp_n]
         x2 += tmp_df.x.tolist()[tmp_n: 2*tmp_n]
         x3 += tmp_df.x.tolist()[2*tmp_n: 3*tmp_n]
@@ -212,7 +198,7 @@ def comp_cls_wts(y, pwr = 0.2):
     return dic
     
 # Get Prediction
-def getPrediction(model, path):
+def getPrediction(model, path, mp):
     files = os.listdir(path)
     files.sort()
     dic = {'fname':[], 'label':[], 'prob':[] }
@@ -238,8 +224,9 @@ def getPrediction(model, path):
         ty = model.predict_classes(x, batch_size=128)
         sy = model.predict(x, batch_size=128)
         for j,p in enumerate(ty):
-            y.append(idmap[p])
+            y.append(mp[p])
             pro.append(1.*sy[j][p]/np.sum(sy[j]))
+        print "\n\n"
     dic['fname'] = files
     dic['label'] = y
     dic['prob'] = pro
@@ -248,6 +235,7 @@ def getPrediction(model, path):
 
 
 if __name__ == '__main__':
+    print "WORK STATED!!:"
     data_dir = '../data/train/audio'
     ## change the name of `_background_noise_' into 'silence` which is a proper label name
     if os.path.exists(data_dir + '/' + '_background_noise_'):
@@ -264,19 +252,15 @@ if __name__ == '__main__':
         idmap[i] = lab
     raw_df = load_audio_data(data_dir, label2idx)
     print "LOADING RAW DATA FINISHED!"
-    
-    print "LOADING NOISE DATA..."
-    raw_df = raw_df.append(generate_noise_data(), ignore_index=True)
-    print "LOADING NOISE DATA FINISHED!"
-
     print "LOADING NEW DATA..."
     raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset', label2idx), ignore_index=True)
     print "LOADING NEW DATA FINISHED!"
-    
+    print "LOADING NOISE DATA..."
+    raw_df = raw_df.append(generate_noise_data(), ignore_index=True)
+    print "LOADING NOISE DATA FINISHED!"
     print "LOADING NOISY DATA..."
-    raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
+    #raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
     print "LOADING NOISY DATA FINISHED!"
-    
     print label2idx
     print idmap
     for lab in TAGET_LABELS:
@@ -326,53 +310,24 @@ if __name__ == '__main__':
     
     ### Construct the model
     print("CONSTRUCTING MODEL!")
-    model = Sequential()
-    model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    #model.add(AveragePooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
+    #Get back the convolutional part of a VGG network trained on ImageNet
+    model_vgg16_conv = VGG16(weights='imagenet', include_top=False)
+    model_vgg16_conv.summary()
+
+    #Create your own input format (here 3x200x200)
+    speech_input = Input(shape=(None, 160, 80, 1),name = 'image_input')
+
+    #Use the generated model 
+    output_vgg16_conv = model_vgg16_conv(speech_input)
+
+    #Add the fully-connected layers 
+    x = Flatten(name='flatten')(output_vgg16_conv)
+    x = Dropout(0.25)(Dense(1024, activation='relu', name='fc1')(x))
+    x = Dense(n_cls, activation='softmax', name='predictions')(x)
+
+    model = Model(input=speech_input, output=x)
     
-    model.add(Conv2D(64, kernel_size = (9, 9), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    #model.add(LeakyReLU(alpha=0.01))
-    #model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout1))
-    
-    model.add(Conv2D(128, kernel_size = (7, 7), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    #model.add(LeakyReLU(alpha=0.01))
-    #model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout2))
-    
-    model.add(Conv2D(256, kernel_size = (5, 5), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    #model.add(LeakyReLU(alpha=0.01))
-    #model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout3))
-    
-    model.add(Conv2D(512, kernel_size = (3, 3), padding = 'same'))
-    model.add(MaxPooling2D(pool_size = (2, 2)))
-    #model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout4))
-    
-    
-    model.add(Flatten())
-    
-    model.add(Dense(1024))
-    #model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout5))
-    
-    model.add(Dense(256))
-    #model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(hyper_dropout5))
-    
-    model.add(Dense(n_cls, activation = 'softmax'))
     model.summary()
-    
     
     ''' First training section '''
     ### Compile the model
@@ -411,16 +366,19 @@ if __name__ == '__main__':
     del test_x
     del test_y
     
-    statics = test_accu[300:]
-    filename = "../cnn_output/test_accu.txt"
+    ## Plot results
+    steps = [i for i in range(len(test_accu))]
+    
+    statics = test_accu[300: ]
+    filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[300:]
-    filename = "../cnn_output/train_accu.txt"
+    statics = train_accu[300: ]
+    filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:
         f.write(str(acc) + ' ')
@@ -428,6 +386,6 @@ if __name__ == '__main__':
     f.close()
     
     ## Getting prediction
-    df = getPrediction(model, '../data/test/audio')
+    df = getPrediction(model, '../data/test/audio',idmap)
     df = df.set_index('fname')
-    df.to_csv('../cnn_output/predict.csv')
+    df.to_csv('../cnn2_output/predict.csv')
