@@ -47,16 +47,15 @@ from keras import regularizers
 
 hyper_pwr = 0.45
 hyper_train_ratio = 0.88
-Amp_ratio = 3.2
 hyper_n = 20
 hyper_m = 6
 hyper_NR = 160
 hyper_NC = 80
 hyper_delta = 0.3
 hyper_dropout0 = 0.12
-hyper_dropout1 = 0.25
-hyper_dropout2 = 0.64
-hyper_dropout3 = 0.64
+hyper_dropout1 = 0.32
+hyper_dropout2 = 0.6
+hyper_dropout3 = 0.7
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.7
 N_NOISE = 800
@@ -125,11 +124,11 @@ def generate_noise_data():
     y = [10]*(5*N_NOISE)
     x = []
     for i in range(N_NOISE):
-        x.append(to_16bit(np.random.normal(size = samples_to_generate)/Amp_ratio))
-        x.append(to_16bit(_gen_colored_noise(1. / (np.sqrt(np.arange(spectrum_len) + 1.)))/Amp_ratio))
-        x.append(to_16bit(_gen_colored_noise(np.sqrt(np.arange(spectrum_len)))/Amp_ratio))
-        x.append(to_16bit(_gen_colored_noise(1. / (np.arange(spectrum_len) + 1))/Amp_ratio))
-        x.append(to_16bit(_gen_colored_noise(np.arange(spectrum_len))/Amp_ratio))
+        x.append(np.random.normal(size = samples_to_generate))
+        x.append(_gen_colored_noise(1. / (np.sqrt(np.arange(spectrum_len) + 1.))))
+        x.append(_gen_colored_noise(np.sqrt(np.arange(spectrum_len))))
+        x.append(_gen_colored_noise(1. / (np.arange(spectrum_len) + 1)))
+        x.append(_gen_colored_noise(np.arange(spectrum_len)))
     return pd.DataFrame({'x': x, 'y': y, 'label': lab})
 
 # Split train, test sets, and also return label_map
@@ -265,7 +264,7 @@ if __name__ == '__main__':
     raw_df = raw_df.append(generate_noise_data(), ignore_index=True)
     print "LOADING NOISE DATA FINISHED!"
     print "LOADING NOISY DATA..."
-    raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
+    #raw_df = raw_df.append(load_audio_data('../data/new_data/augmented_dataset_verynoisy', label2idx), ignore_index=True)
     print "LOADING NOISY DATA FINISHED!"
     print label2idx
     print idmap
@@ -317,48 +316,47 @@ if __name__ == '__main__':
     ### Construct the model
     print("CONSTRUCTING MODEL!")
     model = Sequential()
-    model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
-    model.add(Dropout(hyper_dropout0))
-    ## model.add(AveragePooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
+    #model.add(MaxPooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
+    model.add(AveragePooling2D(pool_size = (2, 2), input_shape = (img_r, img_c, 1)))
     
-    model.add(Conv2D(120, kernel_size = (9, 9), padding = 'same'))
+    model.add(Conv2D(100, kernel_size = (9, 9), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    #model.add(LeakyReLU(alpha=0.01))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
-    model.add(Activation('relu'))
+    #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout1))
     
-    model.add(Conv2D(240, kernel_size = (7, 7), padding = 'same'))
+    model.add(Conv2D(200, kernel_size = (7, 7), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    #model.add(LeakyReLU(alpha=0.01))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
-    model.add(Activation('relu'))
+    #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout2))
     
-    model.add(Conv2D(480, kernel_size = (5, 5), padding = 'same'))
+    model.add(Conv2D(400, kernel_size = (5, 5), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    #model.add(LeakyReLU(alpha=0.01))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
-    model.add(Activation('relu'))
+    #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout3))
     
-    model.add(Conv2D(720, kernel_size = (3, 3), padding = 'same'))
+    model.add(Conv2D(600, kernel_size = (3, 3), padding = 'same'))
     model.add(MaxPooling2D(pool_size = (2, 2)))
-    #model.add(LeakyReLU(alpha=0.01))
+    model.add(LeakyReLU(alpha=0.01))
     #model.add(BatchNormalization())
-    model.add(Activation('relu'))
+    #model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout4))
     
     
-    model.add(Flatten())
-    # model.add(GlobalAveragePooling2D())
+    #model.add(Flatten())
+    model.add(GlobalAveragePooling2D())
     
-    model.add(Dense(1440, kernel_regularizer=regularizers.l2(0.002)))
+    model.add(Dense(1200, kernel_regularizer=regularizers.l2(0.01)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     
-    model.add(Dense(144, kernel_regularizer=regularizers.l2(0.01)))
+    model.add(Dense(120, kernel_regularizer=regularizers.l2(0.02)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
@@ -368,7 +366,7 @@ if __name__ == '__main__':
     
     ''' First training section '''
     ### Compile the model
-    N_epoch = 360
+    N_epoch = 240
     learning_rate = 0.03
     decay_rate = 1./1.20
     optimizer = SGD(learning_rate)
@@ -383,7 +381,7 @@ if __name__ == '__main__':
     def scheduler(epoch):
         global learning_rate
         global decay_rate
-        if epoch%30 == 0:
+        if epoch%20 == 0:
             learning_rate *= decay_rate
             print("CURRENT LEARNING RATE = ", learning_rate)
         return learning_rate
@@ -406,7 +404,7 @@ if __name__ == '__main__':
     ## Plot results
     steps = [i for i in range(len(test_accu))]
     
-    statics = test_accu[300: ]
+    statics = test_accu[200: ]
     filename = "../cnn2_output/test_accu.txt"
     f = open(filename,'w')
     for acc in statics:
@@ -414,7 +412,7 @@ if __name__ == '__main__':
     f.write("\n" + str(sum(statics)*1./len(statics)))
     f.close()
     
-    statics = train_accu[300: ]
+    statics = train_accu[200: ]
     filename = "../cnn2_output/train_accu.txt"
     f = open(filename,'w')
     for acc in statics:

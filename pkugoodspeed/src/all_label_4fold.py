@@ -53,9 +53,9 @@ hyper_NR = 160
 hyper_NC = 80
 hyper_delta = 0.3
 hyper_dropout0 = 0.12
-hyper_dropout1 = 0.15
-hyper_dropout2 = 0.5
-hyper_dropout3 = 0.7
+hyper_dropout1 = 0.17
+hyper_dropout2 = 0.64
+hyper_dropout3 = 0.64
 hyper_dropout4 = 0.5
 hyper_dropout5 = 0.7
 N_NOISE = 800
@@ -360,12 +360,12 @@ if __name__ == '__main__':
     
     model.add(Flatten())
     
-    model.add(Dense(1024))
+    model.add(Dense(1024, kernel_regularizer=regularizers.l2(0.001)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
     
-    model.add(Dense(256))
+    model.add(Dense(256, kernel_regularizer=regularizers.l2(0.005)))
     #model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(Dropout(hyper_dropout5))
